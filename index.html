@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>권보원 — 공개 자료</title><meta name="description" content="생성형 AI와 함께 엮은 공개 자료">
+<script>(function(){var q=new URLSearchParams(location.search).get("theme");if(q==="light"||q==="dark"){localStorage.setItem("hub-theme",q)}else if(q==="auto"){localStorage.removeItem("hub-theme")}var v=localStorage.getItem("hub-theme");if(v)document.documentElement.setAttribute("data-theme",v)})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;
+  --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
+  --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--glow:13%;
+  --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
+  --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
+  --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
+  --body:"Noto Sans KR",-apple-system,"Segoe UI","Apple SD Gothic Neo",Roboto,sans-serif}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
+  --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--glow:17%;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
+  --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
+  --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--glow:17%;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
+  --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;font:16px/1.7 var(--body);background:var(--bg);color:var(--fg);overflow-wrap:anywhere;-webkit-font-smoothing:antialiased;position:relative}
+body::before{content:"";position:absolute;inset:0 0 auto 0;height:720px;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(640px 420px at 8% -5%,color-mix(in srgb,var(--s1) var(--glow),transparent),transparent 70%),
+    radial-gradient(560px 380px at 92% 4%,color-mix(in srgb,var(--s2) var(--glow),transparent),transparent 70%),
+    radial-gradient(520px 360px at 55% 30%,color-mix(in srgb,var(--s3) var(--glow),transparent),transparent 70%);
+  -webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+[id]{scroll-margin-top:4.2rem}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:.55rem 1.2rem;display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap}
+header .brand{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--fg);display:flex;align-items:center;gap:.55rem}
+header .brand i{display:inline-block;width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--s1),var(--s3) 55%,var(--s2))}
+header nav{display:flex;gap:1.1rem;flex-wrap:wrap}header nav a{color:var(--fg2);font-size:.92rem;padding:.2rem 0;border-bottom:1.5px solid transparent}header nav a:hover{text-decoration:none;color:var(--fg);border-color:var(--fg3)}
+header .right{margin-left:auto;display:flex;gap:.6rem;align-items:center}
+header .lang{font-size:.88rem;color:var(--fg2);border:1px solid var(--line);border-radius:999px;padding:.15rem .7rem;background:var(--card)}header .lang:hover{text-decoration:none;color:var(--fg);border-color:var(--fg3)}
+.theme{border:1px solid var(--line);background:var(--card);color:var(--fg2);border-radius:999px;width:30px;height:30px;cursor:pointer;font-size:.9rem;line-height:1;padding:0}.theme:hover{color:var(--fg);border-color:var(--fg3)}
+main{max-width:1100px;margin:0 auto;padding:2.2rem 1.2rem 4rem;min-width:0}
+h1{word-break:keep-all;font-family:var(--display);font-weight:600;font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.2;letter-spacing:-.018em;margin:.4rem 0 .9rem;text-wrap:balance}
+h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;margin:0 0 .3rem}
+.sec{margin-top:3.4rem}.sec-head{display:flex;align-items:baseline;gap:1rem;padding-bottom:.6rem;margin-bottom:1.3rem;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.sec-head .no{font-family:var(--display);font-size:.9rem;color:var(--fg3);letter-spacing:.12em}
+.sec-head p{margin:0;color:var(--fg2);font-size:.92rem;margin-left:auto}
+.hero{padding:2.2rem 0 2.4rem;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:2.5rem;align-items:center}
+.hero .who{color:var(--fg3);font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.lead{word-break:keep-all;color:var(--fg2);font-size:1.1rem;max-width:62ch;margin:0}
+.hero .lead{font-size:1.14rem}
+.hero .cta{margin-top:1.4rem;display:flex;gap:.6rem;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .95rem .4rem .7rem;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:.92rem;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s,border-color .15s}
+.chip i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
+.chip:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow2);border-color:var(--c)}
+.mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr auto;gap:.6rem}
+.mosaic a{border-radius:14px;padding:.9rem .95rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;min-height:120px;
+  background:linear-gradient(160deg,color-mix(in srgb,var(--c) 92%,#fff),color-mix(in srgb,var(--c) 78%,#000));box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
+.mosaic a::after{content:"";position:absolute;inset:auto -30% -45% auto;width:75%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.12)}
+.mosaic a:hover{text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow2)}
+.mosaic .n{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:600;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.mosaic small{font-size:.8rem;line-height:1.35;opacity:.92;margin-top:.3rem}
+.mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/4;grid-row:3;min-height:0}
+.mosaic .m3{flex-direction:row;align-items:baseline;gap:.8rem;justify-content:flex-start}.mosaic .m3 small{margin:0}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0}
+.proj::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)}
+.proj .num{position:absolute;right:1.1rem;top:.6rem;font-family:var(--display);font-size:3.6rem;font-weight:600;line-height:1;color:var(--c);opacity:.14;letter-spacing:-.04em;pointer-events:none;user-select:none}
+.proj .info{padding:1.6rem 1.6rem 1.5rem 1.9rem;display:flex;flex-direction:column;min-width:0}
+.proj .side{padding:1.6rem 1.6rem 1.5rem;background:var(--bg2);border-left:1px solid var(--line2);min-width:0}
+.proj h3{word-break:keep-all;font-family:var(--display);font-weight:600;font-size:1.5rem;margin:.1rem 0 0;line-height:1.3}
+.proj h3 small{display:block;font-family:var(--body);font-weight:400;color:var(--fg3);font-size:.9rem;margin-top:.1rem}
+.tag{display:inline-block;font-size:.74rem;letter-spacing:.06em;padding:.12rem .6rem;border-radius:999px;color:var(--c);background:color-mix(in srgb,var(--c) 11%,transparent);border:1px solid color-mix(in srgb,var(--c) 30%,transparent);align-self:flex-start}
+.proj .lead{font-size:.98rem;margin:.8rem 0 1.1rem}
+.facts{display:flex;gap:0;margin:0 0 1.3rem;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+.facts div{flex:1;padding:.7rem .6rem .6rem 0;line-height:1.2;border-right:1px solid var(--line2);margin-right:.8rem}.facts div:last-child{border:0;margin:0}
+.facts .n{font-family:var(--display);font-size:1.65rem;font-weight:600;color:var(--c);font-variant-numeric:tabular-nums;letter-spacing:-.02em}.facts small{display:block;color:var(--fg2);font-size:.8rem;margin-top:.25rem;line-height:1.35}
+.links{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:auto}
+.btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem;padding:.42rem 1rem;border-radius:999px;border:1px solid var(--line);color:var(--fg2);background:var(--card)}.btn:hover{text-decoration:none;color:var(--fg);border-color:var(--fg3)}
+.btn.primary{background:var(--c);border-color:var(--c);color:#fff}.btn.primary:hover{background:color-mix(in srgb,var(--c) 85%,#000)}
+.btn .ar{font-size:.95em;transition:transform .15s}.btn:hover .ar{transform:translateX(2px)}
+.side .h{font-size:.76rem;letter-spacing:.1em;color:var(--fg3);text-transform:uppercase;margin:0 0 .6rem}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.55rem;margin:0;padding:0;list-style:none}
+.items a{display:block;padding:.6rem .8rem .55rem;border:1px solid var(--line2);border-radius:10px;background:var(--card);color:var(--fg);transition:transform .15s,box-shadow .15s,border-color .15s;position:relative}
+.items a::after{content:"\2197";position:absolute;right:.65rem;top:.45rem;color:var(--fg3);font-size:.8rem;opacity:0;transition:opacity .15s}
+.items a:hover{text-decoration:none;border-color:var(--c);transform:translateY(-1px);box-shadow:var(--shadow)}.items a:hover::after{opacity:1}
+.items b{display:block;font-size:.95rem;color:var(--fg);padding-right:1rem}.items small{color:var(--fg2);font-size:.83rem;line-height:1.45;display:block}
+.extra{font-size:.9rem;color:var(--fg2);margin:.9rem 0 0;padding:.7rem .85rem;border:1px dashed var(--line);border-radius:10px;background:var(--card)}.extra b{color:var(--fg)}.extra .tag{margin-right:.3rem}
+.talks{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.8rem;padding:0;margin:0;list-style:none}
+.talks a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;box-shadow:var(--shadow);color:var(--fg);transition:transform .15s,box-shadow .15s,border-color .15s;position:relative}
+.talks a:hover{text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow2);border-color:var(--fg3)}
+.talks .gh{font-size:.74rem;letter-spacing:.08em;color:var(--fg3);text-transform:uppercase;display:block;margin-bottom:.25rem}
+.talks b{display:block;color:var(--fg);font-size:1rem;font-family:var(--display)}.talks small{color:var(--fg2);font-size:.86rem;line-height:1.5;display:block;margin-top:.2rem}
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem}
+.about div{background:var(--bg2);border:1px solid var(--line2);border-radius:12px;padding:1rem 1.15rem;font-size:.93rem;line-height:1.65;color:var(--fg2)}
+.about div b{display:block;color:var(--fg);font-family:var(--display);font-size:1.02rem;margin-bottom:.3rem}
+footer{border-top:1px solid var(--line);color:var(--fg3);font-size:.82rem;padding:1.4rem 1.2rem;text-align:center}
+footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{width:8px;height:8px;border-radius:50%;display:inline-block}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:1.6rem}.mosaic{max-width:440px}.proj{grid-template-columns:1fr}.proj .side{border-left:0;border-top:1px solid var(--line2)}}
+@media(max-width:520px){.facts{flex-wrap:wrap}.facts div{flex:1 1 40%;border:0}.proj .num{font-size:2.6rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style></head><body>
+<header><a class="brand" href="#"><i></i>권보원</a><nav><a href='#projects'>자료</a><a href='#talks'>발표·스터디</a><a href='#about'>일러두기</a></nav>
+<div class="right"><a class="lang" href="en/index.html">English</a><button class="theme" aria-label="theme">◑</button></div></header>
+<main>
+<div class="hero"><div><div class="who">권보원 · Bowon Kwon</div><h1>생성형 AI와 함께 엮은 공개 자료</h1><p class="lead">법률 외국어 자습서, AI 자습서, 서양 고전 음악 데이터 사이트. 모두 원문과 대조하고 독립된 AI 검토를 거쳤지만, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.</p>
+<div class="cta"><a class='chip' href='#llh' style='--c:var(--s1)'><i></i>법률 외국어 자습서</a><a class='chip' href='#aih' style='--c:var(--s3)'><i></i>AI 자습서</a><a class='chip' href='#cmm' style='--c:var(--s2)'><i></i>서양 고전 음악 메트릭스</a></div></div>
+<div class="mosaic" aria-hidden="true"><a class='m1' href='#llh' style='--c:var(--s1)'><span class='n'>10</span><small>언어판 · 법률 외국어 자습서</small></a><a class='m2' href='#aih' style='--c:var(--s3)'><span class='n'>4</span><small>자습서 · AI 자습서</small></a><a class='m3' href='#cmm' style='--c:var(--s2)'><span class='n'>679</span><small>악장(음표 63만 8천) · 서양 고전 음악 메트릭스</small></a></div></div>
+<div class="sec" id="projects"><div class="sec-head"><span class="no">01</span><h2>자료</h2><p>세 묶음 — 자세한 것은 각 사이트에</p></div>
+<section class='proj' id='llh' style='--c:var(--s1)'>
+<span class='num' aria-hidden='true'>01</span>
+<div class='info'>
+<span class='tag'>법률 외국어</span>
+<h3>법률 외국어 자습서<small>Legal Language Handbooks</small></h3>
+<p class='lead'>한국 법률가가 외국 법령·판결·원전을 원문으로 읽고 외국 법률가와 말할 수 있게 하려고 엮은 자습서. 열 개 언어, 각각 화면본·PDF·Anki 덱.</p>
+<div class='facts'><div><span class='n'>10</span><small>언어판</small></div><div><span class='n'>1.0</span><small>대외판</small></div><div><span class='n'>3</span><small>꼴 — 화면본·PDF·Anki</small></div></div>
+<div class='links'><a class='btn primary' href='https://bowonkwon.github.io/Legal-Language-Handbooks/'>사이트로 <span class='ar'>→</span></a><a class='btn' href='https://github.com/BowonKwon/Legal-Language-Handbooks'>저장소 (GitHub)</a></div>
+</div><div class='side'>
+<p class='h'>들어 있는 것</p>
+<ul class='items'><li><a href='https://bowonkwon.github.io/Legal-Language-Handbooks/objection/'><b>Objection!</b><small>법률 영어 첫걸음</small></a></li><li><a href='https://bowonkwon.github.io/Legal-Language-Handbooks/igiari/'><b>異議あり</b><small>조문과 판례로 배우는 일본어</small></a></li><li><a href='https://bowonkwon.github.io/Legal-Language-Handbooks/anspruch/'><b>Anspruch</b><small>청구권으로 읽는 법률 독일어</small></a></li><li><a href='https://bowonkwon.github.io/Legal-Language-Handbooks/par-ces-motifs/'><b>Par ces motifs</b><small>법전과 법정의 프랑스어</small></a></li><li><a href='https://bowonkwon.github.io/Legal-Language-Handbooks/benyuan-renwei/'><b>本院认为</b><small>조문과 판결의 중국어</small></a></li><li><a href='https://bowonkwon.github.io/Legal-Language-Handbooks/suum-cuique/'><b>Suum cuique</b><small>원전으로 읽는 법률 라틴어</small></a></li><li><a href='https://bowonkwon.github.io/Legal-Language-Handbooks/en-nombre-del-rey/'><b>En nombre del Rey</b><small>법전과 법정의 스페인어</small></a></li><li><a href='https://bowonkwon.github.io/Legal-Language-Handbooks/in-nome-del-popolo-italiano/'><b>In nome del popolo italiano</b><small>법전과 법정의 이탈리아어</small></a></li><li><a href='https://bowonkwon.github.io/Legal-Language-Handbooks/nhan-danh/'><b>Nhân danh</b><small>조문과 판결의 베트남어</small></a></li><li><a href='https://bowonkwon.github.io/Legal-Language-Handbooks/ustanovil/'><b>Установи́л</b><small>조문과 판결로 읽는 법률 러시아어</small></a></li></ul>
+<p class='extra'><span class='tag'>곁가지 연구</span> <a href='https://bowonkwon.github.io/Legal-Language-Handbooks/sejong/'><b>세종의 글자로 보는 외래어 표기</b></a> — 훈민정음의 글자로 외국어 소리를 적는 보조 표기와 그 근거(스페인어·러시아어·중국어)</p>
+</div></section>
+<section class='proj' id='aih' style='--c:var(--s3)'>
+<span class='num' aria-hidden='true'>02</span>
+<div class='info'>
+<span class='tag'>AI·컴퓨터과학</span>
+<h3>AI 자습서<small>AI-Assisted Handbooks</small></h3>
+<p class='lead'>생성형 AI와 함께 엮은 자습서. Agentic AI 논문 읽기와 그 실전편, AI 인프라와 반도체, 법률가를 위한 LLM 위키.</p>
+<div class='facts'><div><span class='n'>4</span><small>자습서</small></div><div><span class='n'>3</span><small>영어판 병행</small></div><div><span class='n'>PDF</span><small>인쇄본 함께</small></div></div>
+<div class='links'><a class='btn primary' href='https://bowonkwon.github.io/AI-Assisted-Handbooks/'>사이트로 <span class='ar'>→</span></a><a class='btn' href='https://github.com/BowonKwon/AI-Assisted-Handbooks'>저장소 (GitHub)</a></div>
+</div><div class='side'>
+<p class='h'>들어 있는 것</p>
+<ul class='items'><li><a href='https://bowonkwon.github.io/AI-Assisted-Handbooks/agentic-ai-reading/'><b>생각하고, 행동하고, 고쳐 쓰는 기계</b><small>ReAct에서 LLM Wiki까지, Agentic AI 논문 읽기</small></a></li><li><a href='https://bowonkwon.github.io/AI-Assisted-Handbooks/agentic-ai-practice/'><b>고삐를 쥐고 기계에게 일을 맡기는 법</b><small>Claude Code·Codex로 내 일을 대신할 에이전트 짓기</small></a></li><li><a href='https://bowonkwon.github.io/AI-Assisted-Handbooks/ai-infra-semiconductors/'><b>AI 인프라와 반도체</b><small>통계·전산·AI 배경 학습자를 위한 일곱 회차 자습서</small></a></li><li><a href='https://bowonkwon.github.io/AI-Assisted-Handbooks/llm-wiki/'><b>읽은 것이 사라지지 않는 서재</b><small>법률가를 위한 LLM 위키 자습서</small></a></li></ul>
+</div></section>
+<section class='proj' id='cmm' style='--c:var(--s2)'>
+<span class='num' aria-hidden='true'>03</span>
+<div class='info'>
+<span class='tag'>음악·데이터</span>
+<h3>서양 고전 음악 메트릭스<small>Classical Music Metrics</small></h3>
+<p class='lead'>악보와 연주를 숫자로 읽는 공개 데이터 사이트. 지표마다 정의·공식·표본·한계를 함께 두고, 공개 악보 코퍼스와 연주 데이터셋에서 뽑은 수치를 한 면씩 보여 준다. 첫 판은 바흐와 베토벤.</p>
+<div class='facts'><div><span class='n'>679</span><small>악장(음표 63만 8천)</small></div><div><span class='n'>36</span><small>지휘자, 베토벤 교향곡 템포</small></div><div><span class='n'>185</span><small>시즌, 뉴욕 필 레퍼토리</small></div></div>
+<div class='links'><a class='btn primary' href='https://bowonkwon.github.io/Classical-Music-Metrics/'>사이트로 <span class='ar'>→</span></a><a class='btn' href='https://github.com/BowonKwon/Classical-Music-Metrics'>저장소 (GitHub)</a></div>
+</div><div class='side'>
+<p class='h'>들어 있는 것</p>
+<ul class='items'><li><a href='https://bowonkwon.github.io/Classical-Music-Metrics/ko/index.html'><b>지표 24개</b><small>악보 14 · 연주 6 · 레퍼토리 4</small></a></li><li><a href='https://bowonkwon.github.io/Classical-Music-Metrics/ko/reading.html'><b>읽기용 판</b><small>숫자가 말하는 것을 한 편의 글로</small></a></li><li><a href='https://bowonkwon.github.io/Classical-Music-Metrics/ko/data.html'><b>데이터</b><small>CSV 내려받기와 라이선스</small></a></li><li><a href='https://bowonkwon.github.io/Classical-Music-Metrics/ko/method.html'><b>방법·출처</b><small>자료원·코드·장기 과제</small></a></li></ul>
+</div></section>
+</div>
+<div class="sec" id="talks"><div class="sec-head"><span class="no">02</span><h2>발표·스터디</h2><p>슬라이드는 GitHub 저장소에</p></div>
+<ul class="talks"><li><a href='https://github.com/BowonKwon/AI-and-Law-Presentations'><span class='gh'>GitHub</span><b>AI-and-Law-Presentations</b><small>인공지능과 법에 관한 초청 강연·학회 발표 슬라이드</small></a></li><li><a href='https://github.com/BowonKwon/SundayAI'><span class='gh'>GitHub</span><b>SundayAI</b><small>「일요일은 AI」 스터디 발제 자료</small></a></li><li><a href='https://github.com/BowonKwon/PseudoLab_Study'><span class='gh'>GitHub</span><b>PseudoLab_Study</b><small>가짜연구소 스터디 발제 자료</small></a></li></ul></div>
+<div class="sec" id="about"><div class="sec-head"><span class="no">03</span><h2>일러두기</h2></div>
+<div class="about"><div><b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI(Codex)가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.</div><div><b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리)으로, 코드는 PolyForm Noncommercial 1.0.0 또는 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.</div><div><b>개인 자료</b> 엮은이가 개인적으로 공부하며 만든 것으로, 엮은이가 속한 기관의 견해나 업무와는 관계가 없습니다. 법률 자문이 아닙니다.</div></div></div>
+</main>
+<footer><div class="dots"><i style='background:var(--s1)'></i><i style='background:var(--s3)'></i><i style='background:var(--s2)'></i></div><br>© 2026 권보원(Bowon Kwon) · 갱신 2026-11-01 · <a href="https://github.com/BowonKwon/">GitHub</a></footer>
+<script>(function(){var b=document.querySelector(".theme");function cur(){return localStorage.getItem("hub-theme")||"auto"}function show(){b.textContent={auto:"\u25d1",light:"\u2600",dark:"\u263e"}[cur()];b.title={auto:"Theme: auto",light:"Theme: light",dark:"Theme: dark"}[cur()]}b.addEventListener("click",function(){var n={auto:"light",light:"dark",dark:"auto"}[cur()];if(n==="auto"){localStorage.removeItem("hub-theme");document.documentElement.removeAttribute("data-theme")}else{localStorage.setItem("hub-theme",n);document.documentElement.setAttribute("data-theme",n)}show()});show()})();</script>
+</body></html>
