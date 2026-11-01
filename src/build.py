@@ -14,6 +14,7 @@ AIH = "https://bowonkwon.github.io/AI-Assisted-Handbooks/"
 CMM = "https://bowonkwon.github.io/Classical-Music-Metrics/"
 ANS = "https://bowonkwon.github.io/Animal-Signals/"
 PCM = "https://bowonkwon.github.io/Physical-Constants-Metrics/"
+SKM = "https://bowonkwon.github.io/Sillok-Metrics/"
 GH = "https://github.com/BowonKwon/"
 
 PROJECTS = [
@@ -166,6 +167,33 @@ PROJECTS = [
             facts=[("10", "editions, 1969–2022"), ("17", "core constants"), ("12.9%", "moves beyond twice the uncertainty (normal 4.6%)")],
         ),
     ),
+    dict(
+        key="skm", color="s6", site=SKM, repo=GH + "Sillok-Metrics",
+        ko=dict(
+            tag="역사·데이터", title="실록 메트릭스", en_title="Sillok Metrics",
+            lead="조선왕조실록(태조~철종)을 기사 38만 건 단위로 센 지표 24개와, 그 숫자를 얼마나 믿어도 되는지를 적은 신뢰도 카드. 일식 기사의 천문 계산 일치율, 태백주현이 재현한 금성 주기, 판본 비교, 성관 집중, 사형 언급의 실제 집행 비율.",
+            items=[
+                ("지표", "기록의 양·판본·하늘·정치·형정 다섯 계열 24개", "ko/metrics/index.html"),
+                ("왕대", "25대 각각의 기사·글자·지표와 재위 리본", "ko/kings/index.html"),
+                ("읽기용 판", "하늘은 맞았나, 사형 기사는 사형이 아니다", "ko/reading.html"),
+                ("데이터", "기사 테이블·코드북·판정 전부 CSV", "ko/data.html"),
+            ],
+            extra=None,
+            facts=[("381,701", "기사, 판본 30종"), ("65%", "일식 관측 보고가 서울 가시 일식과 일치"), ("583.7", "태백주현 기록이 재현한 금성 주기(일)")],
+        ),
+        en=dict(
+            tag="History · data", title="Sillok Metrics", en_title="",
+            lead="The Veritable Records of the Joseon Dynasty (Taejo–Cheoljong) counted across 380,000 articles: 24 metrics, each with a reliability card saying how far to trust the number. Eclipse reports checked against computed eclipses, the Venus period recovered from daytime sightings, editions compared, clan concentration, and how many death-penalty articles were executions.",
+            items=[
+                ("Metrics", "24 across volume, editions, sky, politics and justice", "en/metrics/index.html"),
+                ("Reigns", "All 25, with counts, metrics and a reign ribbon", "en/kings/index.html"),
+                ("Reading edition", "Was the sky right? A death-penalty article is not an execution", "en/reading.html"),
+                ("Data", "Article table, codebooks and every judgement as CSV", "en/data.html"),
+            ],
+            extra=None,
+            facts=[("381,701", "articles, 30 editions"), ("65%", "eclipse reports matching a Seoul-visible eclipse"), ("583.7", "Venus period (days) recovered from daytime sightings")],
+        ),
+    ),
 ]
 
 TALKS = dict(
@@ -221,7 +249,7 @@ CSS = """
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -229,13 +257,13 @@ CSS = """
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
@@ -270,14 +298,14 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .chip{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .95rem .4rem .7rem;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:.92rem;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s,border-color .15s}
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
 .chip:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow2);border-color:var(--c)}
-.mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr auto auto;gap:.6rem}
+.mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr auto auto auto;gap:.6rem}
 .mosaic a{border-radius:14px;padding:.9rem .95rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;min-height:120px;
   background:linear-gradient(160deg,color-mix(in srgb,var(--c) 92%,#fff),color-mix(in srgb,var(--c) 78%,#000));box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
 .mosaic a::after{content:"";position:absolute;inset:auto -30% -45% auto;width:75%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.12)}
 .mosaic a:hover{text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow2)}
 .mosaic .n{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:600;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .mosaic small{font-size:.8rem;line-height:1.35;opacity:.92;margin-top:.3rem}
-.mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/3;grid-row:3;min-height:0}.mosaic .m4{grid-column:3;grid-row:3/5;min-height:0}.mosaic .m5{grid-column:1/3;grid-row:4;min-height:0;padding-top:.9rem;padding-bottom:.9rem}
+.mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/3;grid-row:3;min-height:0}.mosaic .m4{grid-column:3;grid-row:3/5;min-height:0}.mosaic .m5{grid-column:1/3;grid-row:4;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m6{grid-column:1/4;grid-row:5;min-height:0;padding-top:.9rem;padding-bottom:.9rem}
 .mosaic .m3,.mosaic .m4{padding-top:.9rem;padding-bottom:.9rem}
 .proj{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;box-shadow:var(--shadow);position:relative;overflow:hidden;
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0}
