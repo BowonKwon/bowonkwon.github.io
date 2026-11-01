@@ -13,6 +13,7 @@ LLH = "https://bowonkwon.github.io/Legal-Language-Handbooks/"
 AIH = "https://bowonkwon.github.io/AI-Assisted-Handbooks/"
 CMM = "https://bowonkwon.github.io/Classical-Music-Metrics/"
 ANS = "https://bowonkwon.github.io/Animal-Signals/"
+PCM = "https://bowonkwon.github.io/Physical-Constants-Metrics/"
 GH = "https://github.com/BowonKwon/"
 
 PROJECTS = [
@@ -138,6 +139,33 @@ PROJECTS = [
             facts=[("183", "claims, graded A–NS"), ("96", "source papers"), ("37", "press sentences checked against papers")],
         ),
     ),
+    dict(
+        key="pcm", color="s5", site=PCM, repo=GH + "Physical-Constants-Metrics",
+        ko=dict(
+            tag="물리·데이터", title="물리 상수 메트릭스", en_title="Physical Constants Metrics",
+            lead="과학자들이 밝힌 오차 막대는 다음 판의 값을 얼마나 자주 놓쳤나. CODATA 기본 물리 상수 권고값 아홉 판(1973~2022)과 1969년 조정값을 이어 붙여, 값과 불확도가 판마다 어떻게 바뀌었는지 센다. 수치마다 표본 수와 95% 구간을 붙였다.",
+            items=[
+                ("지표", "반감기·판간 이동·2022 판 기준 놓침률·꼬리 두께", "ko/metrics/index.html"),
+                ("상수", "31개, 판별 값과 수렴 그림", "ko/constants/index.html"),
+                ("읽기", "오차 막대와 그 다음 판", "ko/reading.html"),
+                ("데이터", "CSV 내려받기와 라이선스", "ko/data.html"),
+            ],
+            extra=None,
+            facts=[("10", "판, 1969~2022"), ("17", "핵심 상수"), ("12.9%", "판간 이동이 불확도의 2배 초과(정규 4.6%)")],
+        ),
+        en=dict(
+            tag="Physics · data", title="Physical Constants Metrics", en_title="",
+            lead="How often did the error bars scientists published miss the next edition's value? Nine editions of the CODATA recommended values of the fundamental physical constants (1973–2022) and the 1969 adjustment, joined to count how values and uncertainties changed. Every number carries its sample size and a 95% interval.",
+            items=[
+                ("Metrics", "Half-life, edition-to-edition moves, miss rate against 2022, tails", "en/metrics/index.html"),
+                ("Constants", "31, with values by edition and convergence plots", "en/constants/index.html"),
+                ("Reading", "Error bars and the next edition", "en/reading.html"),
+                ("Data", "CSV downloads and licences", "en/data.html"),
+            ],
+            extra=None,
+            facts=[("10", "editions, 1969–2022"), ("17", "core constants"), ("12.9%", "moves beyond twice the uncertainty (normal 4.6%)")],
+        ),
+    ),
 ]
 
 TALKS = dict(
@@ -157,11 +185,11 @@ TEXT = dict(
     ko=dict(
         title="권보원 — 공개 자료", name="권보원", sub="Bowon Kwon",
         hero="생성형 AI와 함께 엮은 공개 자료",
-        hero_lead="법률 외국어 자습서, AI 자습서, 서양 고전 음악 데이터 사이트, 동물 신호 연구의 근거 등급표. 모두 원문과 대조하고 독립된 AI 검토를 거쳤지만, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
+        hero_lead="법률 외국어 자습서, AI 자습서, 서양 고전 음악 데이터 사이트, 동물 신호 연구의 근거 등급표, 물리 상수 불확도 데이터 사이트. 모두 원문과 대조하고 독립된 AI 검토를 거쳤지만, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
         nav=[("#projects", "자료"), ("#talks", "발표·스터디"), ("#about", "일러두기")],
         projects_h="자료", talks_h="발표·스터디", about_h="일러두기",
         site="사이트로", repo="저장소", more="전부 보기", contents="들어 있는 것",
-        projects_sub="네 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
+        projects_sub="다섯 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
         about=[
             "<b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI(Codex)가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.",
             "<b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리) 또는 CC BY 4.0으로, 코드는 PolyForm Noncommercial 1.0.0 또는 MIT 등 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.",
@@ -173,11 +201,11 @@ TEXT = dict(
     en=dict(
         title="Bowon Kwon — Public materials", name="Bowon Kwon", sub="권보원",
         hero="Public materials compiled with generative AI",
-        hero_lead="Legal-language handbooks, AI handbooks, a classical-music data site and an evidence table for animal-signal research. All were checked against the originals and reviewed by an independent AI reviewer, but errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
+        hero_lead="Legal-language handbooks, AI handbooks, a classical-music data site, an evidence table for animal-signal research and a data site on the uncertainties of physical constants. All were checked against the originals and reviewed by an independent AI reviewer, but errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
         nav=[("#projects", "Materials"), ("#talks", "Talks & study groups"), ("#about", "Notes")],
         projects_h="Materials", talks_h="Talks & study groups", about_h="Notes",
         site="Open site", repo="Repository", more="See all", contents="Inside",
-        projects_sub="Four collections — details on each site", talks_sub="Slides live in the GitHub repositories",
+        projects_sub="Five collections — details on each site", talks_sub="Slides live in the GitHub repositories",
         about=[
             "<b>Checked against the originals</b> Statutes, judgments, source texts and figures were machine-checked against official texts or open datasets, and a separate AI reviewer (Codex) that took no part in the writing reviewed them blind, from the raw sources only. Errors may still remain.",
             "<b>Licence</b> To the extent the editor holds rights, texts are licensed under CC BY-NC 4.0 or CC BY 4.0, and code under the PolyForm Noncommercial 1.0.0, MIT or the terms stated in each repository. Quoted statutes, judgments, source texts and data remain subject to their own rights holders. Details are in each repository.",
@@ -193,7 +221,7 @@ CSS = """
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -201,13 +229,13 @@ CSS = """
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
@@ -242,14 +270,14 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .chip{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .95rem .4rem .7rem;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:.92rem;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s,border-color .15s}
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
 .chip:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow2);border-color:var(--c)}
-.mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr auto;gap:.6rem}
+.mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr auto auto;gap:.6rem}
 .mosaic a{border-radius:14px;padding:.9rem .95rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;min-height:120px;
   background:linear-gradient(160deg,color-mix(in srgb,var(--c) 92%,#fff),color-mix(in srgb,var(--c) 78%,#000));box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
 .mosaic a::after{content:"";position:absolute;inset:auto -30% -45% auto;width:75%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.12)}
 .mosaic a:hover{text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow2)}
 .mosaic .n{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:600;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .mosaic small{font-size:.8rem;line-height:1.35;opacity:.92;margin-top:.3rem}
-.mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/3;grid-row:3;min-height:0}.mosaic .m4{grid-column:3;grid-row:3;min-height:0}
+.mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/3;grid-row:3;min-height:0}.mosaic .m4{grid-column:3;grid-row:3/5;min-height:0}.mosaic .m5{grid-column:1/3;grid-row:4;min-height:0;padding-top:.9rem;padding-bottom:.9rem}
 .mosaic .m3,.mosaic .m4{padding-top:.9rem;padding-bottom:.9rem}
 .proj{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;box-shadow:var(--shadow);position:relative;overflow:hidden;
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0}

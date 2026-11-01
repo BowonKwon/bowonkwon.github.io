@@ -8,7 +8,7 @@
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -16,13 +16,13 @@
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
@@ -57,14 +57,14 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .chip{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .95rem .4rem .7rem;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:.92rem;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s,border-color .15s}
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
 .chip:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow2);border-color:var(--c)}
-.mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr auto;gap:.6rem}
+.mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr auto auto;gap:.6rem}
 .mosaic a{border-radius:14px;padding:.9rem .95rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;min-height:120px;
   background:linear-gradient(160deg,color-mix(in srgb,var(--c) 92%,#fff),color-mix(in srgb,var(--c) 78%,#000));box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
 .mosaic a::after{content:"";position:absolute;inset:auto -30% -45% auto;width:75%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.12)}
 .mosaic a:hover{text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow2)}
 .mosaic .n{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:600;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .mosaic small{font-size:.8rem;line-height:1.35;opacity:.92;margin-top:.3rem}
-.mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/3;grid-row:3;min-height:0}.mosaic .m4{grid-column:3;grid-row:3;min-height:0}
+.mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/3;grid-row:3;min-height:0}.mosaic .m4{grid-column:3;grid-row:3/5;min-height:0}.mosaic .m5{grid-column:1/3;grid-row:4;min-height:0;padding-top:.9rem;padding-bottom:.9rem}
 .mosaic .m3,.mosaic .m4{padding-top:.9rem;padding-bottom:.9rem}
 .proj{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;box-shadow:var(--shadow);position:relative;overflow:hidden;
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0}
@@ -107,10 +107,10 @@ footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{w
 <header><a class="brand" href="#"><i></i>권보원</a><nav><a href='#projects'>자료</a><a href='#talks'>발표·스터디</a><a href='#about'>일러두기</a></nav>
 <div class="right"><a class="lang" href="en/index.html">English</a><button class="theme" aria-label="theme">◑</button></div></header>
 <main>
-<div class="hero"><div><div class="who">권보원 · Bowon Kwon</div><h1>생성형 AI와 함께 엮은 공개 자료</h1><p class="lead">법률 외국어 자습서, AI 자습서, 서양 고전 음악 데이터 사이트, 동물 신호 연구의 근거 등급표. 모두 원문과 대조하고 독립된 AI 검토를 거쳤지만, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.</p>
-<div class="cta"><a class='chip' href='#llh' style='--c:var(--s1)'><i></i>법률 외국어 자습서</a><a class='chip' href='#aih' style='--c:var(--s3)'><i></i>AI 자습서</a><a class='chip' href='#cmm' style='--c:var(--s2)'><i></i>서양 고전 음악 메트릭스</a><a class='chip' href='#ans' style='--c:var(--s4)'><i></i>동물의 신호, 어디까지 알았나</a></div></div>
-<div class="mosaic" aria-hidden="true"><a class='m1' href='#llh' style='--c:var(--s1)'><span class='n'>10</span><small>언어판 · 법률 외국어 자습서</small></a><a class='m2' href='#aih' style='--c:var(--s3)'><span class='n'>4</span><small>자습서 · AI 자습서</small></a><a class='m3' href='#cmm' style='--c:var(--s2)'><span class='n'>679</span><small>악장(음표 63만 8천) · 서양 고전 음악 메트릭스</small></a><a class='m4' href='#ans' style='--c:var(--s4)'><span class='n'>183</span><small>주장, 등급 A~NS · 동물의 신호, 어디까지 알았나</small></a></div></div>
-<div class="sec" id="projects"><div class="sec-head"><span class="no">01</span><h2>자료</h2><p>네 묶음 — 자세한 것은 각 사이트에</p></div>
+<div class="hero"><div><div class="who">권보원 · Bowon Kwon</div><h1>생성형 AI와 함께 엮은 공개 자료</h1><p class="lead">법률 외국어 자습서, AI 자습서, 서양 고전 음악 데이터 사이트, 동물 신호 연구의 근거 등급표, 물리 상수 불확도 데이터 사이트. 모두 원문과 대조하고 독립된 AI 검토를 거쳤지만, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.</p>
+<div class="cta"><a class='chip' href='#llh' style='--c:var(--s1)'><i></i>법률 외국어 자습서</a><a class='chip' href='#aih' style='--c:var(--s3)'><i></i>AI 자습서</a><a class='chip' href='#cmm' style='--c:var(--s2)'><i></i>서양 고전 음악 메트릭스</a><a class='chip' href='#ans' style='--c:var(--s4)'><i></i>동물의 신호, 어디까지 알았나</a><a class='chip' href='#pcm' style='--c:var(--s5)'><i></i>물리 상수 메트릭스</a></div></div>
+<div class="mosaic" aria-hidden="true"><a class='m1' href='#llh' style='--c:var(--s1)'><span class='n'>10</span><small>언어판 · 법률 외국어 자습서</small></a><a class='m2' href='#aih' style='--c:var(--s3)'><span class='n'>4</span><small>자습서 · AI 자습서</small></a><a class='m3' href='#cmm' style='--c:var(--s2)'><span class='n'>679</span><small>악장(음표 63만 8천) · 서양 고전 음악 메트릭스</small></a><a class='m4' href='#ans' style='--c:var(--s4)'><span class='n'>183</span><small>주장, 등급 A~NS · 동물의 신호, 어디까지 알았나</small></a><a class='m5' href='#pcm' style='--c:var(--s5)'><span class='n'>10</span><small>판, 1969~2022 · 물리 상수 메트릭스</small></a></div></div>
+<div class="sec" id="projects"><div class="sec-head"><span class="no">01</span><h2>자료</h2><p>다섯 묶음 — 자세한 것은 각 사이트에</p></div>
 <section class='proj' id='llh' style='--c:var(--s1)'>
 <span class='num' aria-hidden='true'>01</span>
 <div class='info'>
@@ -160,12 +160,24 @@ footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{w
 <p class='h'>들어 있는 것</p>
 <ul class='items'><li><a href='https://bowonkwon.github.io/Animal-Signals/map.html'><b>지도</b><small>갈래와 신호 유형별 등급 분포</small></a></li><li><a href='https://bowonkwon.github.io/Animal-Signals/claims.html'><b>주장 카드</b><small>주장마다 등급·이유·통제·문헌</small></a></li><li><a href='https://bowonkwon.github.io/Animal-Signals/press.html'><b>보도와 논문, 나란히</b><small>보도 제목과 논문 본문의 간극</small></a></li><li><a href='https://bowonkwon.github.io/Animal-Signals/aic.html'><b>사람과 동물</b><small>영리한 한스 점검표</small></a></li><li><a href='https://bowonkwon.github.io/Animal-Signals/try.html'><b>직접 해 보기</b><small>향유고래 코다를 원 데이터 수치로 합성</small></a></li></ul>
 </div></section>
+<section class='proj' id='pcm' style='--c:var(--s5)'>
+<span class='num' aria-hidden='true'>05</span>
+<div class='info'>
+<span class='tag'>물리·데이터</span>
+<h3>물리 상수 메트릭스<small>Physical Constants Metrics</small></h3>
+<p class='lead'>과학자들이 밝힌 오차 막대는 다음 판의 값을 얼마나 자주 놓쳤나. CODATA 기본 물리 상수 권고값 아홉 판(1973~2022)과 1969년 조정값을 이어 붙여, 값과 불확도가 판마다 어떻게 바뀌었는지 센다. 수치마다 표본 수와 95% 구간을 붙였다.</p>
+<div class='facts'><div><span class='n'>10</span><small>판, 1969~2022</small></div><div><span class='n'>17</span><small>핵심 상수</small></div><div><span class='n'>12.9%</span><small>판간 이동이 불확도의 2배 초과(정규 4.6%)</small></div></div>
+<div class='links'><a class='btn primary' href='https://bowonkwon.github.io/Physical-Constants-Metrics/'>사이트로 <span class='ar'>→</span></a><a class='btn' href='https://github.com/BowonKwon/Physical-Constants-Metrics'>저장소 (GitHub)</a></div>
+</div><div class='side'>
+<p class='h'>들어 있는 것</p>
+<ul class='items'><li><a href='https://bowonkwon.github.io/Physical-Constants-Metrics/ko/metrics/index.html'><b>지표</b><small>반감기·판간 이동·2022 판 기준 놓침률·꼬리 두께</small></a></li><li><a href='https://bowonkwon.github.io/Physical-Constants-Metrics/ko/constants/index.html'><b>상수</b><small>31개, 판별 값과 수렴 그림</small></a></li><li><a href='https://bowonkwon.github.io/Physical-Constants-Metrics/ko/reading.html'><b>읽기</b><small>오차 막대와 그 다음 판</small></a></li><li><a href='https://bowonkwon.github.io/Physical-Constants-Metrics/ko/data.html'><b>데이터</b><small>CSV 내려받기와 라이선스</small></a></li></ul>
+</div></section>
 </div>
 <div class="sec" id="talks"><div class="sec-head"><span class="no">02</span><h2>발표·스터디</h2><p>슬라이드는 GitHub 저장소에</p></div>
 <ul class="talks"><li><a href='https://github.com/BowonKwon/AI-and-Law-Presentations'><span class='gh'>GitHub</span><b>AI-and-Law-Presentations</b><small>인공지능과 법에 관한 초청 강연·학회 발표 슬라이드</small></a></li><li><a href='https://github.com/BowonKwon/SundayAI'><span class='gh'>GitHub</span><b>SundayAI</b><small>「일요일은 AI」 스터디 발제 자료</small></a></li><li><a href='https://github.com/BowonKwon/PseudoLab_Study'><span class='gh'>GitHub</span><b>PseudoLab_Study</b><small>가짜연구소 스터디 발제 자료</small></a></li></ul></div>
 <div class="sec" id="about"><div class="sec-head"><span class="no">03</span><h2>일러두기</h2></div>
 <div class="about"><div><b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI(Codex)가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.</div><div><b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리) 또는 CC BY 4.0으로, 코드는 PolyForm Noncommercial 1.0.0 또는 MIT 등 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.</div><div><b>개인 자료</b> 엮은이가 개인적으로 공부하며 만든 것으로, 엮은이가 속한 기관의 견해나 업무와는 관계가 없습니다. 법률 자문이 아닙니다.</div></div></div>
 </main>
-<footer><div class="dots"><i style='background:var(--s1)'></i><i style='background:var(--s3)'></i><i style='background:var(--s2)'></i><i style='background:var(--s4)'></i></div><br>© 2026 권보원(Bowon Kwon) · 갱신 2026-11-01 · <a href="https://github.com/BowonKwon/">GitHub</a></footer>
+<footer><div class="dots"><i style='background:var(--s1)'></i><i style='background:var(--s3)'></i><i style='background:var(--s2)'></i><i style='background:var(--s4)'></i><i style='background:var(--s5)'></i></div><br>© 2026 권보원(Bowon Kwon) · 갱신 2026-11-01 · <a href="https://github.com/BowonKwon/">GitHub</a></footer>
 <script>(function(){var b=document.querySelector(".theme");function cur(){return localStorage.getItem("hub-theme")||"auto"}function show(){b.textContent={auto:"\u25d1",light:"\u2600",dark:"\u263e"}[cur()];b.title={auto:"Theme: auto",light:"Theme: light",dark:"Theme: dark"}[cur()]}b.addEventListener("click",function(){var n={auto:"light",light:"dark",dark:"auto"}[cur()];if(n==="auto"){localStorage.removeItem("hub-theme");document.documentElement.removeAttribute("data-theme")}else{localStorage.setItem("hub-theme",n);document.documentElement.setAttribute("data-theme",n)}show()});show()})();</script>
 </body></html>
