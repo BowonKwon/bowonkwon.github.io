@@ -12,6 +12,7 @@ TODAY = dt.date.today().isoformat()
 LLH = "https://bowonkwon.github.io/Legal-Language-Handbooks/"
 AIH = "https://bowonkwon.github.io/AI-Assisted-Handbooks/"
 CMM = "https://bowonkwon.github.io/Classical-Music-Metrics/"
+ANS = "https://bowonkwon.github.io/Animal-Signals/"
 GH = "https://github.com/BowonKwon/"
 
 PROJECTS = [
@@ -108,6 +109,35 @@ PROJECTS = [
             facts=[("679", "movements (638k notes)"), ("36", "conductors, Beethoven symphony tempi"), ("185", "seasons of NY Phil repertoire")],
         ),
     ),
+    dict(
+        key="ans", color="s4", site=ANS, repo=GH + "Animal-Signals",
+        ko=dict(
+            tag="생물학·근거", title="동물의 신호, 어디까지 알았나", en_title="Animal Signals",
+            lead="동물 신호 연구를 주장 하나씩 나누어, 원 논문을 읽고 근거 수준을 매긴 사이트. 소리뿐 아니라 시각·화학·진동·전기 신호와 사람–동물 소통까지. 등급은 보고된 설계가 어디까지 왔는지의 좌표이고, 매긴 기준은 전부 공개되어 있다. 보도 문장과 논문 본문도 나란히 둔다.",
+            items=[
+                ("지도", "갈래와 신호 유형별 등급 분포", "map.html"),
+                ("주장 카드", "주장마다 등급·이유·통제·문헌", "claims.html"),
+                ("보도와 논문, 나란히", "보도 제목과 논문 본문의 간극", "press.html"),
+                ("사람과 동물", "영리한 한스 점검표", "aic.html"),
+                ("직접 해 보기", "향유고래 코다를 원 데이터 수치로 합성", "try.html"),
+            ],
+            extra=None,
+            facts=[("183", "주장, 등급 A~NS"), ("96", "원 논문"), ("37", "보도 문장, 논문과 대조")],
+        ),
+        en=dict(
+            tag="Biology · evidence", title="Animal Signals", en_title="",
+            lead="Research on animal signals split into single claims, each graded for evidence from the original paper: sound, but also visual, chemical, vibrational and electric signals, and human–animal communication. A grade records how far the reported design has gone, under criteria published in full. Press sentences sit beside the papers they cite.",
+            items=[
+                ("Map", "Grade distribution by lineage and signal type", "map.html"),
+                ("Claims", "Grade, reason, controls and sources per claim", "claims.html"),
+                ("Press and papers", "The gap between headline and paper", "press.html"),
+                ("Human and animal", "The Clever Hans checklist", "aic.html"),
+                ("Try it", "Sperm-whale codas synthesised from the published data", "try.html"),
+            ],
+            extra=None,
+            facts=[("183", "claims, graded A–NS"), ("96", "source papers"), ("37", "press sentences checked against papers")],
+        ),
+    ),
 ]
 
 TALKS = dict(
@@ -127,14 +157,14 @@ TEXT = dict(
     ko=dict(
         title="권보원 — 공개 자료", name="권보원", sub="Bowon Kwon",
         hero="생성형 AI와 함께 엮은 공개 자료",
-        hero_lead="법률 외국어 자습서, AI 자습서, 서양 고전 음악 데이터 사이트. 모두 원문과 대조하고 독립된 AI 검토를 거쳤지만, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
+        hero_lead="법률 외국어 자습서, AI 자습서, 서양 고전 음악 데이터 사이트, 동물 신호 연구의 근거 등급표. 모두 원문과 대조하고 독립된 AI 검토를 거쳤지만, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
         nav=[("#projects", "자료"), ("#talks", "발표·스터디"), ("#about", "일러두기")],
         projects_h="자료", talks_h="발표·스터디", about_h="일러두기",
         site="사이트로", repo="저장소", more="전부 보기", contents="들어 있는 것",
-        projects_sub="세 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
+        projects_sub="네 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
         about=[
             "<b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI(Codex)가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.",
-            "<b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리)으로, 코드는 PolyForm Noncommercial 1.0.0 또는 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.",
+            "<b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리) 또는 CC BY 4.0으로, 코드는 PolyForm Noncommercial 1.0.0 또는 MIT 등 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.",
             "<b>개인 자료</b> 엮은이가 개인적으로 공부하며 만든 것으로, 엮은이가 속한 기관의 견해나 업무와는 관계가 없습니다. 법률 자문이 아닙니다.",
         ],
         foot="© 2026 권보원(Bowon Kwon) · 갱신 " + TODAY,
@@ -143,14 +173,14 @@ TEXT = dict(
     en=dict(
         title="Bowon Kwon — Public materials", name="Bowon Kwon", sub="권보원",
         hero="Public materials compiled with generative AI",
-        hero_lead="Legal-language handbooks, AI handbooks and a classical-music data site. All were checked against the originals and reviewed by an independent AI reviewer, but errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
+        hero_lead="Legal-language handbooks, AI handbooks, a classical-music data site and an evidence table for animal-signal research. All were checked against the originals and reviewed by an independent AI reviewer, but errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
         nav=[("#projects", "Materials"), ("#talks", "Talks & study groups"), ("#about", "Notes")],
         projects_h="Materials", talks_h="Talks & study groups", about_h="Notes",
         site="Open site", repo="Repository", more="See all", contents="Inside",
-        projects_sub="Three collections — details on each site", talks_sub="Slides live in the GitHub repositories",
+        projects_sub="Four collections — details on each site", talks_sub="Slides live in the GitHub repositories",
         about=[
             "<b>Checked against the originals</b> Statutes, judgments, source texts and figures were machine-checked against official texts or open datasets, and a separate AI reviewer (Codex) that took no part in the writing reviewed them blind, from the raw sources only. Errors may still remain.",
-            "<b>Licence</b> To the extent the editor holds rights, texts are licensed under CC BY-NC 4.0 and code under the PolyForm Noncommercial 1.0.0 or the terms stated in each repository. Quoted statutes, judgments, source texts and data remain subject to their own rights holders. Details are in each repository.",
+            "<b>Licence</b> To the extent the editor holds rights, texts are licensed under CC BY-NC 4.0 or CC BY 4.0, and code under the PolyForm Noncommercial 1.0.0, MIT or the terms stated in each repository. Quoted statutes, judgments, source texts and data remain subject to their own rights holders. Details are in each repository.",
             "<b>Personal materials</b> These were compiled as personal study and do not represent the views or work of any institution the editor belongs to. They are not legal advice.",
         ],
         foot="© 2026 Bowon Kwon · updated " + TODAY,
@@ -163,7 +193,7 @@ CSS = """
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -171,13 +201,13 @@ CSS = """
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
@@ -219,8 +249,8 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .mosaic a:hover{text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow2)}
 .mosaic .n{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:600;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .mosaic small{font-size:.8rem;line-height:1.35;opacity:.92;margin-top:.3rem}
-.mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/4;grid-row:3;min-height:0}
-.mosaic .m3{flex-direction:row;align-items:baseline;gap:.8rem;justify-content:flex-start}.mosaic .m3 small{margin:0}
+.mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/3;grid-row:3;min-height:0}.mosaic .m4{grid-column:3;grid-row:3;min-height:0}
+.mosaic .m3,.mosaic .m4{padding-top:.9rem;padding-bottom:.9rem}
 .proj{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;box-shadow:var(--shadow);position:relative;overflow:hidden;
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0}
 .proj::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)}
