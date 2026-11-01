@@ -171,27 +171,27 @@ PROJECTS = [
         key="skm", color="s6", site=SKM, repo=GH + "Sillok-Metrics",
         ko=dict(
             tag="역사·데이터", title="실록 메트릭스", en_title="Sillok Metrics",
-            lead="조선왕조실록(태조~철종)을 기사 38만 건 단위로 센 지표 24개와, 그 숫자를 얼마나 믿어도 되는지를 적은 신뢰도 카드. 일식 기사의 천문 계산 일치율, 태백주현이 재현한 금성 주기, 판본 비교, 성관 집중, 사형 언급의 실제 집행 비율.",
+            lead="조선왕조실록을 기사 41만 건 단위로 센 지표 24개와, 그 숫자를 얼마나 믿어도 되는지를 적은 신뢰도 카드. 일식 기사의 천문 계산 일치율, 태백주현이 재현한 금성 주기, 판본 비교, 성관 집중, 사형 언급의 실제 집행 비율.",
             items=[
                 ("지표", "기록의 양·판본·하늘·정치·형정 다섯 계열 24개", "ko/metrics/index.html"),
-                ("왕대", "25대 각각의 기사·글자·지표와 재위 리본", "ko/kings/index.html"),
+                ("왕대", "27대 각각의 기사·글자·지표와 재위 리본", "ko/kings/index.html"),
                 ("읽기용 판", "하늘은 맞았나, 사형 기사는 사형이 아니다", "ko/reading.html"),
                 ("데이터", "기사 테이블·코드북·판정 전부 CSV", "ko/data.html"),
             ],
             extra=None,
-            facts=[("381,701", "기사, 판본 30종"), ("65%", "일식 관측 보고가 서울 가시 일식과 일치"), ("583.7", "태백주현 기록이 재현한 금성 주기(일)")],
+            facts=[("414,501", "기사, 판본 33종"), ("65%", "일식 관측 보고가 서울 가시 일식과 일치"), ("583.7", "태백주현 기록이 재현한 금성 주기(일)")],
         ),
         en=dict(
             tag="History · data", title="Sillok Metrics", en_title="",
-            lead="The Veritable Records of the Joseon Dynasty (Taejo–Cheoljong) counted across 380,000 articles: 24 metrics, each with a reliability card saying how far to trust the number. Eclipse reports checked against computed eclipses, the Venus period recovered from daytime sightings, editions compared, clan concentration, and how many death-penalty articles were executions.",
+            lead="The Veritable Records of the Joseon Dynasty counted across 414,000 articles: 24 metrics, each with a reliability card saying how far to trust the number. Eclipse reports checked against computed eclipses, the Venus period recovered from daytime sightings, editions compared, clan concentration, and how many death-penalty articles were executions.",
             items=[
                 ("Metrics", "24 across volume, editions, sky, politics and justice", "en/metrics/index.html"),
-                ("Reigns", "All 25, with counts, metrics and a reign ribbon", "en/kings/index.html"),
+                ("Reigns", "All 27, with counts, metrics and a reign ribbon", "en/kings/index.html"),
                 ("Reading edition", "Was the sky right? A death-penalty article is not an execution", "en/reading.html"),
                 ("Data", "Article table, codebooks and every judgement as CSV", "en/data.html"),
             ],
             extra=None,
-            facts=[("381,701", "articles, 30 editions"), ("65%", "eclipse reports matching a Seoul-visible eclipse"), ("583.7", "Venus period (days) recovered from daytime sightings")],
+            facts=[("414,501", "articles, 33 editions"), ("65%", "eclipse reports matching a Seoul-visible eclipse"), ("583.7", "Venus period (days) recovered from daytime sightings")],
         ),
     ),
 ]
