@@ -147,7 +147,7 @@ PROJECTS = [
             lead="CODATA 물리 상수와 CIAAW 원자량의 권고값이 스스로 밝힌 불확도만큼 믿을 만했는지 센다.",
             items=[
                 ("지표", "반감기·판간 이동·2022 판 기준 놓침률·꼬리 두께", "ko/metrics/index.html"),
-                ("상수", "31개, 판별 값과 수렴 그림", "ko/constants/index.html"),
+                ("상수·원자량", "상수 31개·원소 88개, 판별 값과 그림", "ko/constants/index.html"),
                 ("읽기", "오차 막대와 그 다음 판", "ko/reading.html"),
                 ("데이터", "CSV 내려받기와 라이선스", "ko/data.html"),
             ],
@@ -159,7 +159,7 @@ PROJECTS = [
             lead="Whether the recommended values of CODATA physical constants and CIAAW atomic weights were as reliable as their own stated uncertainties.",
             items=[
                 ("Metrics", "Half-life, edition-to-edition moves, miss rate against 2022, tails", "en/metrics/index.html"),
-                ("Constants", "31, with values by edition and convergence plots", "en/constants/index.html"),
+                ("Constants & atomic weights", "31 constants and 88 elements, values by edition with plots", "en/constants/index.html"),
                 ("Reading", "Error bars and the next edition", "en/reading.html"),
                 ("Data", "CSV downloads and licences", "en/data.html"),
             ],
@@ -329,6 +329,7 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .items a{display:block;padding:.6rem .8rem .55rem;border:1px solid var(--line2);border-radius:10px;background:var(--card);color:var(--fg);transition:transform .15s,box-shadow .15s,border-color .15s;position:relative}
 .items a::after{content:"\\2197";position:absolute;right:.65rem;top:.45rem;color:var(--fg3);font-size:.8rem;opacity:0;transition:opacity .15s}
 .items a:hover{text-decoration:none;border-color:var(--c);transform:translateY(-1px);box-shadow:var(--shadow)}.items a:hover::after{opacity:1}
+html[lang="ko"] p,html[lang="ko"] small,html[lang="ko"] li{word-break:keep-all;overflow-wrap:break-word}
 .items b{display:block;font-size:.95rem;color:var(--fg);padding-right:1rem}.items small{color:var(--fg2);font-size:.83rem;line-height:1.45;display:block}
 .extra{font-size:.9rem;color:var(--fg2);margin:.9rem 0 0;padding:.7rem .85rem;border:1px dashed var(--line);border-radius:10px;background:var(--card)}.extra b{color:var(--fg)}.extra .tag{margin-right:.3rem}
 .talks{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.8rem;padding:0;margin:0;list-style:none}
