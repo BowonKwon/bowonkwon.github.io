@@ -15,6 +15,7 @@ CMM = "https://bowonkwon.github.io/Classical-Music-Metrics/"
 ANS = "https://bowonkwon.github.io/Animal-Signals/"
 PCM = "https://bowonkwon.github.io/Physical-Constants-Metrics/"
 SKM = "https://bowonkwon.github.io/Sillok-Metrics/"
+PPM = "https://bowonkwon.github.io/Privilege-Metrics/"
 GH = "https://github.com/BowonKwon/"
 
 PROJECTS = [
@@ -194,6 +195,33 @@ PROJECTS = [
             facts=[("414,501", "articles, 33 editions"), ("34", "metrics in seven series"), ("73%", "days the rain gauge measured rain on which the weather cell says 雨")],
         ),
     ),
+    dict(
+        key="ppm", color="s7", site=PPM, repo=GH + "Privilege-Metrics",
+        ko=dict(
+            tag="법·역사·데이터", title="특권에서 특허로", en_title="From Privilege to Patent",
+            lead="근대 특허법·저작권법이 생기기 전, 베네치아·잉글랜드·네덜란드에서 군주와 의회가 하나씩 내준 발명·출판 특권을 남은 목록에서 한 건씩 센 지표 18개와 신뢰도 카드.",
+            items=[
+                ("지표", "몇 건·어느 분야·누가·어떤 조건, 출판 등록까지 다섯 계열 18개", "ko/metrics/index.html"),
+                ("관할", "잉글랜드·베네치아·네덜란드, 목록과 단위", "ko/places.html"),
+                ("읽기용 판", "1624년 전후, 누가 받았나, 출판 쪽", "ko/reading.html"),
+                ("데이터", "Woodcroft 14,359번·출판업조합 등록·코딩 표 전부 CSV", "ko/data.html"),
+            ],
+            extra=None,
+            facts=[("14,375", "잉글랜드 발명 허여, 1561–1852"), ("10,453", "런던 출판업조합 등록, 1557–1640"), ("93 / 96", "1625–1640 허여 중 존속기간 14년 이하")],
+        ),
+        en=dict(
+            tag="Law · history · data", title="From Privilege to Patent", en_title="",
+            lead="Before modern patent and copyright law, rulers and assemblies in Venice, England and the Dutch Republic granted invention and printing privileges one petitioner at a time. 18 metrics count the surviving lists grant by grant, each with a reliability card.",
+            items=[
+                ("Metrics", "18 in five series: how many, which trades, to whom, on what terms, and the Stationers' Register", "en/metrics/index.html"),
+                ("Jurisdictions", "England, Venice and the Dutch Republic: lists and units", "en/places.html"),
+                ("Reading edition", "Before and after 1624, who received them, printing", "en/reading.html"),
+                ("Data", "Woodcroft's 14,359 entries, the Stationers' Register and every coding table as CSV", "en/data.html"),
+            ],
+            extra=None,
+            facts=[("14,375", "English invention grants, 1561–1852"), ("10,453", "Stationers' Register entries, 1557–1640"), ("93 / 96", "grants of 1625–1640 with a term of 14 years or less")],
+        ),
+    ),
 ]
 
 TALKS = dict(
@@ -249,7 +277,7 @@ CSS = """
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -257,13 +285,13 @@ CSS = """
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}

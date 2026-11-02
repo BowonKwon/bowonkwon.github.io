@@ -8,7 +8,7 @@
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -16,13 +16,13 @@
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
@@ -109,8 +109,8 @@ footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{w
 <div class="right"><a class="lang" href="../index.html">한국어</a><button class="theme" aria-label="theme">◑</button></div></header>
 <main>
 <div class="hero"><div><div class="who">Bowon Kwon · 권보원</div><h1>Public materials compiled with generative AI</h1><p class="lead">Legal-language handbooks, AI handbooks, a classical-music data site, an evidence table for animal-signal research and a data site on the uncertainties of physical constants. All were checked against the originals and reviewed by an independent AI reviewer, but errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.</p>
-<div class="cta"><a class='chip' href='#llh' style='--c:var(--s1)'><i></i>Legal Language Handbooks</a><a class='chip' href='#aih' style='--c:var(--s3)'><i></i>AI-Assisted Handbooks</a><a class='chip' href='#cmm' style='--c:var(--s2)'><i></i>Classical Music Metrics</a><a class='chip' href='#ans' style='--c:var(--s4)'><i></i>Animal Signals</a><a class='chip' href='#pcm' style='--c:var(--s5)'><i></i>Physical Constants Metrics</a><a class='chip' href='#skm' style='--c:var(--s6)'><i></i>Sillok Metrics</a></div></div>
-<div class="mosaic" aria-hidden="true"><a class='m1' href='#llh' style='--c:var(--s1)'><span class='n'>10</span><small>languages · Legal Language Handbooks</small></a><a class='m2' href='#aih' style='--c:var(--s3)'><span class='n'>4</span><small>handbooks · AI-Assisted Handbooks</small></a><a class='m3' href='#cmm' style='--c:var(--s2)'><span class='n'>679</span><small>movements (638k notes) · Classical Music Metrics</small></a><a class='m4' href='#ans' style='--c:var(--s4)'><span class='n'>183</span><small>claims, graded A–NS · Animal Signals</small></a><a class='m5' href='#pcm' style='--c:var(--s5)'><span class='n'>10</span><small>editions, 1969–2022 · Physical Constants Metrics</small></a><a class='m6' href='#skm' style='--c:var(--s6)'><span class='n'>414,501</span><small>articles, 33 editions · Sillok Metrics</small></a></div></div>
+<div class="cta"><a class='chip' href='#llh' style='--c:var(--s1)'><i></i>Legal Language Handbooks</a><a class='chip' href='#aih' style='--c:var(--s3)'><i></i>AI-Assisted Handbooks</a><a class='chip' href='#cmm' style='--c:var(--s2)'><i></i>Classical Music Metrics</a><a class='chip' href='#ans' style='--c:var(--s4)'><i></i>Animal Signals</a><a class='chip' href='#pcm' style='--c:var(--s5)'><i></i>Physical Constants Metrics</a><a class='chip' href='#skm' style='--c:var(--s6)'><i></i>Sillok Metrics</a><a class='chip' href='#ppm' style='--c:var(--s7)'><i></i>From Privilege to Patent</a></div></div>
+<div class="mosaic" aria-hidden="true"><a class='m1' href='#llh' style='--c:var(--s1)'><span class='n'>10</span><small>languages · Legal Language Handbooks</small></a><a class='m2' href='#aih' style='--c:var(--s3)'><span class='n'>4</span><small>handbooks · AI-Assisted Handbooks</small></a><a class='m3' href='#cmm' style='--c:var(--s2)'><span class='n'>679</span><small>movements (638k notes) · Classical Music Metrics</small></a><a class='m4' href='#ans' style='--c:var(--s4)'><span class='n'>183</span><small>claims, graded A–NS · Animal Signals</small></a><a class='m5' href='#pcm' style='--c:var(--s5)'><span class='n'>10</span><small>editions, 1969–2022 · Physical Constants Metrics</small></a><a class='m6' href='#skm' style='--c:var(--s6)'><span class='n'>414,501</span><small>articles, 33 editions · Sillok Metrics</small></a><a class='m7' href='#ppm' style='--c:var(--s7)'><span class='n'>14,375</span><small>English invention grants, 1561–1852 · From Privilege to Patent</small></a></div></div>
 <div class="sec" id="projects"><div class="sec-head"><span class="no">01</span><h2>Materials</h2><p>Five collections — details on each site</p></div>
 <section class='proj' id='llh' style='--c:var(--s1)'>
 <span class='num' aria-hidden='true'>01</span>
@@ -185,12 +185,24 @@ footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{w
 <p class='h'>Inside</p>
 <ul class='items'><li><a href='https://bowonkwon.github.io/Sillok-Metrics/en/metrics/index.html'><b>Metrics</b><small>34 across seven series: volume, editions, sky, politics, justice, three sources compared, and the weather cell</small></a></li><li><a href='https://bowonkwon.github.io/Sillok-Metrics/en/kings/index.html'><b>Reigns</b><small>All 27, with counts, metrics and a reign ribbon</small></a></li><li><a href='https://bowonkwon.github.io/Sillok-Metrics/en/reading.html'><b>Reading edition</b><small>Was the sky right? A death-penalty article is not an execution</small></a></li><li><a href='https://bowonkwon.github.io/Sillok-Metrics/en/data.html'><b>Data</b><small>Article table, codebooks and every judgment as CSV</small></a></li></ul>
 </div></section>
+<section class='proj' id='ppm' style='--c:var(--s7)'>
+<span class='num' aria-hidden='true'>07</span>
+<div class='info'>
+<span class='tag'>Law · history · data</span>
+<h3>From Privilege to Patent</h3>
+<p class='lead'>Before modern patent and copyright law, rulers and assemblies in Venice, England and the Dutch Republic granted invention and printing privileges one petitioner at a time. 18 metrics count the surviving lists grant by grant, each with a reliability card.</p>
+<div class='facts'><div><span class='n'>14,375</span><small>English invention grants, 1561–1852</small></div><div><span class='n'>10,453</span><small>Stationers' Register entries, 1557–1640</small></div><div><span class='n'>93 / 96</span><small>grants of 1625–1640 with a term of 14 years or less</small></div></div>
+<div class='links'><a class='btn primary' href='https://bowonkwon.github.io/Privilege-Metrics/'>Open site <span class='ar'>→</span></a><a class='btn' href='https://github.com/BowonKwon/Privilege-Metrics'>Repository (GitHub)</a></div>
+</div><div class='side'>
+<p class='h'>Inside</p>
+<ul class='items'><li><a href='https://bowonkwon.github.io/Privilege-Metrics/en/metrics/index.html'><b>Metrics</b><small>18 in five series: how many, which trades, to whom, on what terms, and the Stationers' Register</small></a></li><li><a href='https://bowonkwon.github.io/Privilege-Metrics/en/places.html'><b>Jurisdictions</b><small>England, Venice and the Dutch Republic: lists and units</small></a></li><li><a href='https://bowonkwon.github.io/Privilege-Metrics/en/reading.html'><b>Reading edition</b><small>Before and after 1624, who received them, printing</small></a></li><li><a href='https://bowonkwon.github.io/Privilege-Metrics/en/data.html'><b>Data</b><small>Woodcroft's 14,359 entries, the Stationers' Register and every coding table as CSV</small></a></li></ul>
+</div></section>
 </div>
 <div class="sec" id="talks"><div class="sec-head"><span class="no">02</span><h2>Talks &amp; study groups</h2><p>Slides live in the GitHub repositories</p></div>
 <ul class="talks"><li><a href='https://github.com/BowonKwon/AI-and-Law-Presentations'><span class='gh'>GitHub</span><b>AI-and-Law-Presentations</b><small>Slides from invited talks and conference presentations on AI and law (being prepared; posted in stages)</small></a></li><li><a href='https://github.com/BowonKwon/SundayAI'><span class='gh'>GitHub</span><b>SundayAI</b><small>Presentations for the “Sunday is AI” study group</small></a></li><li><a href='https://github.com/BowonKwon/PseudoLab_Study'><span class='gh'>GitHub</span><b>PseudoLab_Study</b><small>Presentations for the PseudoLab study group</small></a></li></ul></div>
 <div class="sec" id="about"><div class="sec-head"><span class="no">03</span><h2>Notes</h2></div>
 <div class="about"><div><b>Checked against the originals</b> Statutes, judgments, source texts and figures were machine-checked against official texts or open datasets, and a separate AI reviewer (Codex) that took no part in the writing reviewed them blind, from the raw sources only. Errors may still remain.</div><div><b>Licence</b> To the extent the editor holds rights, texts are licensed under CC BY-NC 4.0 or CC BY 4.0, and code under the PolyForm Noncommercial 1.0.0, MIT or the terms stated in each repository. Quoted statutes, judgments, source texts and data remain subject to their own rights holders. Details are in each repository.</div><div><b>Personal materials</b> These were compiled as personal study and do not represent the views or work of any institution the editor belongs to. They are not legal advice.</div></div></div>
 </main>
-<footer><div class="dots"><i style='background:var(--s1)'></i><i style='background:var(--s3)'></i><i style='background:var(--s2)'></i><i style='background:var(--s4)'></i><i style='background:var(--s5)'></i><i style='background:var(--s6)'></i></div><br>© 2026 Bowon Kwon · updated 2026-11-02 · <a href="https://github.com/BowonKwon/">GitHub</a></footer>
+<footer><div class="dots"><i style='background:var(--s1)'></i><i style='background:var(--s3)'></i><i style='background:var(--s2)'></i><i style='background:var(--s4)'></i><i style='background:var(--s5)'></i><i style='background:var(--s6)'></i><i style='background:var(--s7)'></i></div><br>© 2026 Bowon Kwon · updated 2026-11-03 · <a href="https://github.com/BowonKwon/">GitHub</a></footer>
 <script>(function(){var b=document.querySelector(".theme");function cur(){return localStorage.getItem("hub-theme")||"auto"}function show(){b.textContent={auto:"\u25d1",light:"\u2600",dark:"\u263e"}[cur()];b.title={auto:"Theme: auto",light:"Theme: light",dark:"Theme: dark"}[cur()]}b.addEventListener("click",function(){var n={auto:"light",light:"dark",dark:"auto"}[cur()];if(n==="auto"){localStorage.removeItem("hub-theme");document.documentElement.removeAttribute("data-theme")}else{localStorage.setItem("hub-theme",n);document.documentElement.setAttribute("data-theme",n)}show()});show()})();</script>
 </body></html>
