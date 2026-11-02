@@ -16,6 +16,7 @@ ANS = "https://bowonkwon.github.io/Animal-Signals/"
 PCM = "https://bowonkwon.github.io/Physical-Constants-Metrics/"
 SKM = "https://bowonkwon.github.io/Sillok-Metrics/"
 PPM = "https://bowonkwon.github.io/Privilege-Metrics/"
+MJM = "https://bowonkwon.github.io/Munjip-Metrics/"
 GH = "https://github.com/BowonKwon/"
 
 PROJECTS = [
@@ -199,7 +200,7 @@ PROJECTS = [
         key="ppm", color="s7", site=PPM, repo=GH + "Privilege-Metrics",
         ko=dict(
             tag="법·역사·데이터", title="특권에서 특허로", en_title="From Privilege to Patent",
-            lead="근대 특허법·저작권법이 생기기 전, 베네치아·잉글랜드·네덜란드에서 군주와 의회가 하나씩 내준 발명·출판 특권을 남은 목록에서 한 건씩 센 지표 18개와 신뢰도 카드.",
+            lead="근대 특허법·저작권법이 생기기 전, 베네치아·잉글랜드·네덜란드에서 군주와 의회가 하나씩 내준 발명·출판 특권을 지금까지 전하는 목록에서 한 건씩 센 지표 18개와 신뢰도 카드.",
             items=[
                 ("지표", "몇 건·어느 분야·누가·어떤 조건, 출판 등록까지 다섯 계열 18개", "ko/metrics/index.html"),
                 ("관할", "잉글랜드·베네치아·네덜란드, 목록과 단위", "ko/places.html"),
@@ -222,6 +223,33 @@ PROJECTS = [
             facts=[("14,375", "English invention grants, 1561–1852"), ("10,453", "Stationers' Register entries, 1557–1640"), ("93 / 96", "grants of 1625–1640 with a term of 14 years or less")],
         ),
     ),
+    dict(
+        key="mjm", color="s8", site=MJM, repo=GH + "Munjip-Metrics",
+        ko=dict(
+            tag="한문학·데이터", title="문집 메트릭스", en_title="Munjip Metrics",
+            lead="한국문집총간 1,249종의 원문 XML 전문을 편(시 한 수·편지 한 통·묘지명 한 편) 단위로 나눈 637,203편을 세어 규모·문체 구성·관계 문체·저자와 간행의 네 계열 23개 지표로 보이는 공개 데이터 사이트. 고전번역원의 문체분류를 그대로 쓰고, 파싱·연결은 표본으로 정밀도를 잰다. 원문은 싣지 않고 편마다 고전종합DB로 연결한다.",
+            items=[
+                ("지표 23개", "규모 7 · 문체 구성 8 · 관계 문체 3 · 저자와 간행 5", "ko/metrics/index.html"),
+                ("문집 1,249종", "문집마다 한 면과 순위표, 인물 면 10", "ko/collections/index.html"),
+                ("읽기용 판", "숫자가 말하는 것을 한 편의 글로", "ko/reading.html"),
+                ("데이터", "작품 테이블 637,203행과 모든 표의 CSV", "ko/data.html"),
+            ],
+            extra=None,
+            facts=[("637,203", "편, 문집 1,249종"), ("62%", "저자 글 중 시 — 15세기 88%에서 19세기 42%로"), ("613", "저자 1,248명 중 문과방목 연결")],
+        ),
+        en=dict(
+            tag="Sinographic literature · data", title="Munjip Metrics", en_title="",
+            lead="The full XML text of the 1,249 collections of the Hanguk munjip chonggan, split into 637,203 works (one poem, one letter, one epitaph), counted in 23 metrics across four series: size, genre composition, relationship genres, authors and publication. Genre classes are the ITKC's own; parsing and linkage steps carry sampled precision. No text is reproduced; every work links to the ITKC database.",
+            items=[
+                ("23 metrics", "7 size · 8 genre composition · 3 relationship genres · 5 authors and publication", "en/metrics/index.html"),
+                ("1,249 collections", "A page for each collection, a sortable list, ten person pages", "en/collections/index.html"),
+                ("Reading edition", "What the numbers say, as one essay", "en/reading.html"),
+                ("Data", "The 637,203-row work table and every table as CSV", "en/data.html"),
+            ],
+            extra=None,
+            facts=[("637,203", "works in 1,249 collections"), ("62%", "of authors' own works are poems — 88% (15th c.) to 42% (19th)"), ("613", "of 1,248 authors linked to the examination roster")],
+        ),
+    ),
 ]
 
 TALKS = dict(
@@ -241,11 +269,11 @@ TEXT = dict(
     ko=dict(
         title="권보원 — 공개 자료", name="권보원", sub="Bowon Kwon",
         hero="생성형 AI와 함께 엮은 공개 자료",
-        hero_lead="법률 외국어 자습서, AI 자습서, 서양 고전 음악 데이터 사이트, 동물 신호 연구의 근거 등급표, 물리 상수 불확도 데이터 사이트. 모두 원문과 대조하고 독립된 AI 검토를 거쳤지만, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
+        hero_lead="법률 외국어 자습서, AI 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯. 모두 원문과 대조하고 독립된 AI 검토를 거쳤지만, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
         nav=[("#projects", "자료"), ("#talks", "발표·스터디"), ("#about", "일러두기")],
         projects_h="자료", talks_h="발표·스터디", about_h="일러두기",
         site="사이트로", repo="저장소", more="전부 보기", contents="들어 있는 것",
-        projects_sub="다섯 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
+        projects_sub="여덟 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
         about=[
             "<b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI(Codex)가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.",
             "<b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리) 또는 CC BY 4.0으로, 코드는 PolyForm Noncommercial 1.0.0 또는 MIT 등 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.",
@@ -257,11 +285,11 @@ TEXT = dict(
     en=dict(
         title="Bowon Kwon — Public materials", name="Bowon Kwon", sub="권보원",
         hero="Public materials compiled with generative AI",
-        hero_lead="Legal-language handbooks, AI handbooks, a classical-music data site, an evidence table for animal-signal research and a data site on the uncertainties of physical constants. All were checked against the originals and reviewed by an independent AI reviewer, but errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
+        hero_lead="Legal-language handbooks, AI handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections. All were checked against the originals and reviewed by an independent AI reviewer, but errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
         nav=[("#projects", "Materials"), ("#talks", "Talks & study groups"), ("#about", "Notes")],
         projects_h="Materials", talks_h="Talks & study groups", about_h="Notes",
         site="Open site", repo="Repository", more="See all", contents="Inside",
-        projects_sub="Five collections — details on each site", talks_sub="Slides live in the GitHub repositories",
+        projects_sub="Eight collections — details on each site", talks_sub="Slides live in the GitHub repositories",
         about=[
             "<b>Checked against the originals</b> Statutes, judgments, source texts and figures were machine-checked against official texts or open datasets, and a separate AI reviewer (Codex) that took no part in the writing reviewed them blind, from the raw sources only. Errors may still remain.",
             "<b>Licence</b> To the extent the editor holds rights, texts are licensed under CC BY-NC 4.0 or CC BY 4.0, and code under the PolyForm Noncommercial 1.0.0, MIT or the terms stated in each repository. Quoted statutes, judgments, source texts and data remain subject to their own rights holders. Details are in each repository.",
@@ -277,7 +305,7 @@ CSS = """
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -285,13 +313,13 @@ CSS = """
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
@@ -326,7 +354,7 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .chip{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .95rem .4rem .7rem;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:.92rem;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s,border-color .15s}
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
 .chip:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow2);border-color:var(--c)}
-.mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr auto auto auto;gap:.6rem}
+.mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr auto auto auto auto;gap:.6rem}
 .mosaic a{border-radius:14px;padding:.9rem .95rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;min-height:120px;
   background:linear-gradient(160deg,color-mix(in srgb,var(--c) 92%,#fff),color-mix(in srgb,var(--c) 78%,#000));box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
 .mosaic a::after{content:"";position:absolute;inset:auto -30% -45% auto;width:75%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.12)}
@@ -335,6 +363,7 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .mosaic small{font-size:.8rem;line-height:1.35;opacity:.92;margin-top:.3rem}
 .mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/3;grid-row:3;min-height:0}.mosaic .m4{grid-column:3;grid-row:3/5;min-height:0}.mosaic .m5{grid-column:1/3;grid-row:4;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m6{grid-column:1/4;grid-row:5;min-height:0;padding-top:.9rem;padding-bottom:.9rem}
 .mosaic .m3,.mosaic .m4{padding-top:.9rem;padding-bottom:.9rem}
+.mosaic .m7{grid-column:3;grid-row:6;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m8{grid-column:1/3;grid-row:6;min-height:0;padding-top:.9rem;padding-bottom:.9rem}
 .proj{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;box-shadow:var(--shadow);position:relative;overflow:hidden;
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0}
 .proj::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)}
