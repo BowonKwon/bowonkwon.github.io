@@ -144,7 +144,7 @@ PROJECTS = [
         key="pcm", color="s5", site=PCM, repo=GH + "Physical-Constants-Metrics",
         ko=dict(
             tag="물리·데이터", title="물리 상수 메트릭스", en_title="Physical Constants Metrics",
-            lead="과학자들이 밝힌 오차 막대는 다음 판의 값을 얼마나 자주 놓쳤나. CODATA 기본 물리 상수 권고값 아홉 판(1973~2022)과 1969년 조정값을 이어 붙여, 값과 불확도가 판마다 어떻게 바뀌었는지 센다. 수치마다 표본 수와 95% 구간을 붙였다.",
+            lead="CODATA 물리 상수와 CIAAW 원자량의 권고값이 스스로 밝힌 불확도만큼 믿을 만했는지 센다.",
             items=[
                 ("지표", "반감기·판간 이동·2022 판 기준 놓침률·꼬리 두께", "ko/metrics/index.html"),
                 ("상수", "31개, 판별 값과 수렴 그림", "ko/constants/index.html"),
@@ -156,7 +156,7 @@ PROJECTS = [
         ),
         en=dict(
             tag="Physics · data", title="Physical Constants Metrics", en_title="",
-            lead="How often did the error bars scientists published miss the next edition's value? Nine editions of the CODATA recommended values of the fundamental physical constants (1973–2022) and the 1969 adjustment, joined to count how values and uncertainties changed. Every number carries its sample size and a 95% interval.",
+            lead="Whether the recommended values of CODATA physical constants and CIAAW atomic weights were as reliable as their own stated uncertainties.",
             items=[
                 ("Metrics", "Half-life, edition-to-edition moves, miss rate against 2022, tails", "en/metrics/index.html"),
                 ("Constants", "31, with values by edition and convergence plots", "en/constants/index.html"),
