@@ -198,12 +198,12 @@ PROJECTS = [
 
 TALKS = dict(
     ko=[
-        ("AI-and-Law-Presentations", "인공지능과 법에 관한 초청 강연·학회 발표 슬라이드", GH + "AI-and-Law-Presentations"),
+        ("AI-and-Law-Presentations", "인공지능과 법에 관한 초청 강연·학회 발표 슬라이드(정리 중, 차례로 게시)", GH + "AI-and-Law-Presentations"),
         ("SundayAI", "「일요일은 AI」 스터디 발제 자료", GH + "SundayAI"),
         ("PseudoLab_Study", "가짜연구소 스터디 발제 자료", GH + "PseudoLab_Study"),
     ],
     en=[
-        ("AI-and-Law-Presentations", "Slides from invited talks and conference presentations on AI and law", GH + "AI-and-Law-Presentations"),
+        ("AI-and-Law-Presentations", "Slides from invited talks and conference presentations on AI and law (being prepared; posted in stages)", GH + "AI-and-Law-Presentations"),
         ("SundayAI", "Presentations for the “Sunday is AI” study group", GH + "SundayAI"),
         ("PseudoLab_Study", "Presentations for the PseudoLab study group", GH + "PseudoLab_Study"),
     ],
