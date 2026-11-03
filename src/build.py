@@ -267,9 +267,9 @@ TALKS = dict(
 
 TEXT = dict(
     ko=dict(
-        title="권보원 — 공개 자료", name="권보원", sub="Bowon Kwon",
+        title="권보원의 실험실 — 생성형 AI와 함께 엮은 공개 자료", name="권보원", sub="Bowon Kwon", lab="실험실 · Lab",
         hero="생성형 AI와 함께 엮은 공개 자료",
-        hero_lead="법률 외국어 자습서, AI 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯. 모두 원문과 대조하고 독립된 AI 검토를 거쳤지만, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
+        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
         nav=[("#projects", "자료"), ("#talks", "발표·스터디"), ("#about", "일러두기")],
         projects_h="자료", talks_h="발표·스터디", about_h="일러두기",
         site="사이트로", repo="저장소", more="전부 보기", contents="들어 있는 것",
@@ -283,9 +283,9 @@ TEXT = dict(
         lang_link=("en/index.html", "English"),
     ),
     en=dict(
-        title="Bowon Kwon — Public materials", name="Bowon Kwon", sub="권보원",
+        title="Bowon Kwon’s Lab — Public materials compiled with generative AI", name="Bowon Kwon", sub="권보원", lab="Lab · 실험실",
         hero="Public materials compiled with generative AI",
-        hero_lead="Legal-language handbooks, AI handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections. All were checked against the originals and reviewed by an independent AI reviewer, but errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
+        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
         nav=[("#projects", "Materials"), ("#talks", "Talks & study groups"), ("#about", "Notes")],
         projects_h="Materials", talks_h="Talks & study groups", about_h="Notes",
         site="Open site", repo="Repository", more="See all", contents="Inside",
@@ -455,7 +455,7 @@ def page(lang):
 <header><a class="brand" href="#"><i></i>{esc(T['name'])}</a><nav>{nav}</nav>
 <div class="right"><a class="lang" href="{ll[0]}">{ll[1]}</a><button class="theme" aria-label="theme">◑</button></div></header>
 <main>
-<div class="hero"><div><div class="who">{esc(T['name'])} · {esc(T['sub'])}</div><h1>{esc(T['hero'])}</h1><p class="lead">{esc(T['hero_lead'])}</p>
+<div class="hero"><div><div class="who">{esc(T['lab'])}</div><h1>{esc(T['hero'])}</h1><p class="lead">{esc(T['hero_lead'])}</p>
 <div class="cta">{chips}</div></div>
 <div class="mosaic" aria-hidden="true">{mosaic}</div></div>
 <div class="sec" id="projects"><div class="sec-head"><span class="no">01</span><h2>{esc(T['projects_h'])}</h2><p>{esc(T['projects_sub'])}</p></div>
