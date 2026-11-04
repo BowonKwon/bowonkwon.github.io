@@ -17,6 +17,7 @@ PCM = "https://bowonkwon.github.io/Physical-Constants-Metrics/"
 SKM = "https://bowonkwon.github.io/Sillok-Metrics/"
 PPM = "https://bowonkwon.github.io/Privilege-Metrics/"
 MJM = "https://bowonkwon.github.io/Munjip-Metrics/"
+AHP = "https://bowonkwon.github.io/AI-History-in-Papers/"
 GH = "https://github.com/BowonKwon/"
 
 PROJECTS = [
@@ -250,6 +251,33 @@ PROJECTS = [
             facts=[("637,203", "works in 1,249 collections"), ("62%", "of authors' own works are poems — 88% (15th c.) to 42% (19th)"), ("613", "of 1,248 authors linked to the examination roster")],
         ),
     ),
+    dict(
+        key="ahp", color="s9", site=AHP, repo=GH + "AI-History-in-Papers",
+        ko=dict(
+            tag="기술사·논문", title="논문으로 읽는 인공지능의 역사", en_title="AI History in Papers",
+            lead="1943년부터 지금까지 인공지능 연구를 원 논문 191편으로 따라가는 역사 사이트. 점마다 원문 링크와 쪽을 밝힌 원문 한 문장, 인용이 확인된 선만 긋는 계보, 양쪽 서지를 나란히 놓는 우선권 상자, 수치로 다시 보는 「겨울」.",
+            items=[
+                ("시대 7장", "기원 1943부터 에이전트 2022까지, 장마다 서술·계보 그림·논문 카드", "ko/chapters/index.html"),
+                ("계보", "주제 묶음 8개, 인용이 확인된 선만 실선", "ko/lineage/index.html"),
+                ("겨울과 붐", "제목 구절 비율·학회 참가자·NeurIPS 채택 수를 같은 연도축에", "ko/winters.html"),
+                ("논문 목록·방법", "191편 표와 CSV, 목록을 만들기 전에 등록한 선정 기준", "ko/papers.html"),
+            ],
+            extra=None,
+            facts=[("191", "원 논문, 1943–2025"), ("1,108", "확인된 인용선"), ("76%", "AAAI 참가자 감소, 1986→1997")],
+        ),
+        en=dict(
+            tag="History of technology · papers", title="AI History in Papers", en_title="",
+            lead="The history of AI research from 1943 to today, followed through 191 original papers: a link to the source and one quoted sentence with its page for every point, lineage lines drawn only where a citation is confirmed, priority boxes that show both sides, and the \"winters\" re-examined with numbers.",
+            items=[
+                ("Seven eras", "From the origins of 1943 to agents since 2022: narrative, lineage graph and paper cards per chapter", "en/chapters/index.html"),
+                ("Lineage", "Eight theme groups; solid lines only for confirmed citations", "en/lineage/index.html"),
+                ("Winters and booms", "Title-phrase share, conference attendance and NeurIPS acceptances on one time axis", "en/winters.html"),
+                ("Paper list and method", "191 papers as a table and CSV; selection rules registered before the list was made", "en/papers.html"),
+            ],
+            extra=None,
+            facts=[("191", "original papers, 1943–2025"), ("1,108", "confirmed citation lines"), ("76%", "fall in AAAI attendance, 1986→1997")],
+        ),
+    ),
 ]
 
 TALKS = dict(
@@ -305,7 +333,7 @@ CSS = """
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--s9:#5b6a9c;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -313,13 +341,13 @@ CSS = """
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
