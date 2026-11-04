@@ -88,6 +88,33 @@ PROJECTS = [
         ),
     ),
     dict(
+        key="ahp", color="s9", site=AHP, repo=GH + "AI-History-in-Papers",
+        ko=dict(
+            tag="기술사·논문", title="논문으로 읽는 인공지능의 역사", en_title="AI History in Papers",
+            lead="1943년부터 지금까지 인공지능 연구를 원 논문 191편으로 따라가는 역사 사이트. 점마다 원문 링크와 쪽을 밝힌 원문 한 문장, 인용이 확인된 선만 긋는 계보, 양쪽 서지를 나란히 놓는 우선권 상자, 수치로 다시 보는 「겨울」.",
+            items=[
+                ("시대 7장", "기원 1943부터 에이전트 2022까지, 장마다 서술·계보 그림·논문 카드", "ko/chapters/index.html"),
+                ("계보", "주제 묶음 8개, 인용이 확인된 선만 실선", "ko/lineage/index.html"),
+                ("겨울과 붐", "제목 구절 비율·학회 참가자·NeurIPS 채택 수를 같은 연도축에", "ko/winters.html"),
+                ("논문 목록·방법", "191편 표와 CSV, 목록을 만들기 전에 등록한 선정 기준", "ko/papers.html"),
+            ],
+            extra=None,
+            facts=[("191", "원 논문, 1943–2025"), ("1,108", "확인된 인용선"), ("76%", "AAAI 참가자 감소, 1986→1997")],
+        ),
+        en=dict(
+            tag="History of technology · papers", title="AI History in Papers", en_title="",
+            lead="The history of AI research from 1943 to today, followed through 191 original papers: a link to the source and one quoted sentence with its page for every point, lineage lines drawn only where a citation is confirmed, priority boxes that show both sides, and the \"winters\" re-examined with numbers.",
+            items=[
+                ("Seven eras", "From the origins of 1943 to agents since 2022: narrative, lineage graph and paper cards per chapter", "en/chapters/index.html"),
+                ("Lineage", "Eight theme groups; solid lines only for confirmed citations", "en/lineage/index.html"),
+                ("Winters and booms", "Title-phrase share, conference attendance and NeurIPS acceptances on one time axis", "en/winters.html"),
+                ("Paper list and method", "191 papers as a table and CSV; selection rules registered before the list was made", "en/papers.html"),
+            ],
+            extra=None,
+            facts=[("191", "original papers, 1943–2025"), ("1,108", "confirmed citation lines"), ("76%", "fall in AAAI attendance, 1986→1997")],
+        ),
+    ),
+    dict(
         key="cmm", color="s2", site=CMM, repo=GH + "Classical-Music-Metrics",
         ko=dict(
             tag="음악·데이터", title="서양 고전 음악 메트릭스", en_title="Classical Music Metrics",
@@ -249,33 +276,6 @@ PROJECTS = [
             ],
             extra=None,
             facts=[("637,203", "works in 1,249 collections"), ("62%", "of authors' own works are poems — 88% (15th c.) to 42% (19th)"), ("613", "of 1,248 authors linked to the examination roster")],
-        ),
-    ),
-    dict(
-        key="ahp", color="s9", site=AHP, repo=GH + "AI-History-in-Papers",
-        ko=dict(
-            tag="기술사·논문", title="논문으로 읽는 인공지능의 역사", en_title="AI History in Papers",
-            lead="1943년부터 지금까지 인공지능 연구를 원 논문 191편으로 따라가는 역사 사이트. 점마다 원문 링크와 쪽을 밝힌 원문 한 문장, 인용이 확인된 선만 긋는 계보, 양쪽 서지를 나란히 놓는 우선권 상자, 수치로 다시 보는 「겨울」.",
-            items=[
-                ("시대 7장", "기원 1943부터 에이전트 2022까지, 장마다 서술·계보 그림·논문 카드", "ko/chapters/index.html"),
-                ("계보", "주제 묶음 8개, 인용이 확인된 선만 실선", "ko/lineage/index.html"),
-                ("겨울과 붐", "제목 구절 비율·학회 참가자·NeurIPS 채택 수를 같은 연도축에", "ko/winters.html"),
-                ("논문 목록·방법", "191편 표와 CSV, 목록을 만들기 전에 등록한 선정 기준", "ko/papers.html"),
-            ],
-            extra=None,
-            facts=[("191", "원 논문, 1943–2025"), ("1,108", "확인된 인용선"), ("76%", "AAAI 참가자 감소, 1986→1997")],
-        ),
-        en=dict(
-            tag="History of technology · papers", title="AI History in Papers", en_title="",
-            lead="The history of AI research from 1943 to today, followed through 191 original papers: a link to the source and one quoted sentence with its page for every point, lineage lines drawn only where a citation is confirmed, priority boxes that show both sides, and the \"winters\" re-examined with numbers.",
-            items=[
-                ("Seven eras", "From the origins of 1943 to agents since 2022: narrative, lineage graph and paper cards per chapter", "en/chapters/index.html"),
-                ("Lineage", "Eight theme groups; solid lines only for confirmed citations", "en/lineage/index.html"),
-                ("Winters and booms", "Title-phrase share, conference attendance and NeurIPS acceptances on one time axis", "en/winters.html"),
-                ("Paper list and method", "191 papers as a table and CSV; selection rules registered before the list was made", "en/papers.html"),
-            ],
-            extra=None,
-            facts=[("191", "original papers, 1943–2025"), ("1,108", "confirmed citation lines"), ("76%", "fall in AAAI attendance, 1986→1997")],
         ),
     ),
 ]
