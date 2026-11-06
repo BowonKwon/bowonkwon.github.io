@@ -18,6 +18,7 @@ SKM = "https://bowonkwon.github.io/Sillok-Metrics/"
 PPM = "https://bowonkwon.github.io/Privilege-Metrics/"
 MJM = "https://bowonkwon.github.io/Munjip-Metrics/"
 AHP = "https://bowonkwon.github.io/AI-History-in-Papers/"
+KMC = "https://bowonkwon.github.io/Korean-Music-Charts/"
 GH = "https://github.com/BowonKwon/"
 
 PROJECTS = [
@@ -112,6 +113,33 @@ PROJECTS = [
             ],
             extra=None,
             facts=[("191", "original papers, 1943–2025"), ("1,108", "confirmed citation lines"), ("76%", "fall in AAAI attendance, 1986→1997")],
+        ),
+    ),
+    dict(
+        key="kmc", color="s10", site=KMC, repo=GH + "Korean-Music-Charts",
+        ko=dict(
+            tag="가요사·연대표", title="가요 차트 100년", en_title="Korean Music Charts",
+            lead="1906년 유성기 녹음부터 디지털 차트까지, 누가 무엇으로 어떻게 한국 가요의 순위를 매겨 왔는지를 한 연대표로 잇는 역사 사이트. 집계 체계마다 주체·방식·표본·출처 등급을 적고, 1위 목록은 당대 신문과 집계표 사본으로 대조한 행에만 1차 출처를 단다.",
+            items=[
+                ("여섯 장", "순위를 매기는 방법들부터 공인 차트와 플랫폼까지", "ko/ch0.html"),
+                ("집계 체계 연표", "체계·공백 29개를 한 시간축에, 2차 자료로만 받쳐지는 구간은 빗금", "ko/ch0.html"),
+                ("데이터", "음반협회 월간 1위 122개월, 「가요톱10」 889행 등 CSV 8개", "ko/data.html"),
+                ("방법", "미리 정한 표본 규칙, 출처 등급, 대조 결과", "ko/method.html"),
+            ],
+            extra=None,
+            facts=[("122", "음반협회 월간 가요 1위, 1998–2008 사본 전수 대조"), ("29", "집계 체계와 공백 구간"), ("85 / 241", "「가요톱10」 1위 연속 중 정확히 5주에서 끝난 횟수")],
+        ),
+        en=dict(
+            tag="Popular music history · timeline", title="Korean Music Charts", en_title="",
+            lead="A history site that traces, on one timeline from the gramophone recordings of 1906 to digital charts, who ranked Korean popular songs, with what, and how. Each ranking system carries its actor, method, sample and source grade; in the No. 1 lists only rows checked against newspapers or archived tables of the time carry a primary source.",
+            items=[
+                ("Six chapters", "From ways of ranking songs to official charts and platforms", "en/ch0.html"),
+                ("Timeline of systems", "29 systems and gaps on one time axis; spans backed only by secondary sources are hatched", "en/ch0.html"),
+                ("Data", "Eight CSV files, including 122 months of the record association's monthly No. 1 and 889 rows of Gayo Top 10", "en/data.html"),
+                ("Method", "Sampling rules fixed in advance, source grades, check results", "en/method.html"),
+            ],
+            extra=None,
+            facts=[("122", "monthly No. 1 albums, 1998–2008, all checked against archived tables"), ("29", "ranking systems and gaps"), ("85 / 241", "Gayo Top 10 No. 1 runs that ended at exactly five weeks")],
         ),
     ),
     dict(
@@ -282,6 +310,10 @@ PROJECTS = [
     ),
 ]
 
+ORDER = ["llh", "aih", "ahp", "cmm", "kmc", "ans", "pcm", "ppm", "skm", "mjm"]
+assert sorted(ORDER) == sorted(p["key"] for p in PROJECTS)
+PROJECTS.sort(key=lambda p: ORDER.index(p["key"]))
+
 TALKS = dict(
     ko=[
         ("AI-and-Law-Presentations", "인공지능과 법에 관한 초청 강연·학회 발표 슬라이드(정리 중, 차례로 게시)", GH + "AI-and-Law-Presentations"),
@@ -299,11 +331,11 @@ TEXT = dict(
     ko=dict(
         title="권보원의 실험실 — 생성형 AI와 함께 엮은 공개 자료", name="권보원", sub="Bowon Kwon", lab="실험실 · Lab",
         hero="생성형 AI와 함께 엮은 공개 자료",
-        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
+        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯, 논문과 가요 차트로 엮은 역사 사이트 둘. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
         nav=[("#projects", "자료"), ("#talks", "발표·스터디"), ("#about", "일러두기")],
         projects_h="자료", talks_h="발표·스터디", about_h="일러두기",
         site="사이트로", repo="저장소", more="전부 보기", contents="들어 있는 것",
-        projects_sub="여덟 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
+        projects_sub="열 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
         about=[
             "<b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI(Codex)가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.",
             "<b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리) 또는 CC BY 4.0으로, 코드는 PolyForm Noncommercial 1.0.0 또는 MIT 등 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.",
@@ -315,11 +347,11 @@ TEXT = dict(
     en=dict(
         title="Bowon Kwon’s Lab — Public materials compiled with generative AI", name="Bowon Kwon", sub="권보원", lab="Lab · 실험실",
         hero="Public materials compiled with generative AI",
-        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
+        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections, and two history sites built from papers and from music charts. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
         nav=[("#projects", "Materials"), ("#talks", "Talks & study groups"), ("#about", "Notes")],
         projects_h="Materials", talks_h="Talks & study groups", about_h="Notes",
         site="Open site", repo="Repository", more="See all", contents="Inside",
-        projects_sub="Eight collections — details on each site", talks_sub="Slides live in the GitHub repositories",
+        projects_sub="Ten collections — details on each site", talks_sub="Slides live in the GitHub repositories",
         about=[
             "<b>Checked against the originals</b> Statutes, judgments, source texts and figures were machine-checked against official texts or open datasets, and a separate AI reviewer (Codex) that took no part in the writing reviewed them blind, from the raw sources only. Errors may still remain.",
             "<b>Licence</b> To the extent the editor holds rights, texts are licensed under CC BY-NC 4.0 or CC BY 4.0, and code under the PolyForm Noncommercial 1.0.0, MIT or the terms stated in each repository. Quoted statutes, judgments, source texts and data remain subject to their own rights holders. Details are in each repository.",
@@ -335,7 +367,7 @@ CSS = """
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--s9:#5b6a9c;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--s9:#5b6a9c;--s10:#7d6b2e;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -343,13 +375,13 @@ CSS = """
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
@@ -393,7 +425,7 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .mosaic small{font-size:.8rem;line-height:1.35;opacity:.92;margin-top:.3rem}
 .mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/3;grid-row:3;min-height:0}.mosaic .m4{grid-column:3;grid-row:3/5;min-height:0}.mosaic .m5{grid-column:1/3;grid-row:4;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m6{grid-column:1/4;grid-row:5;min-height:0;padding-top:.9rem;padding-bottom:.9rem}
 .mosaic .m3,.mosaic .m4{padding-top:.9rem;padding-bottom:.9rem}
-.mosaic .m7{grid-column:1/4;grid-row:6;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m8{grid-column:1/4;grid-row:7;min-height:0;padding-top:.9rem;padding-bottom:.9rem}
+.mosaic .m7{grid-column:1/4;grid-row:6;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m8{grid-column:1/4;grid-row:7;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m9{grid-column:1/4;grid-row:8;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m10{grid-column:1/4;grid-row:9;min-height:0;padding-top:.9rem;padding-bottom:.9rem}
 .proj{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;box-shadow:var(--shadow);position:relative;overflow:hidden;
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0}
 .proj::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)}
