@@ -202,11 +202,12 @@ PROJECTS = [
         key="pcm", color="s5", site=PCM, repo=GH + "Physical-Constants-Metrics",
         ko=dict(
             tag="물리·데이터", title="물리 상수 메트릭스", en_title="Physical Constants Metrics",
-            lead="CODATA 물리 상수와 CIAAW 원자량의 권고값, 그리고 1929년 이후 발표된 허블 상수 추정값이 스스로 밝힌 불확도만큼 믿을 만했는지 센다.",
+            lead="1929년 이후 물리 상수와 CIAAW 원자량의 권고값, 그리고 같은 시기에 발표된 허블 상수 추정값이 스스로 밝힌 불확도만큼 믿을 만했는지 센다.",
             items=[
                 ("지표", "반감기·판간 이동·2022 판 기준 놓침률·꼬리 두께", "ko/metrics/index.html"),
                 ("상수·원자량", "상수 31개·원소 88개, 판별 값과 그림", "ko/constants/index.html"),
                 ("허블 상수", "발표된 H0 추정값과 오차, 1929~2019 연대기와 지표", "ko/hubble/index.html"),
+                ("CODATA 이전", "1929~1969년 권고값과 Henrion & Fischhoff 재계산", "ko/early/index.html"),
                 ("읽기", "오차 막대와 그 다음 판", "ko/reading.html"),
                 ("데이터", "CSV 내려받기와 라이선스", "ko/data.html"),
             ],
@@ -215,11 +216,12 @@ PROJECTS = [
         ),
         en=dict(
             tag="Physics · data", title="Physical Constants Metrics", en_title="",
-            lead="Whether the recommended values of CODATA physical constants and CIAAW atomic weights, and the Hubble-constant estimates published since 1929, were as reliable as their own stated uncertainties.",
+            lead="Whether the recommended values of the physical constants (CODATA and its predecessors since 1929) and CIAAW atomic weights, and the Hubble-constant estimates published since 1929, were as reliable as their own stated uncertainties.",
             items=[
                 ("Metrics", "Half-life, edition-to-edition moves, miss rate against 2022, tails", "en/metrics/index.html"),
                 ("Constants & atomic weights", "31 constants and 88 elements, values by edition with plots", "en/constants/index.html"),
                 ("Hubble constant", "Published H0 estimates and their errors: 1929–2019 chronology and metrics", "en/hubble/index.html"),
+                ("Before CODATA", "Recommended values 1929–1969 and Henrion & Fischhoff recomputed", "en/early/index.html"),
                 ("Reading", "Error bars and the next edition", "en/reading.html"),
                 ("Data", "CSV downloads and licenses", "en/data.html"),
             ],
