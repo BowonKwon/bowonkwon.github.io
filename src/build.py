@@ -202,7 +202,7 @@ PROJECTS = [
         key="pcm", color="s5", site=PCM, repo=GH + "Physical-Constants-Metrics",
         ko=dict(
             tag="물리·데이터", title="물리 상수 메트릭스", en_title="Physical Constants Metrics",
-            lead="1929년 이후 물리 상수와 CIAAW 원자량의 권고값, 그리고 같은 시기에 발표된 허블 상수 추정값이 스스로 밝힌 불확도만큼 믿을 만했는지 센다.",
+            lead="물리 상수(CODATA 와 그 이전, 1929~)와 CIAAW 원자량의 권고값, 그리고 1929년 이후 발표된 허블 상수 추정값이 스스로 밝힌 불확도만큼 믿을 만했는지 센다.",
             items=[
                 ("지표", "반감기·판간 이동·2022 판 기준 놓침률·꼬리 두께", "ko/metrics/index.html"),
                 ("상수·원자량", "상수 31개·원소 88개, 판별 값과 그림", "ko/constants/index.html"),
