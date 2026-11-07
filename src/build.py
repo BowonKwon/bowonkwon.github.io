@@ -147,27 +147,31 @@ PROJECTS = [
         key="cmm", color="s2", site=CMM, repo=GH + "Classical-Music-Metrics",
         ko=dict(
             tag="음악·데이터", title="서양 고전 음악 메트릭스", en_title="Classical Music Metrics",
-            lead="악보와 연주를 숫자로 읽는 공개 데이터 사이트. 지표마다 정의·공식·표본·한계를 함께 두고, 공개 악보 코퍼스와 연주 데이터셋에서 뽑은 수치를 한 면씩 보여 준다. 첫 판은 바흐와 베토벤.",
+            lead="악보와 연주를 숫자로 읽는 공개 데이터 사이트. 지표마다 정의·공식·표본·한계를 함께 두고, 공개 악보 코퍼스와 연주 데이터셋에서 뽑은 수치를 한 면씩 보여 준다. 바흐·베토벤·모차르트 악보, 뉴욕 필하모닉 전 작곡가 레퍼토리, IMSLP로 본 작품 활동과 A음 높이의 역사, 공연 기록으로 견준 악단 레퍼토리(1.5)까지.",
             items=[
-                ("지표 24개", "악보 14 · 연주 6 · 레퍼토리 4", "ko/index.html"),
+                ("지표 60개", "악보 39 · 연주 9 · 레퍼토리 12", "ko/metrics/index.html"),
+                ("작품·역사", "작품 활동·편성·템포 지시어·A음 높이", "ko/history.html"),
+                ("악단 비교", "뉴욕 필·카네기홀·게반트하우스·서울시향", "ko/orchestras.html"),
                 ("읽기용 판", "숫자가 말하는 것을 한 편의 글로", "ko/reading.html"),
                 ("데이터", "CSV 내려받기와 라이선스", "ko/data.html"),
                 ("방법·출처", "자료원·코드·장기 과제", "ko/method.html"),
             ],
             extra=None,
-            facts=[("679", "악장(음표 63만 8천)"), ("36", "지휘자, 베토벤 교향곡 템포"), ("185", "시즌, 뉴욕 필 레퍼토리")],
+            facts=[("733", "악장(음표 74만)"), ("60", "지표, 악보·연주·레퍼토리"), ("185", "시즌, 뉴욕 필 레퍼토리")],
         ),
         en=dict(
             tag="Music · data", title="Classical Music Metrics", en_title="",
-            lead="An open data site that reads scores and performances as numbers. Every metric carries its definition, formula, sample and caveats, computed from open score corpora and performance datasets. The first edition covers Bach and Beethoven.",
+            lead="An open data site that reads scores and performances as numbers. Every metric carries its definition, formula, sample and caveats, computed from open score corpora and performance datasets: Bach, Beethoven and Mozart scores, the New York Philharmonic's repertoire across every composer, work activity and the history of the pitch of a′ from IMSLP, and orchestras' repertoire compared from performance records (1.5).",
             items=[
-                ("24 metrics", "14 score · 6 performance · 4 repertoire", "en/index.html"),
+                ("60 metrics", "39 score · 9 performance · 12 repertoire", "en/metrics/index.html"),
+                ("Works & history", "Work activity, orchestration, tempo marks, pitch of a′", "en/history.html"),
+                ("Orchestras", "NY Phil, Carnegie Hall, Gewandhaus, Seoul Phil", "en/orchestras.html"),
                 ("Reading edition", "What the numbers say, as one essay", "en/reading.html"),
                 ("Data", "CSV downloads and licenses", "en/data.html"),
                 ("Method & sources", "Datasets, code, long-term tasks", "en/method.html"),
             ],
             extra=None,
-            facts=[("679", "movements (638k notes)"), ("36", "conductors, Beethoven symphony tempi"), ("185", "seasons of NY Phil repertoire")],
+            facts=[("733", "movements (740k notes)"), ("60", "metrics: score, performance, repertoire"), ("185", "seasons of NY Phil repertoire")],
         ),
     ),
     dict(
@@ -446,16 +450,17 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .chip{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .95rem .4rem .7rem;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:.92rem;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s,border-color .15s}
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
 .chip:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow2);border-color:var(--c)}
-.mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr auto auto auto auto auto;gap:.6rem}
-.mosaic a{border-radius:14px;padding:.9rem .95rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;min-height:120px;
-  background:linear-gradient(160deg,color-mix(in srgb,var(--c) 92%,#fff),color-mix(in srgb,var(--c) 78%,#000));box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
-.mosaic a::after{content:"";position:absolute;inset:auto -30% -45% auto;width:75%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.12)}
+.mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(86px,auto);gap:.6rem;
+  grid-template-areas:"L1 L1 T1 S1" "L1 L1 T1 S2" "S3 W1 W1 T2" "L2 L2 S4 T2" "L2 L2 L3 L3" "W2 W2 L3 L3"}
+.mosaic a{border-radius:14px;padding:.85rem .9rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;min-height:0;
+  background:var(--motif) right -6% top -8%/auto 64% no-repeat,linear-gradient(160deg,color-mix(in srgb,var(--c) 92%,#fff),color-mix(in srgb,var(--c) 78%,#000));box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
+.mosaic a.sz-W{background-size:auto 96%,auto;background-position:right -2% center,0 0}.mosaic a.sz-S{background-size:auto 58%,auto;background-position:right -16% top -12%,0 0}
+.mosaic a.sz-T{background-size:96% auto,auto;background-position:right -12% top -4%,0 0}
 .mosaic a:hover{text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow2)}
-.mosaic .n{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:600;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.mosaic small{font-size:.8rem;line-height:1.35;opacity:.92;margin-top:.3rem}
-.mosaic .m1{grid-column:1/3;grid-row:1/3}.mosaic .m2{grid-column:3;grid-row:1/3}.mosaic .m3{grid-column:1/3;grid-row:3;min-height:0}.mosaic .m4{grid-column:3;grid-row:3/5;min-height:0}.mosaic .m5{grid-column:1/3;grid-row:4;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m6{grid-column:1/4;grid-row:5;min-height:0;padding-top:.9rem;padding-bottom:.9rem}
-.mosaic .m3,.mosaic .m4{padding-top:.9rem;padding-bottom:.9rem}
-.mosaic .m7{grid-column:1/4;grid-row:6;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m8{grid-column:1/4;grid-row:7;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m9{grid-column:1/4;grid-row:8;min-height:0;padding-top:.9rem;padding-bottom:.9rem}.mosaic .m10{grid-column:1/4;grid-row:9;min-height:0;padding-top:.9rem;padding-bottom:.9rem}
+.mosaic .n{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:600;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;position:relative}
+.mosaic .sz-L .n{font-size:clamp(1.9rem,3.4vw,2.7rem)}
+.mosaic small{font-size:.78rem;line-height:1.35;opacity:.94;margin-top:.3rem;position:relative;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+.mosaic small{overflow-wrap:normal;word-break:keep-all;hyphens:auto}.mosaic .sz-S small,.mosaic .sz-T small{font-size:.74rem}.mosaic .sz-W small{max-width:66%}
 .proj{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;box-shadow:var(--shadow);position:relative;overflow:hidden;
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0}
 .proj::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)}
@@ -491,13 +496,46 @@ html[lang="ko"] p,html[lang="ko"] small,html[lang="ko"] li{word-break:keep-all;o
 .about div b{display:block;color:var(--fg);font-family:var(--display);font-size:1.02rem;margin-bottom:.3rem}
 footer{border-top:1px solid var(--line);color:var(--fg3);font-size:.82rem;padding:1.4rem 1.2rem;text-align:center}
 footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{width:8px;height:8px;border-radius:50%;display:inline-block}
-@media(max-width:860px){.hero{grid-template-columns:1fr;gap:1.6rem}.mosaic{max-width:440px}.proj{grid-template-columns:1fr}.proj .side{border-left:0;border-top:1px solid var(--line2)}}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:1.6rem}.mosaic{max-width:520px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"L1 L1" "T1 S1" "T1 S2" "W1 W1" "S3 T2" "S4 T2" "L2 L2" "W2 W2" "L3 L3"}.mosaic a.sz-L{background-size:auto 82%,auto}.proj{grid-template-columns:1fr}.proj .side{border-left:0;border-top:1px solid var(--line2)}}
 @media(max-width:520px){.facts{flex-wrap:wrap}.facts div{flex:1 1 40%;border:0}.proj .num{font-size:2.6rem}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 """
 
 THEME_JS = """(function(){var q=new URLSearchParams(location.search).get("theme");if(q==="light"||q==="dark"){localStorage.setItem("hub-theme",q)}else if(q==="auto"){localStorage.removeItem("hub-theme")}var v=localStorage.getItem("hub-theme");if(v)document.documentElement.setAttribute("data-theme",v)})();"""
 TOGGLE_JS = """(function(){var b=document.querySelector(".theme");function cur(){return localStorage.getItem("hub-theme")||"auto"}function show(){b.textContent={auto:"\\u25d1",light:"\\u2600",dark:"\\u263e"}[cur()];b.title={auto:"Theme: auto",light:"Theme: light",dark:"Theme: dark"}[cur()]}b.addEventListener("click",function(){var n={auto:"light",light:"dark",dark:"auto"}[cur()];if(n==="auto"){localStorage.removeItem("hub-theme");document.documentElement.removeAttribute("data-theme")}else{localStorage.setItem("hub-theme",n);document.documentElement.setAttribute("data-theme",n)}show()});show()})();"""
+
+
+# Hero mosaic: a 4 x 6 bento grid (areas in the .mosaic CSS). L = 2x2, T = 1x2 tall, W = 2x1 wide, S = 1x1.
+# Sites with the longest headline numbers take the large tiles; small tiles show the number and title only.
+SLOT = {"bph": "L1", "mjm": "L2", "skm": "L3", "llh": "T1", "aih": "T2", "ppm": "W1", "ans": "W2",
+        "cmm": "S1", "ahp": "S2", "pcm": "S3", "kmc": "S4"}  # tall tiles are one column wide: only short labels fit
+# Motif by kind of site, drawn in white over the colour: metrics = bars, history = timeline,
+# handbooks = stacked pages, evidence table = signal waves.
+KIND = {"cmm": "bars", "pcm": "bars", "skm": "bars", "ppm": "bars", "mjm": "bars",
+        "ahp": "time", "kmc": "time", "bph": "time", "llh": "pages", "aih": "pages", "ans": "waves"}
+
+
+def _svg(body: str) -> str:
+    from urllib.parse import quote
+    return "url(\"data:image/svg+xml," + quote(f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>{body}</svg>", safe="") + "\")"
+
+
+MOTIF = {
+    "bars": _svg("<g fill='#fff' fill-opacity='.15'><rect x='8' y='62' width='14' height='38' rx='2'/><rect x='28' y='40' width='14' height='60' rx='2'/>"
+                 "<rect x='48' y='52' width='14' height='48' rx='2'/><rect x='68' y='18' width='14' height='82' rx='2'/></g>"
+                 "<polyline points='15,56 35,34 55,46 75,12' fill='none' stroke='#fff' stroke-opacity='.3' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>"),
+    "time": _svg("<g stroke='#fff' stroke-opacity='.28' stroke-width='2.2' stroke-linecap='round'><line x1='4' y1='62' x2='98' y2='62'/>"
+                 "<line x1='22' y1='62' x2='22' y2='40'/><line x1='50' y1='62' x2='50' y2='28'/><line x1='78' y1='62' x2='78' y2='46'/></g>"
+                 "<g fill='#fff' fill-opacity='.2'><circle cx='22' cy='62' r='6'/><circle cx='50' cy='62' r='8'/><circle cx='78' cy='62' r='6'/>"
+                 "<rect x='12' y='30' width='20' height='8' rx='2'/><rect x='38' y='17' width='24' height='9' rx='2'/><rect x='68' y='36' width='20' height='8' rx='2'/></g>"),
+    "pages": _svg("<g stroke='#fff' stroke-opacity='.3' stroke-width='2' fill='#fff' fill-opacity='.07'>"
+                  "<rect x='34' y='8' width='54' height='70' rx='4' transform='rotate(8 61 43)'/><rect x='24' y='16' width='54' height='70' rx='4'/></g>"
+                  "<g stroke='#fff' stroke-opacity='.3' stroke-width='2.2' stroke-linecap='round'><line x1='33' y1='32' x2='68' y2='32'/><line x1='33' y1='44' x2='68' y2='44'/>"
+                  "<line x1='33' y1='56' x2='60' y2='56'/><line x1='33' y1='68' x2='64' y2='68'/></g>"),
+    "waves": _svg("<g fill='none' stroke='#fff' stroke-opacity='.28' stroke-width='2.4' stroke-linecap='round'>"
+                  "<path d='M30 74 a16 16 0 0 1 0 -32'/><path d='M44 84 a30 30 0 0 1 0 -52'/><path d='M58 94 a44 44 0 0 1 0 -72'/><path d='M72 104 a58 58 0 0 1 0 -92'/></g>"
+                  "<circle cx='22' cy='58' r='6' fill='#fff' fill-opacity='.25'/>"),
+}
 
 
 def esc(s):
@@ -530,9 +568,14 @@ def page(lang):
     nav = "".join(f"<a href='{h}'>{esc(l)}</a>" for h, l in T["nav"])
     projs = "\n".join(project(p, i + 1, lang) for i, p in enumerate(PROJECTS))
     chips = "".join(f"<a class='chip' href='#{p['key']}' style='--c:var(--{p['color']})'><i></i>{esc(p[lang]['title'])}</a>" for p in PROJECTS)
-    mosaic = "".join(
-        f"<a class='m{i+1}' href='#{p['key']}' style='--c:var(--{p['color']})'><span class='n'>{esc(p[lang]['facts'][0][0])}</span><small>{esc(p[lang]['facts'][0][1])} · {esc(p[lang]['title'])}</small></a>"
-        for i, p in enumerate(PROJECTS))
+    def tile(p):
+        slot = SLOT[p["key"]]
+        size = slot[0]
+        fact, label = p[lang]["facts"][0]
+        text = esc(p[lang]["title"]) if size == "S" else f"{esc(label)} · {esc(p[lang]['title'])}"
+        return (f"<a class='sz-{size}' href='#{p['key']}' title='{esc(label)} · {esc(p[lang]['title'])}' "
+                f"style='grid-area:{slot};--c:var(--{p['color']});--motif:{MOTIF[KIND[p['key']]]}'><span class='n'>{esc(fact)}</span><small>{text}</small></a>")
+    mosaic = "".join(tile(p) for p in PROJECTS)
     talks = "".join(f"<li><a href='{u}'><span class='gh'>GitHub</span><b>{esc(a)}</b><small>{esc(b)}</small></a></li>" for a, b, u in TALKS[lang])
     about = "".join(f"<div>{x}</div>" for x in T["about"])
     ll = T["lang_link"]
