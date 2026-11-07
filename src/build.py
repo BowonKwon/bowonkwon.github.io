@@ -19,6 +19,7 @@ PPM = "https://bowonkwon.github.io/Privilege-Metrics/"
 MJM = "https://bowonkwon.github.io/Munjip-Metrics/"
 AHP = "https://bowonkwon.github.io/AI-History-in-Papers/"
 KMC = "https://bowonkwon.github.io/Korean-Music-Charts/"
+BPH = "https://bowonkwon.github.io/Book-Publishing-History/"
 GH = "https://github.com/BowonKwon/"
 
 PROJECTS = [
@@ -284,6 +285,33 @@ PROJECTS = [
         ),
     ),
     dict(
+        key="bph", color="s11", site=BPH, repo=GH + "Book-Publishing-History",
+        ko=dict(
+            tag="출판사·연대표", title="책 출간의 역사", en_title="A History of Book Publishing",
+            lead="필사본에서 전자책까지, 한 해에 책이 몇 종 나왔는지를 세는 방법과 함께 보는 역사 사이트. 출처마다 다른 선으로 놓고 출처가 셈법을 바꾼 해를 표시한다. 독일어권·네덜란드·인큐내뷸러 종합목록은 규칙을 먼저 정해 직접 다시 셌고, 한국·일본·중국·미국의 공식 표는 원문에서 옮겨 대조했다.",
+            items=[
+                ("일곱 장", "「책 한 종」을 어떻게 세나부터 디지털 이후까지", "ko/ch0.html"),
+                ("정의 단절 연대표", "UNESCO 1964 권고부터 출처마다 셈법이 바뀐 자리", "ko/ch0.html"),
+                ("데이터", "판 수·종수·정의 단절 표 CSV 21개", "ko/data.html"),
+                ("방법", "미리 정한 계수 규칙과 사후 정정, 독립 재계수 결과", "ko/method.html"),
+            ],
+            extra=None,
+            facts=[("669,442", "독일어권 인쇄본 판 수, 1501–1800(VD16·17·18)"), ("28,530", "1500년까지 인쇄된 판(ISTC)"), ("11", "출처가 셈법을 바꾼 자리")],
+        ),
+        en=dict(
+            tag="Publishing history · timeline", title="A History of Book Publishing", en_title="",
+            lead="A history site that follows, from manuscripts to e-books, how many books appeared each year together with how they were counted. Each source gets its own line, and the years in which a source changed its counting are marked. The German, Dutch and incunabula union catalogs were recounted under rules fixed in advance; official tables for Korea, Japan, China and the United States were transcribed from the originals and checked against them.",
+            items=[
+                ("Seven chapters", "From how to count \"one book\" to after digital", "en/ch0.html"),
+                ("Timeline of definition breaks", "From the 1964 UNESCO recommendation on, each point where a source changed its counting", "en/ch0.html"),
+                ("Data", "21 CSV files of editions, titles and definition breaks", "en/data.html"),
+                ("Method", "Counting rules fixed in advance, later corrections, and the independent recount", "en/method.html"),
+            ],
+            extra=None,
+            facts=[("669,442", "editions printed in the German-speaking lands, 1501–1800 (VD16, VD17, VD18)"), ("28,530", "editions printed up to 1500 (ISTC)"), ("11", "points where a source changed its counting")],
+        ),
+    ),
+    dict(
         key="mjm", color="s8", site=MJM, repo=GH + "Munjip-Metrics",
         ko=dict(
             tag="한문학·데이터", title="문집 메트릭스", en_title="Munjip Metrics",
@@ -312,7 +340,7 @@ PROJECTS = [
     ),
 ]
 
-ORDER = ["llh", "aih", "ahp", "cmm", "kmc", "ans", "pcm", "ppm", "skm", "mjm"]
+ORDER = ["llh", "aih", "ahp", "cmm", "kmc", "ans", "pcm", "ppm", "bph", "skm", "mjm"]
 assert sorted(ORDER) == sorted(p["key"] for p in PROJECTS)
 PROJECTS.sort(key=lambda p: ORDER.index(p["key"]))
 
@@ -333,11 +361,11 @@ TEXT = dict(
     ko=dict(
         title="권보원의 실험실 — 생성형 AI와 함께 엮은 공개 자료", name="권보원", sub="Bowon Kwon", lab="실험실 · Lab",
         hero="생성형 AI와 함께 엮은 공개 자료",
-        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯, 논문과 가요 차트로 엮은 역사 사이트 둘. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
+        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯, 논문·가요 차트·책 출간으로 엮은 역사 사이트 셋. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
         nav=[("#projects", "자료"), ("#talks", "발표·스터디"), ("#about", "일러두기")],
         projects_h="자료", talks_h="발표·스터디", about_h="일러두기",
         site="사이트로", repo="저장소", more="전부 보기", contents="들어 있는 것",
-        projects_sub="열 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
+        projects_sub="열한 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
         about=[
             "<b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI(Codex)가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.",
             "<b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리) 또는 CC BY 4.0으로, 코드는 PolyForm Noncommercial 1.0.0 또는 MIT 등 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.",
@@ -349,11 +377,11 @@ TEXT = dict(
     en=dict(
         title="Bowon Kwon’s Lab — Public materials compiled with generative AI", name="Bowon Kwon", sub="권보원", lab="Lab · 실험실",
         hero="Public materials compiled with generative AI",
-        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections, and two history sites built from papers and from music charts. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
+        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections, and three history sites built from papers, music charts and book publishing. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
         nav=[("#projects", "Materials"), ("#talks", "Talks & study groups"), ("#about", "Notes")],
         projects_h="Materials", talks_h="Talks & study groups", about_h="Notes",
         site="Open site", repo="Repository", more="See all", contents="Inside",
-        projects_sub="Ten collections — details on each site", talks_sub="Slides live in the GitHub repositories",
+        projects_sub="Eleven collections — details on each site", talks_sub="Slides live in the GitHub repositories",
         about=[
             "<b>Checked against the originals</b> Statutes, judgments, source texts and figures were machine-checked against official texts or open datasets, and a separate AI reviewer (Codex) that took no part in the writing reviewed them blind, from the raw sources only. Errors may still remain.",
             "<b>Licence</b> To the extent the editor holds rights, texts are licensed under CC BY-NC 4.0 or CC BY 4.0, and code under the PolyForm Noncommercial 1.0.0, MIT or the terms stated in each repository. Quoted statutes, judgments, source texts and data remain subject to their own rights holders. Details are in each repository.",
@@ -369,7 +397,7 @@ CSS = """
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--s9:#5b6a9c;--s10:#7d6b2e;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--s9:#5b6a9c;--s10:#7d6b2e;--s11:#8e4f86;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -377,13 +405,13 @@ CSS = """
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
