@@ -74,7 +74,7 @@ PROJECTS = [
                 ("읽은 것이 사라지지 않는 서재", "법률가를 위한 LLM 위키 자습서", "llm-wiki/"),
             ],
             extra=None,
-            facts=[("4", "자습서"), ("3", "영어판 병행"), ("PDF", "인쇄본 함께")],
+            facts=[("4", "자습서"), ("4", "영어판 병행"), ("PDF", "인쇄본 함께")],
         ),
         en=dict(
             tag="AI · computer science", title="AI-Assisted Handbooks", en_title="",
@@ -83,10 +83,10 @@ PROJECTS = [
                 ("Machines That Think, Act, and Revise", "Reading agentic-AI papers, from ReAct to LLM Wiki", "agentic-ai-reading/en/"),
                 ("Harness in Hand", "Building AI agents with Claude Code and Codex", "agentic-ai-practice/en/"),
                 ("AI Infrastructure and Semiconductors", "A seven-session self-study guide", "ai-infra-semiconductors/en/"),
-                ("A Library That Remembers What You Read", "Building an LLM wiki — a guide for lawyers (Korean only)", "llm-wiki/"),
+                ("A Library That Remembers What You Read", "Building an LLM wiki — a guide for lawyers", "llm-wiki/en/"),
             ],
             extra=None,
-            facts=[("4", "handbooks"), ("3", "with English editions"), ("PDF", "print editions included")],
+            facts=[("4", "handbooks"), ("4", "with English editions"), ("PDF", "print editions included")],
         ),
     ),
     dict(
