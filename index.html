@@ -8,7 +8,7 @@
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--s9:#5b6a9c;--s10:#7d6b2e;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--s9:#5b6a9c;--s10:#7d6b2e;--s11:#8e4f86;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -16,13 +16,13 @@
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
@@ -109,10 +109,10 @@ footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{w
 <header><a class="brand" href="#"><i></i>권보원</a><nav><a href='#projects'>자료</a><a href='#talks'>발표·스터디</a><a href='#about'>일러두기</a></nav>
 <div class="right"><a class="lang" href="en/index.html">English</a><button class="theme" aria-label="theme">◑</button></div></header>
 <main>
-<div class="hero"><div><div class="who">실험실 · Lab</div><h1>생성형 AI와 함께 엮은 공개 자료</h1><p class="lead">완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯, 논문과 가요 차트로 엮은 역사 사이트 둘. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.</p>
-<div class="cta"><a class='chip' href='#llh' style='--c:var(--s1)'><i></i>법률 외국어 자습서</a><a class='chip' href='#aih' style='--c:var(--s3)'><i></i>AI 자습서</a><a class='chip' href='#ahp' style='--c:var(--s9)'><i></i>논문으로 읽는 인공지능의 역사</a><a class='chip' href='#cmm' style='--c:var(--s2)'><i></i>서양 고전 음악 메트릭스</a><a class='chip' href='#kmc' style='--c:var(--s10)'><i></i>가요 차트 100년</a><a class='chip' href='#ans' style='--c:var(--s4)'><i></i>동물의 신호, 어디까지 알았나</a><a class='chip' href='#pcm' style='--c:var(--s5)'><i></i>물리 상수 메트릭스</a><a class='chip' href='#ppm' style='--c:var(--s7)'><i></i>특권에서 특허로</a><a class='chip' href='#skm' style='--c:var(--s6)'><i></i>실록 메트릭스</a><a class='chip' href='#mjm' style='--c:var(--s8)'><i></i>문집 메트릭스</a></div></div>
-<div class="mosaic" aria-hidden="true"><a class='m1' href='#llh' style='--c:var(--s1)'><span class='n'>10</span><small>언어판 · 법률 외국어 자습서</small></a><a class='m2' href='#aih' style='--c:var(--s3)'><span class='n'>4</span><small>자습서 · AI 자습서</small></a><a class='m3' href='#ahp' style='--c:var(--s9)'><span class='n'>191</span><small>원 논문, 1943–2025 · 논문으로 읽는 인공지능의 역사</small></a><a class='m4' href='#cmm' style='--c:var(--s2)'><span class='n'>679</span><small>악장(음표 63만 8천) · 서양 고전 음악 메트릭스</small></a><a class='m5' href='#kmc' style='--c:var(--s10)'><span class='n'>122</span><small>음반협회 월간 가요 1위, 1998–2008 사본 전수 대조 · 가요 차트 100년</small></a><a class='m6' href='#ans' style='--c:var(--s4)'><span class='n'>183</span><small>주장, 등급 A~NS · 동물의 신호, 어디까지 알았나</small></a><a class='m7' href='#pcm' style='--c:var(--s5)'><span class='n'>10</span><small>판, 1969~2022 · 물리 상수 메트릭스</small></a><a class='m8' href='#ppm' style='--c:var(--s7)'><span class='n'>14,375</span><small>잉글랜드 발명 허여, 1561–1852 · 특권에서 특허로</small></a><a class='m9' href='#skm' style='--c:var(--s6)'><span class='n'>414,501</span><small>기사, 판본 33종 · 실록 메트릭스</small></a><a class='m10' href='#mjm' style='--c:var(--s8)'><span class='n'>637,203</span><small>편, 문집 1,249종 · 문집 메트릭스</small></a></div></div>
-<div class="sec" id="projects"><div class="sec-head"><span class="no">01</span><h2>자료</h2><p>열 묶음 — 자세한 것은 각 사이트에</p></div>
+<div class="hero"><div><div class="who">실험실 · Lab</div><h1>생성형 AI와 함께 엮은 공개 자료</h1><p class="lead">완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯, 논문·가요 차트·책 출간으로 엮은 역사 사이트 셋. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.</p>
+<div class="cta"><a class='chip' href='#llh' style='--c:var(--s1)'><i></i>법률 외국어 자습서</a><a class='chip' href='#aih' style='--c:var(--s3)'><i></i>AI 자습서</a><a class='chip' href='#ahp' style='--c:var(--s9)'><i></i>논문으로 읽는 인공지능의 역사</a><a class='chip' href='#cmm' style='--c:var(--s2)'><i></i>서양 고전 음악 메트릭스</a><a class='chip' href='#kmc' style='--c:var(--s10)'><i></i>가요 차트 100년</a><a class='chip' href='#ans' style='--c:var(--s4)'><i></i>동물의 신호, 어디까지 알았나</a><a class='chip' href='#pcm' style='--c:var(--s5)'><i></i>물리 상수 메트릭스</a><a class='chip' href='#ppm' style='--c:var(--s7)'><i></i>특권에서 특허로</a><a class='chip' href='#bph' style='--c:var(--s11)'><i></i>책 출간의 역사</a><a class='chip' href='#skm' style='--c:var(--s6)'><i></i>실록 메트릭스</a><a class='chip' href='#mjm' style='--c:var(--s8)'><i></i>문집 메트릭스</a></div></div>
+<div class="mosaic" aria-hidden="true"><a class='m1' href='#llh' style='--c:var(--s1)'><span class='n'>10</span><small>언어판 · 법률 외국어 자습서</small></a><a class='m2' href='#aih' style='--c:var(--s3)'><span class='n'>4</span><small>자습서 · AI 자습서</small></a><a class='m3' href='#ahp' style='--c:var(--s9)'><span class='n'>191</span><small>원 논문, 1943–2025 · 논문으로 읽는 인공지능의 역사</small></a><a class='m4' href='#cmm' style='--c:var(--s2)'><span class='n'>679</span><small>악장(음표 63만 8천) · 서양 고전 음악 메트릭스</small></a><a class='m5' href='#kmc' style='--c:var(--s10)'><span class='n'>122</span><small>음반협회 월간 가요 1위, 1998–2008 사본 전수 대조 · 가요 차트 100년</small></a><a class='m6' href='#ans' style='--c:var(--s4)'><span class='n'>183</span><small>주장, 등급 A~NS · 동물의 신호, 어디까지 알았나</small></a><a class='m7' href='#pcm' style='--c:var(--s5)'><span class='n'>10</span><small>판, 1969~2022 · 물리 상수 메트릭스</small></a><a class='m8' href='#ppm' style='--c:var(--s7)'><span class='n'>14,375</span><small>잉글랜드 발명 허여, 1561–1852 · 특권에서 특허로</small></a><a class='m9' href='#bph' style='--c:var(--s11)'><span class='n'>669,442</span><small>독일어권 인쇄본 판 수, 1501–1800(VD16·17·18) · 책 출간의 역사</small></a><a class='m10' href='#skm' style='--c:var(--s6)'><span class='n'>414,501</span><small>기사, 판본 33종 · 실록 메트릭스</small></a><a class='m11' href='#mjm' style='--c:var(--s8)'><span class='n'>637,203</span><small>편, 문집 1,249종 · 문집 메트릭스</small></a></div></div>
+<div class="sec" id="projects"><div class="sec-head"><span class="no">01</span><h2>자료</h2><p>열한 묶음 — 자세한 것은 각 사이트에</p></div>
 <section class='proj' id='llh' style='--c:var(--s1)'>
 <span class='num' aria-hidden='true'>01</span>
 <div class='info'>
@@ -210,8 +210,20 @@ footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{w
 <p class='h'>들어 있는 것</p>
 <ul class='items'><li><a href='https://bowonkwon.github.io/Privilege-Metrics/ko/metrics/index.html'><b>지표</b><small>몇 건·어느 분야·누가·어떤 조건, 출판 등록까지 다섯 계열 18개</small></a></li><li><a href='https://bowonkwon.github.io/Privilege-Metrics/ko/places.html'><b>관할</b><small>잉글랜드·베네치아·네덜란드, 목록과 단위</small></a></li><li><a href='https://bowonkwon.github.io/Privilege-Metrics/ko/reading.html'><b>읽기용 판</b><small>1624년 전후, 누가 받았나, 출판 쪽</small></a></li><li><a href='https://bowonkwon.github.io/Privilege-Metrics/ko/data.html'><b>데이터</b><small>Woodcroft 14,359번·출판업조합 등록·코딩 표 전부 CSV</small></a></li></ul>
 </div></section>
-<section class='proj' id='skm' style='--c:var(--s6)'>
+<section class='proj' id='bph' style='--c:var(--s11)'>
 <span class='num' aria-hidden='true'>09</span>
+<div class='info'>
+<span class='tag'>출판사·연대표</span>
+<h3>책 출간의 역사<small>A History of Book Publishing</small></h3>
+<p class='lead'>필사본에서 전자책까지, 한 해에 책이 몇 종 나왔는지를 세는 방법과 함께 보는 역사 사이트. 출처마다 다른 선으로 놓고 출처가 셈법을 바꾼 해를 표시한다. 독일어권·네덜란드·인큐내뷸러 종합목록은 규칙을 먼저 정해 직접 다시 셌고, 한국·일본·중국·미국의 공식 표는 원문에서 옮겨 대조했다.</p>
+<div class='facts'><div><span class='n'>669,442</span><small>독일어권 인쇄본 판 수, 1501–1800(VD16·17·18)</small></div><div><span class='n'>28,530</span><small>1500년까지 인쇄된 판(ISTC)</small></div><div><span class='n'>11</span><small>출처가 셈법을 바꾼 자리</small></div></div>
+<div class='links'><a class='btn primary' href='https://bowonkwon.github.io/Book-Publishing-History/'>사이트로 <span class='ar'>→</span></a><a class='btn' href='https://github.com/BowonKwon/Book-Publishing-History'>저장소 (GitHub)</a></div>
+</div><div class='side'>
+<p class='h'>들어 있는 것</p>
+<ul class='items'><li><a href='https://bowonkwon.github.io/Book-Publishing-History/ko/ch0.html'><b>일곱 장</b><small>「책 한 종」을 어떻게 세나부터 디지털 이후까지</small></a></li><li><a href='https://bowonkwon.github.io/Book-Publishing-History/ko/ch0.html'><b>정의 단절 연대표</b><small>UNESCO 1964 권고부터 출처마다 셈법이 바뀐 자리</small></a></li><li><a href='https://bowonkwon.github.io/Book-Publishing-History/ko/data.html'><b>데이터</b><small>판 수·종수·정의 단절 표 CSV 21개</small></a></li><li><a href='https://bowonkwon.github.io/Book-Publishing-History/ko/method.html'><b>방법</b><small>미리 정한 계수 규칙과 사후 정정, 독립 재계수 결과</small></a></li></ul>
+</div></section>
+<section class='proj' id='skm' style='--c:var(--s6)'>
+<span class='num' aria-hidden='true'>10</span>
 <div class='info'>
 <span class='tag'>역사·데이터</span>
 <h3>실록 메트릭스<small>Sillok Metrics</small></h3>
@@ -223,7 +235,7 @@ footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{w
 <ul class='items'><li><a href='https://bowonkwon.github.io/Sillok-Metrics/ko/metrics/index.html'><b>지표</b><small>기록의 양·판본·하늘·정치·형정에 사료 셋·날씨 칸을 더한 일곱 계열 34개</small></a></li><li><a href='https://bowonkwon.github.io/Sillok-Metrics/ko/kings/index.html'><b>왕대</b><small>27대 각각의 기사·글자·지표와 재위 리본</small></a></li><li><a href='https://bowonkwon.github.io/Sillok-Metrics/ko/reading.html'><b>읽기용 판</b><small>하늘은 맞았나, 사형 기사는 사형이 아니다</small></a></li><li><a href='https://bowonkwon.github.io/Sillok-Metrics/ko/data.html'><b>데이터</b><small>기사 테이블·코드북·판정 전부 CSV</small></a></li></ul>
 </div></section>
 <section class='proj' id='mjm' style='--c:var(--s8)'>
-<span class='num' aria-hidden='true'>10</span>
+<span class='num' aria-hidden='true'>11</span>
 <div class='info'>
 <span class='tag'>한문학·데이터</span>
 <h3>문집 메트릭스<small>Munjip Metrics</small></h3>
@@ -240,6 +252,6 @@ footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{w
 <div class="sec" id="about"><div class="sec-head"><span class="no">03</span><h2>일러두기</h2></div>
 <div class="about"><div><b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI(Codex)가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.</div><div><b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리) 또는 CC BY 4.0으로, 코드는 PolyForm Noncommercial 1.0.0 또는 MIT 등 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.</div><div><b>개인 자료</b> 엮은이가 개인적으로 공부하며 만든 것으로, 엮은이가 속한 기관의 견해나 업무와는 관계가 없습니다. 법률 자문이 아닙니다.</div></div></div>
 </main>
-<footer><div class="dots"><i style='background:var(--s1)'></i><i style='background:var(--s3)'></i><i style='background:var(--s9)'></i><i style='background:var(--s2)'></i><i style='background:var(--s10)'></i><i style='background:var(--s4)'></i><i style='background:var(--s5)'></i><i style='background:var(--s7)'></i><i style='background:var(--s6)'></i><i style='background:var(--s8)'></i></div><br>© 2026 권보원(Bowon Kwon) · 갱신 2026-11-06 · <a href="https://github.com/BowonKwon/">GitHub</a></footer>
+<footer><div class="dots"><i style='background:var(--s1)'></i><i style='background:var(--s3)'></i><i style='background:var(--s9)'></i><i style='background:var(--s2)'></i><i style='background:var(--s10)'></i><i style='background:var(--s4)'></i><i style='background:var(--s5)'></i><i style='background:var(--s7)'></i><i style='background:var(--s11)'></i><i style='background:var(--s6)'></i><i style='background:var(--s8)'></i></div><br>© 2026 권보원(Bowon Kwon) · 갱신 2026-11-07 · <a href="https://github.com/BowonKwon/">GitHub</a></footer>
 <script>(function(){var b=document.querySelector(".theme");function cur(){return localStorage.getItem("hub-theme")||"auto"}function show(){b.textContent={auto:"\u25d1",light:"\u2600",dark:"\u263e"}[cur()];b.title={auto:"Theme: auto",light:"Theme: light",dark:"Theme: dark"}[cur()]}b.addEventListener("click",function(){var n={auto:"light",light:"dark",dark:"auto"}[cur()];if(n==="auto"){localStorage.removeItem("hub-theme");document.documentElement.removeAttribute("data-theme")}else{localStorage.setItem("hub-theme",n);document.documentElement.setAttribute("data-theme",n)}show()});show()})();</script>
 </body></html>
