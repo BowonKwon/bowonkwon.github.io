@@ -147,10 +147,12 @@ PROJECTS = [
         key="cmm", color="s2", site=CMM, repo=GH + "Classical-Music-Metrics",
         ko=dict(
             tag="음악·데이터", title="서양 고전 음악 메트릭스", en_title="Classical Music Metrics",
-            lead="악보와 연주를 숫자로 읽는 공개 데이터 사이트. 지표마다 정의·공식·표본·한계를 함께 두고, 공개 악보 코퍼스와 연주 데이터셋에서 뽑은 수치를 한 면씩 보여 준다. 바흐·베토벤·모차르트 악보, 뉴욕 필하모닉 전 작곡가 레퍼토리, IMSLP로 본 작품 활동과 A음 높이의 역사, 공연 기록으로 견준 악단 레퍼토리(1.5)까지.",
+            lead="악보와 연주를 숫자로 읽는 공개 데이터 사이트. 지표마다 정의·공식·표본·한계를 함께 두고, 공개 악보 코퍼스와 연주 데이터셋에서 뽑은 수치를 한 면씩 보여 준다. 바흐·베토벤·모차르트 악보, 뉴욕 필하모닉 전 작곡가 레퍼토리, IMSLP로 본 작품 활동과 A음 높이의 역사, 공연 기록으로 견준 악단 레퍼토리(1.5), 곡집 40개로 본 화성의 역사와 듣는 음계(1.6)까지.",
             items=[
                 ("지표 60개", "악보 39 · 연주 9 · 레퍼토리 12", "ko/metrics/index.html"),
                 ("작품·역사", "작품 활동·편성·템포 지시어·A음 높이", "ko/history.html"),
+                ("화성의 역사", "곡집 40개로 본 7화음·반음계, 1590~1931", "ko/harmony.html"),
+                ("음계와 조율", "시대·지역별 음계 23개를 보고 듣기", "ko/scales.html"),
                 ("악단 비교", "뉴욕 필·카네기홀·게반트하우스·서울시향", "ko/orchestras.html"),
                 ("읽기용 판", "숫자가 말하는 것을 한 편의 글로", "ko/reading.html"),
                 ("데이터", "CSV 내려받기와 라이선스", "ko/data.html"),
@@ -161,10 +163,12 @@ PROJECTS = [
         ),
         en=dict(
             tag="Music · data", title="Classical Music Metrics", en_title="",
-            lead="An open data site that reads scores and performances as numbers. Every metric carries its definition, formula, sample and caveats, computed from open score corpora and performance datasets: Bach, Beethoven and Mozart scores, the New York Philharmonic's repertoire across every composer, work activity and the history of the pitch of a′ from IMSLP, and orchestras' repertoire compared from performance records (1.5).",
+            lead="An open data site that reads scores and performances as numbers. Every metric carries its definition, formula, sample and caveats, computed from open score corpora and performance datasets: Bach, Beethoven and Mozart scores, the New York Philharmonic's repertoire across every composer, work activity and the history of the pitch of a′ from IMSLP, orchestras' repertoire compared from performance records (1.5), and a history of harmony over 40 collections with scales you can hear (1.6).",
             items=[
                 ("60 metrics", "39 score · 9 performance · 12 repertoire", "en/metrics/index.html"),
                 ("Works & history", "Work activity, orchestration, tempo marks, pitch of a′", "en/history.html"),
+                ("History of harmony", "Seventh chords and chromaticism in 40 collections, 1590–1931", "en/harmony.html"),
+                ("Scales and tuning", "23 scales across periods and regions, to see and hear", "en/scales.html"),
                 ("Orchestras", "NY Phil, Carnegie Hall, Gewandhaus, Seoul Phil", "en/orchestras.html"),
                 ("Reading edition", "What the numbers say, as one essay", "en/reading.html"),
                 ("Data", "CSV downloads and licenses", "en/data.html"),
