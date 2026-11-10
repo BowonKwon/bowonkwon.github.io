@@ -147,7 +147,7 @@ PROJECTS = [
         key="cmm", color="s2", site=CMM, repo=GH + "Classical-Music-Metrics",
         ko=dict(
             tag="음악·데이터", title="서양 고전 음악 메트릭스", en_title="Classical Music Metrics",
-            lead="악보와 연주를 숫자로 읽는 공개 데이터 사이트. 지표마다 정의·공식·표본·한계를 함께 두고, 공개 악보 코퍼스와 연주 데이터셋에서 뽑은 수치를 한 면씩 보여 준다. 바흐·베토벤·모차르트 악보, 뉴욕 필하모닉 전 작곡가 레퍼토리, IMSLP로 본 작품 활동과 A음 높이의 역사, 공연 기록으로 견준 악단 레퍼토리(1.5), 곡집 40개로 본 화성의 역사와 듣는 음계(1.6), 같은 시대 건반 소나타 곡집 일곱 개의 비교(1.8), 낭만기 피아노 소품과 색으로 그린 조성 지도(1.9), 악장을 지표로 펼친 곡 지도(1.10)까지.",
+            lead="악보와 연주를 숫자로 읽는 공개 데이터 사이트. 지표마다 정의·공식·표본·한계를 함께 두고, 공개 악보 코퍼스와 연주 데이터셋에서 뽑은 수치를 한 면씩 보여 준다. 바흐·베토벤·모차르트 악보, 뉴욕 필하모닉 전 작곡가 레퍼토리, IMSLP로 본 작품 활동과 A음 높이의 역사, 공연 기록으로 견준 악단 레퍼토리(1.5), 곡집 40개로 본 화성의 역사와 듣는 음계(1.6), 같은 시대 건반 소나타 곡집 일곱 개의 비교(1.8), 낭만기 피아노 소품과 색으로 그린 조성 지도(1.9), 악장을 지표로 펼친 곡 지도(1.10), 작곡가 30명의 생애 장르 흐름(1.11)까지.",
             items=[
                 ("지표 67개", "악보 46 · 연주 9 · 레퍼토리 12", "ko/metrics/index.html"),
                 ("작품·역사", "작품 활동·편성·템포 지시어·A음 높이", "ko/history.html"),
@@ -156,6 +156,7 @@ PROJECTS = [
                 ("고전기 건반 소나타", "스카를라티부터 베토벤까지 곡집 일곱 개", "ko/sonatas.html"),
                 ("낭만기 피아노 소품", "쇼팽에서 메트너까지, 조성 지도", "ko/romantic.html"),
                 ("곡 지도", "악장 1,182개를 지표로 펼친 지도", "ko/map.html"),
+                ("작곡가와 장르", "30명의 생애에 걸친 장르 흐름", "ko/genres.html"),
                 ("악단 비교", "뉴욕 필·카네기홀·게반트하우스·서울시향", "ko/orchestras.html"),
                 ("읽기용 판", "숫자가 말하는 것을 한 편의 글로", "ko/reading.html"),
                 ("데이터", "CSV 내려받기와 라이선스", "ko/data.html"),
@@ -166,7 +167,7 @@ PROJECTS = [
         ),
         en=dict(
             tag="Music · data", title="Classical Music Metrics", en_title="",
-            lead="An open data site that reads scores and performances as numbers. Every metric carries its definition, formula, sample and caveats, computed from open score corpora and performance datasets: Bach, Beethoven and Mozart scores, the New York Philharmonic's repertoire across every composer, work activity and the history of the pitch of a′ from IMSLP, orchestras' repertoire compared from performance records (1.5), a history of harmony over 40 collections with scales you can hear (1.6), seven keyboard-sonata collections of the Classical era compared (1.8), Romantic piano pieces with colour key maps (1.9), and a map of movements laid out by their metrics (1.10).",
+            lead="An open data site that reads scores and performances as numbers. Every metric carries its definition, formula, sample and caveats, computed from open score corpora and performance datasets: Bach, Beethoven and Mozart scores, the New York Philharmonic's repertoire across every composer, work activity and the history of the pitch of a′ from IMSLP, orchestras' repertoire compared from performance records (1.5), a history of harmony over 40 collections with scales you can hear (1.6), seven keyboard-sonata collections of the Classical era compared (1.8), Romantic piano pieces with colour key maps (1.9), a map of movements laid out by their metrics (1.10), and genres across the lives of 30 composers (1.11).",
             items=[
                 ("67 metrics", "46 score · 9 performance · 12 repertoire", "en/metrics/index.html"),
                 ("Works & history", "Work activity, orchestration, tempo marks, pitch of a′", "en/history.html"),
@@ -175,6 +176,7 @@ PROJECTS = [
                 ("Classical-era keyboard sonatas", "Seven collections, from Scarlatti to Beethoven", "en/sonatas.html"),
                 ("Romantic piano miniatures", "From Chopin to Medtner, with key maps", "en/romantic.html"),
                 ("Piece map", "1,182 movements laid out by their metrics", "en/map.html"),
+                ("Composers and genres", "Genres across the lives of 30 composers", "en/genres.html"),
                 ("Orchestras", "NY Phil, Carnegie Hall, Gewandhaus, Seoul Phil", "en/orchestras.html"),
                 ("Reading edition", "What the numbers say, as one essay", "en/reading.html"),
                 ("Data", "CSV downloads and licenses", "en/data.html"),
