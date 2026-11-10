@@ -550,6 +550,28 @@ def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+# Keep the hub's language on the target site. Each site's root otherwise picks
+# a language from the browser (or its own saved choice), so a Korean-language
+# browser landed on Korean pages even from the English hub.
+SPLIT = {"ahp", "kmc", "cmm", "pcm", "skm", "ppm", "bph", "mjm"}  # ko/ and en/ folders
+QUERY = {"aih", "ans"}  # one page per language switch; honour ?lang=
+
+
+def entry(p, lang):
+    if p["key"] in SPLIT:
+        return f"{p['site']}{lang}/index.html"
+    if p["key"] in QUERY:
+        return f"{p['site']}?lang={lang}"
+    return p["site"]
+
+
+def link(p, path, lang):
+    url = p["site"] + path
+    if p["key"] == "ans":
+        url += f"?lang={lang}"
+    return url
+
+
 def project(p, i, lang):
     t, T = p[lang], TEXT[lang]
     h = [f"<section class='proj' id='{p['key']}' style='--c:var(--{p['color']})'>"]
@@ -560,13 +582,13 @@ def project(p, i, lang):
     h.append(f"<h3>{esc(t['title'])}{sub}</h3>")
     h.append(f"<p class='lead'>{esc(t['lead'])}</p>")
     h.append("<div class='facts'>" + "".join(f"<div><span class='n'>{esc(n)}</span><small>{esc(l)}</small></div>" for n, l in t["facts"]) + "</div>")
-    h.append(f"<div class='links'><a class='btn primary' href='{p['site']}'>{T['site']} <span class='ar'>→</span></a><a class='btn' href='{p['repo']}'>{T['repo']} (GitHub)</a></div>")
+    h.append(f"<div class='links'><a class='btn primary' href='{entry(p, lang)}'>{T['site']} <span class='ar'>→</span></a><a class='btn' href='{p['repo']}'>{T['repo']} (GitHub)</a></div>")
     h.append("</div><div class='side'>")
     h.append(f"<p class='h'>{esc(T['contents'])}</p>")
-    h.append("<ul class='items'>" + "".join(f"<li><a href='{p['site']}{path}'><b>{esc(a)}</b><small>{esc(b)}</small></a></li>" for a, b, path in t["items"]) + "</ul>")
+    h.append("<ul class='items'>" + "".join(f"<li><a href='{link(p, path, lang)}'><b>{esc(a)}</b><small>{esc(b)}</small></a></li>" for a, b, path in t["items"]) + "</ul>")
     if t["extra"]:
         k, a, b, path = t["extra"]
-        h.append(f"<p class='extra'><span class='tag'>{esc(k)}</span> <a href='{p['site']}{path}'><b>{esc(a)}</b></a> — {esc(b)}</p>")
+        h.append(f"<p class='extra'><span class='tag'>{esc(k)}</span> <a href='{link(p, path, lang)}'><b>{esc(a)}</b></a> — {esc(b)}</p>")
     h.append("</div></section>")
     return "\n".join(h)
 
