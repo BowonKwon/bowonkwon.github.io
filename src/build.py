@@ -26,6 +26,7 @@ PROJECTS = [
     dict(
         key="llh", color="s1", site=LLH, repo=GH + "Legal-Language-Handbooks",
         ko=dict(
+            # 순서(소유자 2026-11-11, 두 칸씩 한 줄): 영·일 / 독·프 / 중·베 / 스·포 / 이·라 / 러·튀 / 네·스웨 — 새 언어판은 이 자리에 끼운다(en 목록도 같게)
             tag="법률 외국어", title="법률 외국어 자습서", en_title="Legal Language Handbooks",
             lead="한국 법률가가 외국 법령·판결·원전을 원문으로 읽고 외국 법률가와 말할 수 있게 하려고 엮은 자습서. 열한 개 언어, 각각 화면본·PDF·Anki 덱.",
             items=[
@@ -34,10 +35,10 @@ PROJECTS = [
                 ("Anspruch", "청구권으로 읽는 법률 독일어", "anspruch/"),
                 ("Par ces motifs", "법전과 법정의 프랑스어", "par-ces-motifs/"),
                 ("本院认为", "조문과 판결의 중국어", "benyuan-renwei/"),
-                ("Suum cuique", "원전으로 읽는 법률 라틴어", "suum-cuique/"),
+                ("Nhân danh", "조문과 판결의 베트남어", "nhan-danh/"),
                 ("En nombre del Rey", "법전과 법정의 스페인어", "en-nombre-del-rey/"),
                 ("In nome del popolo italiano", "법전과 법정의 이탈리아어", "in-nome-del-popolo-italiano/"),
-                ("Nhân danh", "조문과 판결의 베트남어", "nhan-danh/"),
+                ("Suum cuique", "원전으로 읽는 법률 라틴어", "suum-cuique/"),
                 ("Установи́л", "조문과 판결로 읽는 법률 러시아어", "ustanovil/"),
                 ("Gereği düşünüldü", "조문으로 읽는 법률 튀르키예어", "https://bowonkwon.github.io/geregi-dusunuldu/"),
             ],
@@ -53,10 +54,10 @@ PROJECTS = [
                 ("Anspruch", "Legal German through the language of claims", "anspruch/"),
                 ("Par ces motifs", "French of the code and the courtroom", "par-ces-motifs/"),
                 ("本院认为", "Chinese of statutes and judgments", "benyuan-renwei/"),
-                ("Suum cuique", "Legal Latin from the sources", "suum-cuique/"),
+                ("Nhân danh", "Vietnamese of statutes and judgments", "nhan-danh/"),
                 ("En nombre del Rey", "Spanish of the code and the courtroom", "en-nombre-del-rey/"),
                 ("In nome del popolo italiano", "Italian of the code and the courtroom", "in-nome-del-popolo-italiano/"),
-                ("Nhân danh", "Vietnamese of statutes and judgments", "nhan-danh/"),
+                ("Suum cuique", "Legal Latin from the sources", "suum-cuique/"),
                 ("Установи́л", "Legal Russian through statutes and judgments", "ustanovil/"),
                 ("Gereği düşünüldü", "Legal Turkish through the statutes", "https://bowonkwon.github.io/geregi-dusunuldu/"),
             ],
