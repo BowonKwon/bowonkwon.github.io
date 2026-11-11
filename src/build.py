@@ -27,7 +27,7 @@ PROJECTS = [
         key="llh", color="s1", site=LLH, repo=GH + "Legal-Language-Handbooks",
         ko=dict(
             tag="법률 외국어", title="법률 외국어 자습서", en_title="Legal Language Handbooks",
-            lead="한국 법률가가 외국 법령·판결·원전을 원문으로 읽고 외국 법률가와 말할 수 있게 하려고 엮은 자습서. 열 개 언어, 각각 화면본·PDF·Anki 덱.",
+            lead="한국 법률가가 외국 법령·판결·원전을 원문으로 읽고 외국 법률가와 말할 수 있게 하려고 엮은 자습서. 열한 개 언어, 각각 화면본·PDF·Anki 덱.",
             items=[
                 ("Objection!", "법률 영어 첫걸음", "objection/"),
                 ("異議あり", "조문과 판례로 배우는 일본어", "igiari/"),
@@ -39,13 +39,14 @@ PROJECTS = [
                 ("In nome del popolo italiano", "법전과 법정의 이탈리아어", "in-nome-del-popolo-italiano/"),
                 ("Nhân danh", "조문과 판결의 베트남어", "nhan-danh/"),
                 ("Установи́л", "조문과 판결로 읽는 법률 러시아어", "ustanovil/"),
+                ("Gereği düşünüldü", "조문으로 읽는 법률 튀르키예어", "https://bowonkwon.github.io/geregi-dusunuldu/"),
             ],
             extra=("곁가지 연구", "세종의 글자로 보는 외래어 표기", "훈민정음의 글자로 외국어 소리를 적는 보조 표기와 그 근거(스페인어·러시아어·중국어)", "sejong/"),
-            facts=[("10", "언어판"), ("1.0", "대외판"), ("3", "꼴 — 화면본·PDF·Anki")],
+            facts=[("11", "언어판"), ("1.0", "대외판"), ("3", "꼴 — 화면본·PDF·Anki")],
         ),
         en=dict(
             tag="Legal languages", title="Legal Language Handbooks", en_title="",
-            lead="Self-study handbooks for Korean lawyers who want to read statutes, judgments and classic texts in the original. Ten languages, each as a web edition, a PDF and an Anki deck.",
+            lead="Self-study handbooks for Korean lawyers who want to read statutes, judgments and classic texts in the original. Eleven languages, each as a web edition, a PDF and an Anki deck.",
             items=[
                 ("Objection!", "First steps in legal English", "objection/"),
                 ("異議あり", "Japanese through statutes and case law", "igiari/"),
@@ -57,9 +58,10 @@ PROJECTS = [
                 ("In nome del popolo italiano", "Italian of the code and the courtroom", "in-nome-del-popolo-italiano/"),
                 ("Nhân danh", "Vietnamese of statutes and judgments", "nhan-danh/"),
                 ("Установи́л", "Legal Russian through statutes and judgments", "ustanovil/"),
+                ("Gereği düşünüldü", "Legal Turkish through the statutes", "https://bowonkwon.github.io/geregi-dusunuldu/"),
             ],
             extra=("Side study", "Foreign sounds in Sejong's letters", "An auxiliary transcription of foreign sounds using the letters of Hunminjeongeum, with its evidence (Spanish, Russian, Chinese)", "sejong/"),
-            facts=[("10", "languages"), ("1.0", "public edition"), ("3", "formats — web, PDF, Anki")],
+            facts=[("11", "languages"), ("1.0", "public edition"), ("3", "formats — web, PDF, Anki")],
         ),
     ),
     dict(
@@ -572,7 +574,7 @@ def entry(p, lang):
 
 
 def link(p, path, lang):
-    url = p["site"] + path
+    url = path if path.startswith("https://") else p["site"] + path
     if p["key"] == "ans":
         url += f"?lang={lang}"
     return url
