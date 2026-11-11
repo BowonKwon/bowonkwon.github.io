@@ -48,7 +48,7 @@ PROJECTS = [
         ),
         en=dict(
             tag="Legal languages", title="Legal Language Handbooks", en_title="",
-            lead="Self-study handbooks for Korean lawyers who want to read statutes, judgments and classic texts in the original. twelve languages, each as a web edition, a PDF and an Anki deck.",
+            lead="Self-study handbooks for Korean lawyers who want to read statutes, judgments and classic texts in the original. Twelve languages, each as a web edition, a PDF and an Anki deck.",
             items=[
                 ("Objection!", "First steps in legal English", "objection/"),
                 ("異議あり", "Japanese through statutes and case law", "igiari/"),
