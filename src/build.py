@@ -110,7 +110,7 @@ PROJECTS = [
                 ("논문 목록·방법", "191편 표와 CSV, 목록을 만들기 전에 등록한 선정 기준", "ko/papers.html"),
             ],
             extra=None,
-            facts=[("191", "원 논문, 1943–2025"), ("1,108", "확인된 인용선"), ("76%", "AAAI 참가자 감소, 1986→1997")],
+            facts=[("191", "원 논문, 1943–2025"), ("1,286", "확인된 인용선"), ("76%", "AAAI 참가자 감소, 1986→1997")],
         ),
         en=dict(
             tag="History of technology · papers", title="AI History in Papers", en_title="",
@@ -122,7 +122,7 @@ PROJECTS = [
                 ("Paper list and method", "191 papers as a table and CSV; selection rules registered before the list was made", "en/papers.html"),
             ],
             extra=None,
-            facts=[("191", "original papers, 1943–2025"), ("1,108", "confirmed citation lines"), ("76%", "fall in AAAI attendance, 1986→1997")],
+            facts=[("191", "original papers, 1943–2025"), ("1,286", "confirmed citation lines"), ("76%", "fall in AAAI attendance, 1986→1997")],
         ),
     ),
     dict(
@@ -156,7 +156,7 @@ PROJECTS = [
         key="cmm", color="s2", site=CMM, repo=GH + "Classical-Music-Metrics",
         ko=dict(
             tag="음악·데이터", title="서양 고전 음악 메트릭스", en_title="Classical Music Metrics",
-            lead="악보와 연주를 숫자로 읽는 공개 데이터 사이트. 지표마다 정의·공식·표본·한계를 함께 두고, 공개 악보 코퍼스와 연주 데이터셋에서 뽑은 수치를 한 면씩 보여 준다. 바흐·베토벤·모차르트 악보, 뉴욕 필하모닉 전 작곡가 레퍼토리, IMSLP로 본 작품 활동과 A음 높이의 역사, 공연 기록으로 견준 악단 레퍼토리(1.5), 곡집 40개로 본 화성의 역사와 듣는 음계(1.6), 같은 시대 건반 소나타 곡집 일곱 개의 비교(1.8), 낭만기 피아노 소품과 색으로 그린 조성 지도(1.9), 악장을 지표로 펼친 곡 지도(1.10), 작곡가 30명의 생애 장르 흐름(1.11)까지.",
+            lead="악보와 연주를 숫자로 읽는 공개 데이터 사이트. 지표마다 정의·공식·표본·한계를 함께 두고, 공개 악보 코퍼스와 연주 데이터셋에서 뽑은 수치를 한 면씩 보여 준다. 바흐·베토벤·모차르트 악보, 뉴욕 필하모닉 전 작곡가 레퍼토리, IMSLP로 본 작품 활동과 A음 높이의 역사, 공연 기록으로 견준 악단 레퍼토리(1.5), 곡집 40개로 본 화성의 역사와 듣는 음계(1.6), 같은 시대 건반 소나타 곡집 일곱 개의 비교(1.8), 낭만기 피아노 소품과 색으로 그린 조성 지도(1.9), 악장을 지표로 펼친 곡 지도(1.10), 작곡가 30명의 생애 장르 흐름(1.11), 음 분포와 근음 전이로 본 화성 진행(1.12)까지.",
             items=[
                 ("지표 68개", "악보 47 · 연주 9 · 레퍼토리 12", "ko/metrics/index.html"),
                 ("작품·역사", "작품 활동·편성·템포 지시어·A음 높이", "ko/history.html"),
@@ -177,7 +177,7 @@ PROJECTS = [
         ),
         en=dict(
             tag="Music · data", title="Classical Music Metrics", en_title="",
-            lead="An open data site that reads scores and performances as numbers. Every metric carries its definition, formula, sample and caveats, computed from open score corpora and performance datasets: Bach, Beethoven and Mozart scores, the New York Philharmonic's repertoire across every composer, work activity and the history of the pitch of a′ from IMSLP, orchestras' repertoire compared from performance records (1.5), a history of harmony over 40 collections with scales you can hear (1.6), seven keyboard-sonata collections of the Classical era compared (1.8), Romantic piano pieces with colour key maps (1.9), a map of movements laid out by their metrics (1.10), and genres across the lives of 30 composers (1.11).",
+            lead="An open data site that reads scores and performances as numbers. Every metric carries its definition, formula, sample and caveats, computed from open score corpora and performance datasets: Bach, Beethoven and Mozart scores, the New York Philharmonic's repertoire across every composer, work activity and the history of the pitch of a′ from IMSLP, orchestras' repertoire compared from performance records (1.5), a history of harmony over 40 collections with scales you can hear (1.6), seven keyboard-sonata collections of the Classical era compared (1.8), Romantic piano pieces with colour key maps (1.9), a map of movements laid out by their metrics (1.10), and genres across the lives of 30 composers (1.11), and pitch-class profiles and root progressions (1.12).",
             items=[
                 ("68 metrics", "47 score · 9 performance · 12 repertoire", "en/metrics/index.html"),
                 ("Works & history", "Work activity, orchestration, tempo marks, pitch of a′", "en/history.html"),
