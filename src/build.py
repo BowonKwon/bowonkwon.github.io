@@ -46,7 +46,7 @@ PROJECTS = [
                 ("Domslut", "조문으로 읽는 법률 스웨덴어", "https://bowonkwon.github.io/domslut/"),
             ],
             extra=("곁가지 연구", "세종의 글자로 보는 외래어 표기", "훈민정음의 글자로 외국어 소리를 적는 보조 표기와 그 근거(스페인어·러시아어·중국어)", "sejong/"),
-            facts=[("14", "언어판"), ("1.0", "대외판"), ("3", "꼴 — 화면본·PDF·Anki")],
+            facts=[("14", "언어판"), ("1.0–1.1", "대외판"), ("3", "꼴 — 화면본·PDF·Anki")],
         ),
         en=dict(
             tag="Legal languages", title="Legal Language Handbooks", en_title="",
@@ -68,7 +68,7 @@ PROJECTS = [
                 ("Domslut", "Legal Swedish through the statutes", "https://bowonkwon.github.io/domslut/"),
             ],
             extra=("Side study", "Foreign sounds in Sejong's letters", "An auxiliary transcription of foreign sounds using the letters of Hunminjeongeum, with its evidence (Spanish, Russian, Chinese)", "sejong/"),
-            facts=[("14", "languages"), ("1.0", "public edition"), ("3", "formats — web, PDF, Anki")],
+            facts=[("14", "languages"), ("1.0–1.1", "public editions"), ("3", "formats — web, PDF, Anki")],
         ),
     ),
     dict(
