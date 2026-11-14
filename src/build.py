@@ -20,6 +20,7 @@ MJM = "https://bowonkwon.github.io/Munjip-Metrics/"
 AHP = "https://bowonkwon.github.io/AI-History-in-Papers/"
 KMC = "https://bowonkwon.github.io/Korean-Music-Charts/"
 BPH = "https://bowonkwon.github.io/Book-Publishing-History/"
+JCL = "https://bowonkwon.github.io/Joseon-Code-Lineage/"
 GH = "https://github.com/BowonKwon/"
 
 PROJECTS = [
@@ -367,9 +368,36 @@ PROJECTS = [
             facts=[("637,203", "works in 1,249 collections"), ("62%", "of authors' own works are poems — 88% (15th c.) to 42% (19th)"), ("613", "of 1,248 authors linked to the examination roster")],
         ),
     ),
+    dict(
+        key="jcl", color="s12", site=JCL, repo=GH + "Joseon-Code-Lineage",
+        ko=dict(
+            tag="법제사·데이터", title="조선 법전 계보", en_title="Lineage of the Joseon Codes",
+            lead="『경국대전』(1485)에서 『대전회통』(1865)까지, 법전 밖에 쌓인 왕의 명령(수교)과 그것을 모은 중간 편찬물 일곱을 국사편찬위원회 원문 데이터로 센 역사 사이트. 1786년 『전율통보』가 조문마다 단 출처 표지로 그 책의 본문을 나누고, 표지 판독·수교 날짜·조문 분절은 미리 정한 규칙으로 따로 확인했다. 0.9판은 중간 편찬물을 다루고, 네 법전의 층은 1.0에서 나눈다.",
+            items=[
+                ("세 장", "속록과 후속록, 수교의 시대, 1786년의 단면", "ko/ch2.html"),
+                ("실록 속 법전", "27대 실록 기사에 법전 이름이 나오는 횟수", "ko/sillok.html"),
+                ("신뢰도", "표지 판독·날짜·조문 분절을 따로 확인한 결과", "ko/reliability.html"),
+                ("데이터", "『전율통보』 구간 4,907개와 날짜 문자열 목록 등 CSV 10개", "ko/data.html"),
+            ],
+            extra=None,
+            facts=[("4,287", "날짜가 적힌 수교 문자열, 중간 편찬물 일곱"), ("26.6%", "『전율통보』 六典 본문 가운데 『속대전』 표지"), ("507", "법전 이름이 나오는 실록 기사")],
+        ),
+        en=dict(
+            tag="Legal history · data", title="Lineage of the Joseon Codes", en_title="",
+            lead="A history site that counts, in the National Institute of Korean History's source-text data, the royal instructions (sugyo) that piled up outside the codes of Joseon between the Gyeongguk daejeon (1485) and the Daejeon hoetong (1865), and the seven intermediate compilations that gathered them. The source marks the Jeonyul tongbo of 1786 put on its provisions divide that book's text; mark reading, instruction dates and provision boundaries were checked separately under rules fixed in advance. Version 0.9 covers the intermediate compilations; the layers of the four codes follow in 1.0.",
+            items=[
+                ("Three chapters", "The Songnok and Husongnok, the age of royal instructions, a cross-section of 1786", "en/ch2.html"),
+                ("Codes in the Sillok", "How often the codes are named in the Veritable Records of 27 reigns", "en/sillok.html"),
+                ("Reliability", "Separate checks of mark reading, dates and provision boundaries", "en/reliability.html"),
+                ("Data", "The 4,907 segments of the Jeonyul tongbo, the list of dated strings and more: 10 CSV files", "en/data.html"),
+            ],
+            extra=None,
+            facts=[("4,287", "dated royal-instruction strings in seven compilations"), ("26.6%", "of the Jeonyul tongbo's text marked as from the Sok daejeon"), ("507", "Sillok articles naming a law code")],
+        ),
+    ),
 ]
 
-ORDER = ["llh", "aih", "ahp", "cmm", "kmc", "ans", "pcm", "ppm", "bph", "skm", "mjm"]
+ORDER = ["llh", "aih", "ahp", "cmm", "kmc", "ans", "pcm", "ppm", "bph", "skm", "mjm", "jcl"]
 assert sorted(ORDER) == sorted(p["key"] for p in PROJECTS)
 PROJECTS.sort(key=lambda p: ORDER.index(p["key"]))
 
@@ -390,11 +418,11 @@ TEXT = dict(
     ko=dict(
         title="권보원의 실험실 — 생성형 AI와 함께 엮은 공개 자료", name="권보원", sub="Bowon Kwon", lab="실험실 · Lab",
         hero="생성형 AI와 함께 엮은 공개 자료",
-        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI·테크 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯, 논문·가요 차트·책 출간으로 엮은 역사 사이트 셋. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
+        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI·테크 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯, 논문·가요 차트·책 출간·조선 법전으로 엮은 역사 사이트 넷. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
         nav=[("#projects", "자료"), ("#talks", "발표·스터디"), ("#about", "일러두기")],
         projects_h="자료", talks_h="발표·스터디", about_h="일러두기",
         site="사이트로", repo="저장소", more="전부 보기", contents="들어 있는 것",
-        projects_sub="열한 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
+        projects_sub="열두 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
         about=[
             "<b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI(Codex)가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.",
             "<b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리) 또는 CC BY 4.0으로, 코드는 PolyForm Noncommercial 1.0.0 또는 MIT 등 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.",
@@ -406,11 +434,11 @@ TEXT = dict(
     en=dict(
         title="Bowon Kwon’s Lab — Public materials compiled with generative AI", name="Bowon Kwon", sub="권보원", lab="Lab · 실험실",
         hero="Public materials compiled with generative AI",
-        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI and tech handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections, and three history sites built from papers, music charts and book publishing. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
+        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI and tech handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections, and four history sites built from papers, music charts, book publishing and the Joseon law codes. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
         nav=[("#projects", "Materials"), ("#talks", "Talks & study groups"), ("#about", "Notes")],
         projects_h="Materials", talks_h="Talks & study groups", about_h="Notes",
         site="Open site", repo="Repository", more="See all", contents="Inside",
-        projects_sub="Eleven collections — details on each site", talks_sub="Slides live in the GitHub repositories",
+        projects_sub="Twelve collections — details on each site", talks_sub="Slides live in the GitHub repositories",
         about=[
             "<b>Checked against the originals</b> Statutes, judgments, source texts and figures were machine-checked against official texts or open datasets, and a separate AI reviewer (Codex) that took no part in the writing reviewed them blind, from the raw sources only. Errors may still remain.",
             "<b>Licence</b> To the extent the editor holds rights, texts are licensed under CC BY-NC 4.0 or CC BY 4.0, and code under the PolyForm Noncommercial 1.0.0, MIT or the terms stated in each repository. Quoted statutes, judgments, source texts and data remain subject to their own rights holders. Details are in each repository.",
@@ -426,7 +454,7 @@ CSS = """
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--s9:#5b6a9c;--s10:#7d6b2e;--s11:#8e4f86;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--s9:#5b6a9c;--s10:#7d6b2e;--s11:#8e4f86;--s12:#6d5a45;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -434,13 +462,13 @@ CSS = """
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--s12:#b39a7c;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--s12:#b39a7c;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
@@ -476,11 +504,12 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
 .chip:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow2);border-color:var(--c)}
 .mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(86px,auto);gap:.6rem;
-  grid-template-areas:"L1 L1 T1 S1" "L1 L1 T1 S2" "S3 W1 W1 T2" "L2 L2 S4 T2" "L2 L2 L3 L3" "W2 W2 L3 L3"}
+  grid-template-areas:"L1 L1 T1 S1" "L1 L1 T1 S2" "S3 W1 W1 T2" "L2 L2 S4 T2" "L2 L2 L3 L3" "W2 W2 L3 L3" "B1 B1 B1 B1"}
 .mosaic a{border-radius:14px;padding:.85rem .9rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;min-height:0;
   background:var(--motif) right -6% top -8%/auto 64% no-repeat,linear-gradient(160deg,color-mix(in srgb,var(--c) 92%,#fff),color-mix(in srgb,var(--c) 78%,#000));box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
 .mosaic a.sz-W{background-size:auto 96%,auto;background-position:right -2% center,0 0}.mosaic a.sz-S{background-size:auto 58%,auto;background-position:right -16% top -12%,0 0}
 .mosaic a.sz-T{background-size:96% auto,auto;background-position:right -12% top -4%,0 0}
+.mosaic a.sz-B{background-size:auto 150%,auto;background-position:right 3% center,0 0}.mosaic .sz-B small{max-width:70%}
 .mosaic a:hover{text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow2)}
 .mosaic .n{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:600;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;position:relative}
 .mosaic .sz-L .n{font-size:clamp(1.9rem,3.4vw,2.7rem)}
@@ -521,7 +550,7 @@ html[lang="ko"] p,html[lang="ko"] small,html[lang="ko"] li{word-break:keep-all;o
 .about div b{display:block;color:var(--fg);font-family:var(--display);font-size:1.02rem;margin-bottom:.3rem}
 footer{border-top:1px solid var(--line);color:var(--fg3);font-size:.82rem;padding:1.4rem 1.2rem;text-align:center}
 footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{width:8px;height:8px;border-radius:50%;display:inline-block}
-@media(max-width:860px){.hero{grid-template-columns:1fr;gap:1.6rem}.mosaic{max-width:520px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"L1 L1" "T1 S1" "T1 S2" "W1 W1" "S3 T2" "S4 T2" "L2 L2" "W2 W2" "L3 L3"}.mosaic a.sz-L{background-size:auto 82%,auto}.proj{grid-template-columns:1fr}.proj .side{border-left:0;border-top:1px solid var(--line2)}}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:1.6rem}.mosaic{max-width:520px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"L1 L1" "T1 S1" "T1 S2" "W1 W1" "S3 T2" "S4 T2" "L2 L2" "W2 W2" "L3 L3" "B1 B1"}.mosaic a.sz-L{background-size:auto 82%,auto}.proj{grid-template-columns:1fr}.proj .side{border-left:0;border-top:1px solid var(--line2)}}
 @media(max-width:520px){.facts{flex-wrap:wrap}.facts div{flex:1 1 40%;border:0}.proj .num{font-size:2.6rem}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 """
@@ -533,11 +562,11 @@ TOGGLE_JS = """(function(){var b=document.querySelector(".theme");function cur()
 # Hero mosaic: a 4 x 6 bento grid (areas in the .mosaic CSS). L = 2x2, T = 1x2 tall, W = 2x1 wide, S = 1x1.
 # Sites with the longest headline numbers take the large tiles; small tiles show the number and title only.
 SLOT = {"bph": "L1", "mjm": "L2", "skm": "L3", "llh": "T1", "aih": "T2", "ppm": "W1", "ans": "W2",
-        "cmm": "S1", "ahp": "S2", "pcm": "S3", "kmc": "S4"}  # tall tiles are one column wide: only short labels fit
+        "cmm": "S1", "ahp": "S2", "pcm": "S3", "kmc": "S4", "jcl": "B1"}  # tall tiles are one column wide: only short labels fit
 # Motif by kind of site, drawn in white over the colour: metrics = bars, history = timeline,
 # handbooks = stacked pages, evidence table = signal waves.
 KIND = {"cmm": "bars", "pcm": "bars", "skm": "bars", "ppm": "bars", "mjm": "bars",
-        "ahp": "time", "kmc": "time", "bph": "time", "llh": "pages", "aih": "pages", "ans": "waves"}
+        "ahp": "time", "kmc": "time", "bph": "time", "llh": "pages", "aih": "pages", "ans": "waves", "jcl": "lineage"}
 
 
 def _svg(body: str) -> str:
@@ -557,6 +586,11 @@ MOTIF = {
                   "<rect x='34' y='8' width='54' height='70' rx='4' transform='rotate(8 61 43)'/><rect x='24' y='16' width='54' height='70' rx='4'/></g>"
                   "<g stroke='#fff' stroke-opacity='.3' stroke-width='2.2' stroke-linecap='round'><line x1='33' y1='32' x2='68' y2='32'/><line x1='33' y1='44' x2='68' y2='44'/>"
                   "<line x1='33' y1='56' x2='60' y2='56'/><line x1='33' y1='68' x2='64' y2='68'/></g>"),
+    "lineage": _svg("<g stroke='#fff' stroke-opacity='.3' stroke-width='2.2' stroke-linecap='round'><line x1='4' y1='70' x2='96' y2='70'/></g>"
+                    "<g fill='#fff' fill-opacity='.2'><circle cx='14' cy='70' r='6'/><circle cx='38' cy='70' r='6'/><circle cx='62' cy='70' r='6'/><circle cx='86' cy='70' r='6'/>"
+                    "<rect x='8' y='50' width='12' height='12' rx='2'/><rect x='32' y='50' width='12' height='12' rx='2'/><rect x='32' y='36' width='12' height='12' rx='2'/>"
+                    "<rect x='56' y='50' width='12' height='12' rx='2'/><rect x='56' y='36' width='12' height='12' rx='2'/><rect x='56' y='22' width='12' height='12' rx='2'/>"
+                    "<rect x='80' y='50' width='12' height='12' rx='2'/><rect x='80' y='36' width='12' height='12' rx='2'/><rect x='80' y='22' width='12' height='12' rx='2'/><rect x='80' y='8' width='12' height='12' rx='2'/></g>"),
     "waves": _svg("<g fill='none' stroke='#fff' stroke-opacity='.28' stroke-width='2.4' stroke-linecap='round'>"
                   "<path d='M30 74 a16 16 0 0 1 0 -32'/><path d='M44 84 a30 30 0 0 1 0 -52'/><path d='M58 94 a44 44 0 0 1 0 -72'/><path d='M72 104 a58 58 0 0 1 0 -92'/></g>"
                   "<circle cx='22' cy='58' r='6' fill='#fff' fill-opacity='.25'/>"),
@@ -570,7 +604,7 @@ def esc(s):
 # Keep the hub's language on the target site. Each site's root otherwise picks
 # a language from the browser (or its own saved choice), so a Korean-language
 # browser landed on Korean pages even from the English hub.
-SPLIT = {"ahp", "kmc", "cmm", "pcm", "skm", "ppm", "bph", "mjm"}  # ko/ and en/ folders
+SPLIT = {"ahp", "kmc", "cmm", "pcm", "skm", "ppm", "bph", "mjm", "jcl"}  # ko/ and en/ folders
 QUERY = {"aih", "ans"}  # one page per language switch; honour ?lang=
 
 
