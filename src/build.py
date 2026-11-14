@@ -48,7 +48,8 @@ PROJECTS = [
                 ("Recht doende", "조문으로 읽는 법률 네덜란드어", "https://bowonkwon.github.io/recht-doende/"),
                 ("Domslut", "조문으로 읽는 법률 스웨덴어", "https://bowonkwon.github.io/domslut/"),
             ],
-            extra=("곁가지 연구", "세종의 글자로 보는 외래어 표기", "훈민정음의 글자로 외국어 소리를 적는 보조 표기와 그 근거(스페인어·러시아어·중국어)", "sejong/"),
+            extra=[("곁가지 연구", "세종의 글자로 보는 외래어 표기", "훈민정음의 글자로 외국어 소리를 적는 보조 표기와 그 근거(스페인어·러시아어·중국어)", "sejong/"),
+                   ("곁가지 연구", "한글로 적으면 무엇이 남고 무엇이 빠지나", "그 표기 규약으로 적을 때 소리가 합쳐지는 자리와 글자가 없는 자리를 3,886개 언어 단위마다 센 형식 조건표(탐색판 1)", "https://bowonkwon.github.io/Hangul-Notation-Conditions/")],
             facts=[("14", "언어판"), ("1.0–1.1", "대외판"), ("3", "꼴 — 화면본·PDF·Anki")],
         ),
         en=dict(
@@ -70,7 +71,8 @@ PROJECTS = [
                 ("Recht doende", "Legal Dutch through the statutes", "https://bowonkwon.github.io/recht-doende/"),
                 ("Domslut", "Legal Swedish through the statutes", "https://bowonkwon.github.io/domslut/"),
             ],
-            extra=("Side study", "Foreign sounds in Sejong's letters", "An auxiliary transcription of foreign sounds using the letters of Hunminjeongeum, with its evidence (Spanish, Russian, Chinese)", "sejong/"),
+            extra=[("Side study", "Foreign sounds in Sejong's letters", "An auxiliary transcription of foreign sounds using the letters of Hunminjeongeum, with its evidence (Spanish, Russian, Chinese)", "sejong/"),
+                   ("Side study", "What Hangul writes and what it misses", "A formal-condition table that counts, for 3,886 language units, where sounds merge and where there is no letter under that notation (exploratory edition 1)", "https://bowonkwon.github.io/Hangul-Notation-Conditions/en/")],
             facts=[("14", "languages"), ("1.0–1.1", "public editions"), ("3", "formats — web, PDF, Anki")],
         ),
     ),
@@ -688,8 +690,7 @@ def project(p, i, lang):
     h.append("</div><div class='side'>")
     h.append(f"<p class='h'>{esc(T['contents'])}</p>")
     h.append("<ul class='items'>" + "".join(f"<li><a href='{link(p, path, lang)}'><b>{esc(a)}</b><small>{esc(b)}</small></a></li>" for a, b, path in t["items"]) + "</ul>")
-    if t["extra"]:
-        k, a, b, path = t["extra"]
+    for k, a, b, path in (t["extra"] if isinstance(t["extra"], list) else [t["extra"]] if t["extra"] else []):
         h.append(f"<p class='extra'><span class='tag'>{esc(k)}</span> <a href='{link(p, path, lang)}'><b>{esc(a)}</b></a> — {esc(b)}</p>")
     h.append("</div></section>")
     return "\n".join(h)
