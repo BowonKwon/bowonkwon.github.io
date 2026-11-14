@@ -4,6 +4,7 @@
 """
 from pathlib import Path
 import datetime as dt
+import re
 
 ROOT = Path(__file__).resolve().parent.parent
 TODAY = dt.date.today().isoformat()
@@ -418,7 +419,7 @@ TEXT = dict(
     ko=dict(
         title="권보원의 실험실 — 생성형 AI와 함께 엮은 공개 자료", name="권보원", sub="Bowon Kwon", lab="실험실 · Lab",
         hero="생성형 AI와 함께 엮은 공개 자료",
-        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI·테크 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯, 논문·가요 차트·책 출간·조선 법전으로 엮은 역사 사이트 넷. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
+        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI·테크 자습서, 논문으로 읽는 인공지능의 역사, 서양 고전 음악 메트릭스, 가요 차트 100년, 동물 신호 연구의 근거 등급표, 그리고 물리 상수·근대 이전 특권·책 출간·조선왕조실록·한국문집총간·조선 법전을 숫자와 연대표로 엮은 사이트 여섯. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
         nav=[("#projects", "자료"), ("#talks", "발표·스터디"), ("#about", "일러두기")],
         projects_h="자료", talks_h="발표·스터디", about_h="일러두기",
         site="사이트로", repo="저장소", more="전부 보기", contents="들어 있는 것",
@@ -434,7 +435,7 @@ TEXT = dict(
     en=dict(
         title="Bowon Kwon’s Lab — Public materials compiled with generative AI", name="Bowon Kwon", sub="권보원", lab="Lab · 실험실",
         hero="Public materials compiled with generative AI",
-        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI and tech handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections, and four history sites built from papers, music charts, book publishing and the Joseon law codes. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
+        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI and tech handbooks, a history of AI told through its papers, classical music metrics, a hundred years of Korean music charts, an evidence table for animal-signal research, and six sites that put physical constants, pre-modern privileges, book publishing, the Joseon Veritable Records, Korean literary collections and the Joseon law codes into numbers and timelines. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
         nav=[("#projects", "Materials"), ("#talks", "Talks & study groups"), ("#about", "Notes")],
         projects_h="Materials", talks_h="Talks & study groups", about_h="Notes",
         site="Open site", repo="Repository", more="See all", contents="Inside",
@@ -504,7 +505,7 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
 .chip:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow2);border-color:var(--c)}
 .mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(86px,auto);gap:.6rem;
-  grid-template-areas:"L1 L1 T1 S1" "L1 L1 T1 S2" "S3 W1 W1 T2" "L2 L2 S4 T2" "L2 L2 L3 L3" "W2 W2 L3 L3" "B1 B1 B1 B1"}
+  grid-template-areas:"L1 L1 L2 L2" "L1 L1 L2 L2" "S1 W1 W1 S2" "L3 L3 L4 L4" "L3 L3 L4 L4" "W2 W2 W3 W3" "S3 W4 W4 S4"}
 .mosaic a{border-radius:14px;padding:.85rem .9rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;min-height:0;
   background:var(--motif) right -6% top -8%/auto 64% no-repeat,linear-gradient(160deg,color-mix(in srgb,var(--c) 92%,#fff),color-mix(in srgb,var(--c) 78%,#000));box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
 .mosaic a.sz-W{background-size:auto 96%,auto;background-position:right -2% center,0 0}.mosaic a.sz-S{background-size:auto 58%,auto;background-position:right -16% top -12%,0 0}
@@ -512,9 +513,9 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .mosaic a.sz-B{background-size:auto 150%,auto;background-position:right 3% center,0 0}.mosaic .sz-B small{max-width:70%}
 .mosaic a:hover{text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow2)}
 .mosaic .n{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:600;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;position:relative}
-.mosaic .sz-L .n{font-size:clamp(1.9rem,3.4vw,2.7rem)}
+.mosaic .n{white-space:nowrap}.mosaic .sz-L .n{font-size:clamp(1.9rem,3.4vw,2.7rem)}.mosaic .sz-S .n.long{font-size:clamp(1.05rem,1.75vw,1.45rem)}
 .mosaic small{font-size:.78rem;line-height:1.35;opacity:.94;margin-top:.3rem;position:relative;text-shadow:0 1px 2px rgba(0,0,0,.18)}
-.mosaic small{overflow-wrap:normal;word-break:keep-all;hyphens:auto}.mosaic .sz-S small,.mosaic .sz-T small{font-size:.74rem}.mosaic .sz-W small{max-width:66%}
+.mosaic small{overflow-wrap:normal;word-break:keep-all;hyphens:auto}.mosaic .sz-S small,.mosaic .sz-T small{font-size:.74rem}.mosaic .sz-W small{max-width:84%}
 .proj{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;box-shadow:var(--shadow);position:relative;overflow:hidden;
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0}
 .proj::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)}
@@ -550,7 +551,7 @@ html[lang="ko"] p,html[lang="ko"] small,html[lang="ko"] li{word-break:keep-all;o
 .about div b{display:block;color:var(--fg);font-family:var(--display);font-size:1.02rem;margin-bottom:.3rem}
 footer{border-top:1px solid var(--line);color:var(--fg3);font-size:.82rem;padding:1.4rem 1.2rem;text-align:center}
 footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{width:8px;height:8px;border-radius:50%;display:inline-block}
-@media(max-width:860px){.hero{grid-template-columns:1fr;gap:1.6rem}.mosaic{max-width:520px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"L1 L1" "T1 S1" "T1 S2" "W1 W1" "S3 T2" "S4 T2" "L2 L2" "W2 W2" "L3 L3" "B1 B1"}.mosaic a.sz-L{background-size:auto 82%,auto}.proj{grid-template-columns:1fr}.proj .side{border-left:0;border-top:1px solid var(--line2)}}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:1.6rem}.mosaic{max-width:520px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"L1 L1" "L2 L2" "S1 S2" "W1 W1" "L3 L3" "L4 L4" "W2 W2" "W3 W3" "S3 S4" "W4 W4"}.mosaic a.sz-L{background-size:auto 82%,auto;min-height:124px}.mosaic .sz-S .n.long{font-size:clamp(1.5rem,2.6vw,2.1rem)}.proj{grid-template-columns:1fr}.proj .side{border-left:0;border-top:1px solid var(--line2)}}
 @media(max-width:520px){.facts{flex-wrap:wrap}.facts div{flex:1 1 40%;border:0}.proj .num{font-size:2.6rem}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 """
@@ -559,10 +560,11 @@ THEME_JS = """(function(){var q=new URLSearchParams(location.search).get("theme"
 TOGGLE_JS = """(function(){var b=document.querySelector(".theme");function cur(){return localStorage.getItem("hub-theme")||"auto"}function show(){b.textContent={auto:"\\u25d1",light:"\\u2600",dark:"\\u263e"}[cur()];b.title={auto:"Theme: auto",light:"Theme: light",dark:"Theme: dark"}[cur()]}b.addEventListener("click",function(){var n={auto:"light",light:"dark",dark:"auto"}[cur()];if(n==="auto"){localStorage.removeItem("hub-theme");document.documentElement.removeAttribute("data-theme")}else{localStorage.setItem("hub-theme",n);document.documentElement.setAttribute("data-theme",n)}show()});show()})();"""
 
 
-# Hero mosaic: a 4 x 6 bento grid (areas in the .mosaic CSS). L = 2x2, T = 1x2 tall, W = 2x1 wide, S = 1x1.
-# Sites with the longest headline numbers take the large tiles; small tiles show the number and title only.
-SLOT = {"bph": "L1", "mjm": "L2", "skm": "L3", "llh": "T1", "aih": "T2", "ppm": "W1", "ans": "W2",
-        "cmm": "S1", "ahp": "S2", "pcm": "S3", "kmc": "S4", "jcl": "B1"}  # tall tiles are one column wide: only short labels fit
+# Hero mosaic: a 4 x 7 bento grid (areas in the .mosaic CSS). L = 2x2, W = 2x1 wide, S = 1x1.
+# The collections with the most work and pages in them take the large tiles. Six-digit headline numbers
+# need a wide tile; small tiles show the number and title only.
+SLOT = {"llh": "L1", "aih": "L2", "ahp": "L3", "cmm": "L4", "ppm": "W1", "bph": "W2", "skm": "W3", "mjm": "W4",
+        "kmc": "S1", "ans": "S2", "pcm": "S3", "jcl": "S4"}
 # Motif by kind of site, drawn in white over the colour: metrics = bars, history = timeline,
 # handbooks = stacked pages, evidence table = signal waves.
 KIND = {"cmm": "bars", "pcm": "bars", "skm": "bars", "ppm": "bars", "mjm": "bars",
@@ -653,9 +655,11 @@ def page(lang):
         slot = SLOT[p["key"]]
         size = slot[0]
         fact, label = p[lang]["facts"][0]
-        text = esc(p[lang]["title"]) if size == "S" else f"{esc(label)} · {esc(p[lang]['title'])}"
+        short = re.sub(r"\s*\([^)]*\)$", "", label) if size == "W" else label  # wide tiles drop a trailing parenthetical; the tooltip and the card keep it
+        text = esc(p[lang]["title"]) if size == "S" else f"{esc(short)} · {esc(p[lang]['title'])}"
+        ncls = "n long" if size == "S" and len(fact) >= 5 else "n"  # a one-column tile holds about four digits at full size
         return (f"<a class='sz-{size}' href='#{p['key']}' title='{esc(label)} · {esc(p[lang]['title'])}' "
-                f"style='grid-area:{slot};--c:var(--{p['color']});--motif:{MOTIF[KIND[p['key']]]}'><span class='n'>{esc(fact)}</span><small>{text}</small></a>")
+                f"style='grid-area:{slot};--c:var(--{p['color']});--motif:{MOTIF[KIND[p['key']]]}'><span class='{ncls}'>{esc(fact)}</span><small>{text}</small></a>")
     mosaic = "".join(tile(p) for p in PROJECTS)
     talks = "".join(f"<li><a href='{u}'><span class='gh'>GitHub</span><b>{esc(a)}</b><small>{esc(b)}</small></a></li>" for a, b, u in TALKS[lang])
     about = "".join(f"<div>{x}</div>" for x in T["about"])
