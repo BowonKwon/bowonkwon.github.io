@@ -74,28 +74,30 @@ PROJECTS = [
     dict(
         key="aih", color="s3", site=AIH, repo=GH + "AI-Assisted-Handbooks",
         ko=dict(
-            tag="AI·컴퓨터과학", title="AI 자습서", en_title="AI-Assisted Handbooks",
-            lead="생성형 AI와 함께 엮은 자습서. Agentic AI 논문 읽기와 그 실전편, AI 인프라와 반도체, 법률가를 위한 LLM 위키.",
+            tag="AI·반도체·블록체인", title="AI·테크 자습서", en_title="AI-Assisted Handbooks",
+            lead="생성형 AI와 함께 엮은 자습서. Agentic AI 논문 읽기와 그 실전편, AI 인프라와 반도체, 법률가를 위한 LLM 위키, 법률가를 위한 블록체인.",
             items=[
                 ("생각하고, 행동하고, 고쳐 쓰는 기계", "ReAct에서 LLM Wiki까지, Agentic AI 논문 읽기", "agentic-ai-reading/"),
                 ("고삐를 쥐고 기계에게 일을 맡기는 법", "Claude Code·Codex로 내 일을 대신할 에이전트 짓기", "agentic-ai-practice/"),
                 ("AI 인프라와 반도체", "통계·전산·AI 배경 학습자를 위한 일곱 회차 자습서", "ai-infra-semiconductors/"),
                 ("읽은 것이 사라지지 않는 서재", "법률가를 위한 LLM 위키 자습서", "llm-wiki/"),
+                ("법률가를 위한 블록체인", "기술과 경제학으로 읽기", "blockchain-for-lawyers/"),
             ],
             extra=None,
-            facts=[("4", "자습서"), ("4", "영어판 병행"), ("PDF", "인쇄본 함께")],
+            facts=[("5", "자습서"), ("5", "영어판 병행"), ("PDF", "인쇄본 함께")],
         ),
         en=dict(
-            tag="AI · computer science", title="AI-Assisted Handbooks", en_title="",
-            lead="Study handbooks compiled with generative AI: reading agentic-AI papers and its hands-on companion, AI infrastructure and semiconductors, and an LLM wiki guide for lawyers.",
+            tag="AI · semiconductors · blockchain", title="AI-Assisted Handbooks", en_title="",
+            lead="Study handbooks compiled with generative AI: reading agentic-AI papers and its hands-on companion, AI infrastructure and semiconductors, an LLM wiki guide for lawyers, and blockchain for lawyers.",
             items=[
                 ("Machines That Think, Act, and Revise", "Reading agentic-AI papers, from ReAct to LLM Wiki", "agentic-ai-reading/en/"),
                 ("Harness in Hand", "Building AI agents with Claude Code and Codex", "agentic-ai-practice/en/"),
                 ("AI Infrastructure and Semiconductors", "A seven-session self-study guide", "ai-infra-semiconductors/en/"),
                 ("A Library That Remembers What You Read", "Building an LLM wiki — a guide for lawyers", "llm-wiki/en/"),
+                ("Blockchain for Lawyers", "A reading through technology and economics", "blockchain-for-lawyers/en/"),
             ],
             extra=None,
-            facts=[("4", "handbooks"), ("4", "with English editions"), ("PDF", "print editions included")],
+            facts=[("5", "handbooks"), ("5", "with English editions"), ("PDF", "print editions included")],
         ),
     ),
     dict(
@@ -388,7 +390,7 @@ TEXT = dict(
     ko=dict(
         title="권보원의 실험실 — 생성형 AI와 함께 엮은 공개 자료", name="권보원", sub="Bowon Kwon", lab="실험실 · Lab",
         hero="생성형 AI와 함께 엮은 공개 자료",
-        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯, 논문·가요 차트·책 출간으로 엮은 역사 사이트 셋. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
+        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI·테크 자습서, 동물 신호 연구의 근거 등급표, 그리고 서양 고전 음악·물리 상수·조선왕조실록·근대 이전 특권·한국문집총간을 숫자로 센 데이터 사이트 다섯, 논문·가요 차트·책 출간으로 엮은 역사 사이트 셋. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
         nav=[("#projects", "자료"), ("#talks", "발표·스터디"), ("#about", "일러두기")],
         projects_h="자료", talks_h="발표·스터디", about_h="일러두기",
         site="사이트로", repo="저장소", more="전부 보기", contents="들어 있는 것",
@@ -404,7 +406,7 @@ TEXT = dict(
     en=dict(
         title="Bowon Kwon’s Lab — Public materials compiled with generative AI", name="Bowon Kwon", sub="권보원", lab="Lab · 실험실",
         hero="Public materials compiled with generative AI",
-        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections, and three history sites built from papers, music charts and book publishing. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
+        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI and tech handbooks, an evidence table for animal-signal research, and five data sites that count classical music, physical constants, the Joseon Veritable Records, pre-modern privileges and Korean literary collections, and three history sites built from papers, music charts and book publishing. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
         nav=[("#projects", "Materials"), ("#talks", "Talks & study groups"), ("#about", "Notes")],
         projects_h="Materials", talks_h="Talks & study groups", about_h="Notes",
         site="Open site", repo="Repository", more="See all", contents="Inside",
