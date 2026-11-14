@@ -4,6 +4,7 @@
 """
 from pathlib import Path
 import datetime as dt
+import json
 import re
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -429,6 +430,7 @@ TEXT = dict(
             "<b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리) 또는 CC BY 4.0으로, 코드는 PolyForm Noncommercial 1.0.0 또는 MIT 등 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.",
             "<b>개인 자료</b> 엮은이가 개인적으로 공부하며 만든 것으로, 엮은이가 속한 기관의 견해나 업무와는 관계가 없습니다. 법률 자문이 아닙니다.",
         ],
+        theme=dict(auto="화면: 기기 설정 따름", light="화면: 밝게", dark="화면: 어둡게"),
         foot="© 2026 권보원(Bowon Kwon) · 갱신 " + TODAY,
         lang_link=("en/index.html", "English"),
     ),
@@ -445,6 +447,7 @@ TEXT = dict(
             "<b>Licence</b> To the extent the editor holds rights, texts are licensed under CC BY-NC 4.0 or CC BY 4.0, and code under the PolyForm Noncommercial 1.0.0, MIT or the terms stated in each repository. Quoted statutes, judgments, source texts and data remain subject to their own rights holders. Details are in each repository.",
             "<b>Personal materials</b> These were compiled as personal study and do not represent the views or work of any institution the editor belongs to. They are not legal advice.",
         ],
+        theme=dict(auto="Theme: follow device", light="Theme: light", dark="Theme: dark"),
         foot="© 2026 Bowon Kwon · updated " + TODAY,
         lang_link=("../index.html", "한국어"),
     ),
@@ -557,7 +560,7 @@ footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{w
 """
 
 THEME_JS = """(function(){var q=new URLSearchParams(location.search).get("theme");if(q==="light"||q==="dark"){localStorage.setItem("hub-theme",q)}else if(q==="auto"){localStorage.removeItem("hub-theme")}var v=localStorage.getItem("hub-theme");if(v)document.documentElement.setAttribute("data-theme",v)})();"""
-TOGGLE_JS = """(function(){var b=document.querySelector(".theme");function cur(){return localStorage.getItem("hub-theme")||"auto"}function show(){b.textContent={auto:"\\u25d1",light:"\\u2600",dark:"\\u263e"}[cur()];b.title={auto:"Theme: auto",light:"Theme: light",dark:"Theme: dark"}[cur()]}b.addEventListener("click",function(){var n={auto:"light",light:"dark",dark:"auto"}[cur()];if(n==="auto"){localStorage.removeItem("hub-theme");document.documentElement.removeAttribute("data-theme")}else{localStorage.setItem("hub-theme",n);document.documentElement.setAttribute("data-theme",n)}show()});show()})();"""
+TOGGLE_JS = """(function(){var b=document.querySelector(".theme");function cur(){return localStorage.getItem("hub-theme")||"auto"}function show(){b.textContent={auto:"\\u25d1",light:"\\u2600",dark:"\\u263e"}[cur()];var t=THEME_LABELS[cur()];b.title=t;b.setAttribute("aria-label",t)}b.addEventListener("click",function(){var n={auto:"light",light:"dark",dark:"auto"}[cur()];if(n==="auto"){localStorage.removeItem("hub-theme");document.documentElement.removeAttribute("data-theme")}else{localStorage.setItem("hub-theme",n);document.documentElement.setAttribute("data-theme",n)}show()});show()})();"""
 
 
 # Hero mosaic: a 4 x 7 bento grid (areas in the .mosaic CSS). L = 2x2, W = 2x1 wide, S = 1x1.
@@ -565,10 +568,9 @@ TOGGLE_JS = """(function(){var b=document.querySelector(".theme");function cur()
 # need a wide tile; small tiles show the number and title only.
 SLOT = {"llh": "L1", "aih": "L2", "ahp": "L3", "cmm": "L4", "ppm": "W1", "bph": "W2", "skm": "W3", "mjm": "W4",
         "kmc": "S1", "ans": "S2", "pcm": "S3", "jcl": "S4"}
-# Motif by kind of site, drawn in white over the colour: metrics = bars, history = timeline,
-# handbooks = stacked pages, evidence table = signal waves.
-KIND = {"cmm": "bars", "pcm": "bars", "skm": "bars", "ppm": "bars", "mjm": "bars",
-        "ahp": "time", "kmc": "time", "bph": "time", "llh": "pages", "aih": "pages", "ans": "waves", "jcl": "lineage"}
+# Motif by collection, drawn in white over the colour. One picture per tile, so no two tiles look alike.
+KIND = {"llh": "speech", "aih": "chip", "ahp": "network", "cmm": "staff", "kmc": "record", "ans": "waves",
+        "pcm": "atom", "ppm": "seal", "bph": "book", "skm": "columns", "mjm": "bound", "jcl": "lineage"}
 
 
 def _svg(body: str) -> str:
@@ -576,26 +578,73 @@ def _svg(body: str) -> str:
     return "url(\"data:image/svg+xml," + quote(f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>{body}</svg>", safe="") + "\")"
 
 
+_S = "stroke='#fff' stroke-opacity='.3' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'"
 MOTIF = {
-    "bars": _svg("<g fill='#fff' fill-opacity='.15'><rect x='8' y='62' width='14' height='38' rx='2'/><rect x='28' y='40' width='14' height='60' rx='2'/>"
-                 "<rect x='48' y='52' width='14' height='48' rx='2'/><rect x='68' y='18' width='14' height='82' rx='2'/></g>"
-                 "<polyline points='15,56 35,34 55,46 75,12' fill='none' stroke='#fff' stroke-opacity='.3' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>"),
-    "time": _svg("<g stroke='#fff' stroke-opacity='.28' stroke-width='2.2' stroke-linecap='round'><line x1='4' y1='62' x2='98' y2='62'/>"
-                 "<line x1='22' y1='62' x2='22' y2='40'/><line x1='50' y1='62' x2='50' y2='28'/><line x1='78' y1='62' x2='78' y2='46'/></g>"
-                 "<g fill='#fff' fill-opacity='.2'><circle cx='22' cy='62' r='6'/><circle cx='50' cy='62' r='8'/><circle cx='78' cy='62' r='6'/>"
-                 "<rect x='12' y='30' width='20' height='8' rx='2'/><rect x='38' y='17' width='24' height='9' rx='2'/><rect x='68' y='36' width='20' height='8' rx='2'/></g>"),
-    "pages": _svg("<g stroke='#fff' stroke-opacity='.3' stroke-width='2' fill='#fff' fill-opacity='.07'>"
-                  "<rect x='34' y='8' width='54' height='70' rx='4' transform='rotate(8 61 43)'/><rect x='24' y='16' width='54' height='70' rx='4'/></g>"
-                  "<g stroke='#fff' stroke-opacity='.3' stroke-width='2.2' stroke-linecap='round'><line x1='33' y1='32' x2='68' y2='32'/><line x1='33' y1='44' x2='68' y2='44'/>"
-                  "<line x1='33' y1='56' x2='60' y2='56'/><line x1='33' y1='68' x2='64' y2='68'/></g>"),
+    # legal-language handbooks: two speech bubbles, one answering the other
+    "speech": _svg(f"<g fill='#fff' fill-opacity='.09' {_S}>"
+                   "<path d='M40 8h44a6 6 0 0 1 6 6v26a6 6 0 0 1-6 6H74l-9 11V46H40a6 6 0 0 1-6-6V14a6 6 0 0 1 6-6z'/>"
+                   "<path d='M14 46h38a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6H33v11L23 82h-9a6 6 0 0 1-6-6V52a6 6 0 0 1 6-6z'/></g>"
+                   f"<g fill='none' {_S}><line x1='44' y1='20' x2='80' y2='20'/><line x1='44' y1='31' x2='70' y2='31'/>"
+                   "<line x1='18' y1='58' x2='48' y2='58'/><line x1='18' y1='69' x2='40' y2='69'/></g>"),
+    # AI and tech handbooks: a chip with its pins
+    "chip": _svg(f"<g fill='#fff' fill-opacity='.09' {_S}><rect x='27' y='27' width='46' height='46' rx='6'/></g>"
+                 "<rect x='40' y='40' width='20' height='20' rx='3' fill='#fff' fill-opacity='.22'/>"
+                 f"<g fill='none' {_S}>"
+                 + "".join(f"<line x1='{x}' y1='12' x2='{x}' y2='27'/><line x1='{x}' y1='73' x2='{x}' y2='88'/>"
+                           f"<line x1='12' y1='{x}' x2='27' y2='{x}'/><line x1='73' y1='{x}' x2='88' y2='{x}'/>" for x in (38, 50, 62))
+                 + "</g>"),
+    # AI history in papers: papers citing one another
+    "network": _svg(f"<g fill='none' {_S}><line x1='18' y1='72' x2='42' y2='46'/><line x1='42' y1='46' x2='30' y2='20'/>"
+                    "<line x1='42' y1='46' x2='68' y2='60'/><line x1='68' y1='60' x2='82' y2='30'/><line x1='68' y1='60' x2='60' y2='86'/>"
+                    "<line x1='30' y1='20' x2='82' y2='30'/><line x1='18' y1='72' x2='60' y2='86'/></g>"
+                    "<g fill='#fff' fill-opacity='.24'><circle cx='18' cy='72' r='6'/><circle cx='42' cy='46' r='9'/><circle cx='30' cy='20' r='6'/>"
+                    "<circle cx='68' cy='60' r='8'/><circle cx='82' cy='30' r='6'/><circle cx='60' cy='86' r='5'/></g>"),
+    # classical music: a staff with three notes
+    "staff": _svg("<g stroke='#fff' stroke-opacity='.24' stroke-width='1.8' stroke-linecap='round'>"
+                  + "".join(f"<line x1='4' y1='{y}' x2='98' y2='{y}'/>" for y in (34, 45, 56, 67, 78)) + "</g>"
+                  "<g fill='#fff' fill-opacity='.3'><ellipse cx='24' cy='72' rx='7.5' ry='5.5' transform='rotate(-20 24 72)'/>"
+                  "<ellipse cx='50' cy='61' rx='7.5' ry='5.5' transform='rotate(-20 50 61)'/><ellipse cx='76' cy='50' rx='7.5' ry='5.5' transform='rotate(-20 76 50)'/></g>"
+                  f"<g fill='none' {_S}><line x1='31' y1='70' x2='31' y2='38'/><line x1='57' y1='59' x2='57' y2='22'/><line x1='83' y1='48' x2='83' y2='14'/>"
+                  "<line x1='57' y1='22' x2='83' y2='14' stroke-width='5'/></g>"),
+    # music charts: a record
+    "record": _svg("<circle cx='52' cy='50' r='42' fill='#fff' fill-opacity='.1' stroke='#fff' stroke-opacity='.3' stroke-width='2.2'/>"
+                   "<g fill='none' stroke='#fff' stroke-opacity='.2' stroke-width='1.8'><circle cx='52' cy='50' r='33'/><circle cx='52' cy='50' r='25'/></g>"
+                   "<circle cx='52' cy='50' r='14' fill='#fff' fill-opacity='.2'/><circle cx='52' cy='50' r='3' fill='#fff' fill-opacity='.45'/>"),
+    # animal signals: a call spreading out
+    "waves": _svg("<g fill='none' stroke='#fff' stroke-opacity='.28' stroke-width='2.4' stroke-linecap='round'>"
+                  "<path d='M30 74 a16 16 0 0 1 0 -32'/><path d='M44 84 a30 30 0 0 1 0 -52'/><path d='M58 94 a44 44 0 0 1 0 -72'/><path d='M72 104 a58 58 0 0 1 0 -92'/></g>"
+                  "<circle cx='22' cy='58' r='6' fill='#fff' fill-opacity='.25'/>"),
+    # physical constants: an atom
+    "atom": _svg(f"<g fill='none' {_S}><ellipse cx='52' cy='50' rx='42' ry='15'/><ellipse cx='52' cy='50' rx='42' ry='15' transform='rotate(60 52 50)'/>"
+                 "<ellipse cx='52' cy='50' rx='42' ry='15' transform='rotate(120 52 50)'/></g>"
+                 "<circle cx='52' cy='50' r='7' fill='#fff' fill-opacity='.3'/>"
+                 "<g fill='#fff' fill-opacity='.3'><circle cx='94' cy='50' r='3.5'/><circle cx='31' cy='14' r='3.5'/><circle cx='31' cy='86' r='3.5'/></g>"),
+    # privilege to patent: a grant with its seal
+    "seal": _svg(f"<g fill='#fff' fill-opacity='.09' {_S}><rect x='20' y='8' width='54' height='68' rx='4'/></g>"
+                 f"<g fill='none' {_S}><line x1='30' y1='22' x2='64' y2='22'/><line x1='30' y1='34' x2='64' y2='34'/><line x1='30' y1='46' x2='52' y2='46'/></g>"
+                 "<path d='M62 76l-7 18 11-6 11 6-7-18z' fill='#fff' fill-opacity='.2'/>"
+                 "<circle cx='70' cy='68' r='15' fill='#fff' fill-opacity='.26'/><circle cx='70' cy='68' r='8.5' fill='none' stroke='#fff' stroke-opacity='.35' stroke-width='2'/>"),
+    # book publishing: an open book
+    "book": _svg(f"<g fill='#fff' fill-opacity='.09' {_S}><path d='M50 28C40 19 22 18 8 22v56c14-4 32-3 42 6z'/><path d='M50 28c10-9 28-10 42-6v56c-14-4-32-3-42 6z'/></g>"
+                 f"<g fill='none' {_S}><path d='M17 36c9-2 17-1 25 3'/><path d='M17 49c9-2 17-1 25 3'/><path d='M17 62c9-2 17-1 25 3'/>"
+                 "<path d='M83 36c-9-2-17-1-25 3'/><path d='M83 49c-9-2-17-1-25 3'/><path d='M83 62c-9-2-17-1-25 3'/></g>"),
+    # Veritable Records: a page ruled in columns, written top to bottom
+    "columns": _svg(f"<g fill='#fff' fill-opacity='.09' {_S}><rect x='14' y='8' width='72' height='84' rx='3'/></g>"
+                    "<g stroke='#fff' stroke-opacity='.22' stroke-width='1.6'><line x1='32' y1='8' x2='32' y2='92'/><line x1='50' y1='8' x2='50' y2='92'/><line x1='68' y1='8' x2='68' y2='92'/></g>"
+                    "<g stroke='#fff' stroke-opacity='.32' stroke-width='5' stroke-dasharray='7 5'>"
+                    "<line x1='77' y1='16' x2='77' y2='86'/><line x1='59' y1='16' x2='59' y2='74'/><line x1='41' y1='16' x2='41' y2='86'/><line x1='23' y1='16' x2='23' y2='50'/></g>"),
+    # literary collections: thread-bound books, one on another
+    "bound": _svg(f"<g fill='#fff' fill-opacity='.08' {_S}><rect x='34' y='6' width='52' height='74' rx='2' transform='rotate(7 60 43)'/></g>"
+                  f"<g fill='#fff' fill-opacity='.12' {_S}><rect x='18' y='16' width='52' height='76' rx='2'/></g>"
+                  f"<g fill='none' {_S}><line x1='29' y1='16' x2='29' y2='92'/>"
+                  + "".join(f"<line x1='18' y1='{y}' x2='29' y2='{y}'/>" for y in (26, 40, 54, 68, 82)) + "</g>"
+                  "<rect x='52' y='24' width='10' height='36' rx='1.5' fill='#fff' fill-opacity='.24'/>"),
+    # Joseon codes: each code built on the one before
     "lineage": _svg("<g stroke='#fff' stroke-opacity='.3' stroke-width='2.2' stroke-linecap='round'><line x1='4' y1='70' x2='96' y2='70'/></g>"
                     "<g fill='#fff' fill-opacity='.2'><circle cx='14' cy='70' r='6'/><circle cx='38' cy='70' r='6'/><circle cx='62' cy='70' r='6'/><circle cx='86' cy='70' r='6'/>"
                     "<rect x='8' y='50' width='12' height='12' rx='2'/><rect x='32' y='50' width='12' height='12' rx='2'/><rect x='32' y='36' width='12' height='12' rx='2'/>"
                     "<rect x='56' y='50' width='12' height='12' rx='2'/><rect x='56' y='36' width='12' height='12' rx='2'/><rect x='56' y='22' width='12' height='12' rx='2'/>"
                     "<rect x='80' y='50' width='12' height='12' rx='2'/><rect x='80' y='36' width='12' height='12' rx='2'/><rect x='80' y='22' width='12' height='12' rx='2'/><rect x='80' y='8' width='12' height='12' rx='2'/></g>"),
-    "waves": _svg("<g fill='none' stroke='#fff' stroke-opacity='.28' stroke-width='2.4' stroke-linecap='round'>"
-                  "<path d='M30 74 a16 16 0 0 1 0 -32'/><path d='M44 84 a30 30 0 0 1 0 -52'/><path d='M58 94 a44 44 0 0 1 0 -72'/><path d='M72 104 a58 58 0 0 1 0 -92'/></g>"
-                  "<circle cx='22' cy='58' r='6' fill='#fff' fill-opacity='.25'/>"),
 }
 
 
@@ -673,7 +722,7 @@ def page(lang):
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body>
 <header><a class="brand" href="#"><i></i>{esc(T['name'])}</a><nav>{nav}</nav>
-<div class="right"><a class="lang" href="{ll[0]}">{ll[1]}</a><button class="theme" aria-label="theme">◑</button></div></header>
+<div class="right"><a class="lang" href="{ll[0]}">{ll[1]}</a><button class="theme" aria-label="{esc(T['theme']['auto'])}">◑</button></div></header>
 <main>
 <div class="hero"><div><div class="who">{esc(T['lab'])}</div><h1>{esc(T['hero'])}</h1><p class="lead">{esc(T['hero_lead'])}</p>
 <div class="cta">{chips}</div></div>
@@ -687,7 +736,7 @@ def page(lang):
 <div class="about">{about}</div></div>
 </main>
 <footer><div class="dots">{dots}</div><br>{esc(T['foot'])} · <a href="{GH}">GitHub</a></footer>
-<script>{TOGGLE_JS}</script>
+<script>var THEME_LABELS={json.dumps(T['theme'], ensure_ascii=False)};{TOGGLE_JS}</script>
 </body></html>
 """
 
