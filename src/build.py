@@ -558,6 +558,23 @@ footer{border-top:1px solid var(--line);color:var(--fg3);font-size:.82rem;paddin
 footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{width:8px;height:8px;border-radius:50%;display:inline-block}
 @media(max-width:860px){.hero{grid-template-columns:1fr;gap:1.6rem}.mosaic{max-width:520px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"L1 L1" "L2 L2" "S1 S2" "W1 W1" "L3 L3" "L4 L4" "W2 W2" "W3 W3" "S3 S4" "W4 W4"}.mosaic a.sz-L{background-size:auto 82%,auto;min-height:124px}.mosaic .sz-S .n.long{font-size:clamp(1.5rem,2.6vw,2.1rem)}.proj{grid-template-columns:1fr}.proj .side{border-left:0;border-top:1px solid var(--line2)}}
 @media(max-width:520px){.facts{flex-wrap:wrap}.facts div{flex:1 1 40%;border:0}.proj .num{font-size:2.6rem}}
+header .lang .ls{display:none}
+@media(max-width:700px){html[lang="en"] header{gap:.35rem 1.1rem}html[lang="en"] header nav{order:3;flex-basis:100%}}
+@media(max-width:560px){
+header{padding:.5rem .9rem;gap:.35rem .7rem}header .brand{white-space:nowrap}header .brand i{display:none}html[lang="en"] header nav{order:3;flex-basis:100%}header .lang{white-space:nowrap}
+header nav{gap:.75rem;flex-wrap:nowrap}header nav a{font-size:.86rem;white-space:nowrap}
+header .right{gap:.4rem}header .lang{font-size:.8rem;padding:.12rem .6rem}header .lang .lf{display:none}header .lang .ls{display:inline}.theme{width:28px;height:28px}
+main{padding:1.3rem 1rem 3rem}.hero{padding:1rem 0 1.6rem;gap:1.2rem;grid-template-columns:minmax(0,1fr)}.hero>*{min-width:0}.hero .lead{font-size:1rem;line-height:1.75}
+.hero .cta{flex-wrap:nowrap;overflow-x:auto;margin:1.1rem -1rem 0;padding:.2rem 1rem .5rem;gap:.45rem;scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(90deg,#000 84%,transparent);mask-image:linear-gradient(90deg,#000 84%,transparent)}
+.hero .cta::-webkit-scrollbar{display:none}
+.chip{flex:none;font-size:.86rem;padding:.3rem .8rem .3rem .6rem;box-shadow:none}
+.mosaic{max-width:none;grid-template-areas:none;grid-auto-rows:92px;gap:.5rem}
+.mosaic a[class^="sz-"]{grid-area:auto!important;min-height:0;padding:.65rem .75rem;border-radius:12px;background-size:auto 64%,auto;background-position:right -8% top -12%,0 0}
+.mosaic .n,.mosaic .sz-L .n,.mosaic .sz-S .n.long{font-size:1.45rem}
+.mosaic small,.mosaic .sz-W small,.mosaic .sz-S small{font-size:.75rem;max-width:none;margin-top:.25rem}
+.mosaic small .lab{display:none}
+.sec{margin-top:2.6rem}.sec-head p{margin-left:0;flex-basis:100%}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 """
 
@@ -706,7 +723,7 @@ def page(lang):
         size = slot[0]
         fact, label = p[lang]["facts"][0]
         short = re.sub(r"\s*\([^)]*\)$", "", label) if size == "W" else label  # wide tiles drop a trailing parenthetical; the tooltip and the card keep it
-        text = esc(p[lang]["title"]) if size == "S" else f"{esc(short)} · {esc(p[lang]['title'])}"
+        text = esc(p[lang]["title"]) if size == "S" else f"<span class='lab'>{esc(short)} · </span>{esc(p[lang]['title'])}"
         ncls = "n long" if size == "S" and len(fact) >= 5 else "n"  # a one-column tile holds about four digits at full size
         return (f"<a class='sz-{size}' href='#{p['key']}' title='{esc(label)} · {esc(p[lang]['title'])}' "
                 f"style='grid-area:{slot};--c:var(--{p['color']});--motif:{MOTIF[KIND[p['key']]]}'><span class='{ncls}'>{esc(fact)}</span><small>{text}</small></a>")
@@ -723,7 +740,7 @@ def page(lang):
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body>
 <header><a class="brand" href="#"><i></i>{esc(T['name'])}</a><nav>{nav}</nav>
-<div class="right"><a class="lang" href="{ll[0]}">{ll[1]}</a><button class="theme" aria-label="{esc(T['theme']['auto'])}">◑</button></div></header>
+<div class="right"><a class="lang" href="{ll[0]}" aria-label="{ll[1]}"><span class="lf">{ll[1]}</span><span class="ls" aria-hidden="true">{'EN' if lang == 'ko' else 'KO'}</span></a><button class="theme" aria-label="{esc(T['theme']['auto'])}">◑</button></div></header>
 <main>
 <div class="hero"><div><div class="who">{esc(T['lab'])}</div><h1>{esc(T['hero'])}</h1><p class="lead">{esc(T['hero_lead'])}</p>
 <div class="cta">{chips}</div></div>
