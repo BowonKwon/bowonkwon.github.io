@@ -675,7 +675,7 @@ def esc(s):
 # a language from the browser (or its own saved choice), so a Korean-language
 # browser landed on Korean pages even from the English hub.
 SPLIT = {"ahp", "kmc", "cmm", "pcm", "skm", "ppm", "bph", "mjm", "jcl"}  # ko/ and en/ folders
-QUERY = {"aih", "ans"}  # one page per language switch; honour ?lang=
+QUERY = {"aih", "ans", "llh"}  # one page per language switch; honour ?lang= (the legal-language hub is Korean only and shows a note for English readers on ?lang=en)
 
 
 def entry(p, lang):
