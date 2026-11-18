@@ -91,7 +91,7 @@ PROJECTS = [
                 ("법률가를 위한 인공지능 코딩 자습서", "코딩 경험이 없는 분부터 딥러닝을 직접 구현하려는 분까지", "ai-coding-for-lawyers/"),
             ],
             extra=None,
-            facts=[("6", "자습서"), ("5", "영어판 병행"), ("PDF", "인쇄본 함께")],
+            facts=[("6", "자습서"), ("6", "영어판 병행"), ("PDF", "인쇄본 함께")],
         ),
         en=dict(
             tag="AI · semiconductors · blockchain", title="AI-Assisted Handbooks", en_title="",
@@ -102,10 +102,10 @@ PROJECTS = [
                 ("AI Infrastructure and Semiconductors", "A seven-session self-study guide", "ai-infra-semiconductors/en/"),
                 ("A Library That Remembers What You Read", "Building an LLM wiki — a guide for lawyers", "llm-wiki/en/"),
                 ("Blockchain for Lawyers", "A reading through technology and economics", "blockchain-for-lawyers/en/"),
-                ("AI Coding for Lawyers", "A self-study guide, with 59 Colab notebooks (Korean)", "ai-coding-for-lawyers/"),
+                ("AI Coding for Lawyers", "A self-study guide, with 59 Colab notebooks", "ai-coding-for-lawyers/en/"),
             ],
             extra=None,
-            facts=[("6", "handbooks"), ("5", "with English editions"), ("PDF", "print editions included")],
+            facts=[("6", "handbooks"), ("6", "with English editions"), ("PDF", "print editions included")],
         ),
     ),
     dict(
@@ -700,12 +700,8 @@ MOTIF = {
                  "<line x1='72' y1='48' x2='60' y2='78'/><line x1='72' y1='48' x2='86' y2='78'/></g>"
                  "<g fill='#fff' fill-opacity='.24'><circle cx='50' cy='20' r='8'/><circle cx='28' cy='48' r='7'/><circle cx='72' cy='48' r='7'/>"
                  "<circle cx='14' cy='78' r='6'/><circle cx='40' cy='78' r='6'/><circle cx='60' cy='78' r='6'/><circle cx='86' cy='78' r='6'/></g>"),
-    # Joseon codes: each code built on the one before
-    "lineage": _svg("<g stroke='#fff' stroke-opacity='.3' stroke-width='2.2' stroke-linecap='round'><line x1='4' y1='70' x2='96' y2='70'/></g>"
-                    "<g fill='#fff' fill-opacity='.2'><circle cx='14' cy='70' r='6'/><circle cx='38' cy='70' r='6'/><circle cx='62' cy='70' r='6'/><circle cx='86' cy='70' r='6'/>"
-                    "<rect x='8' y='50' width='12' height='12' rx='2'/><rect x='32' y='50' width='12' height='12' rx='2'/><rect x='32' y='36' width='12' height='12' rx='2'/>"
-                    "<rect x='56' y='50' width='12' height='12' rx='2'/><rect x='56' y='36' width='12' height='12' rx='2'/><rect x='56' y='22' width='12' height='12' rx='2'/>"
-                    "<rect x='80' y='50' width='12' height='12' rx='2'/><rect x='80' y='36' width='12' height='12' rx='2'/><rect x='80' y='22' width='12' height='12' rx='2'/><rect x='80' y='8' width='12' height='12' rx='2'/></g>"),
+    # Joseon codes: four codes as closed books, each laid on the one before (Gyeongguk daejeon at the bottom)
+    "lineage": _svg(f"<g fill='#fff' fill-opacity='.09' {_S}><rect x='10' y='72' width='80' height='16' rx='2'/><rect x='17' y='56' width='70' height='16' rx='2'/><rect x='8' y='40' width='76' height='16' rx='2'/><rect x='20' y='24' width='64' height='16' rx='2'/></g><g fill='#fff' fill-opacity='.24'><rect x='19' y='77' width='13' height='6' rx='1'/><rect x='26' y='61' width='13' height='6' rx='1'/><rect x='17' y='45' width='13' height='6' rx='1'/><rect x='29' y='29' width='13' height='6' rx='1'/></g><g stroke='#fff' stroke-opacity='.2' stroke-width='1.4'><line x1='84' y1='75' x2='84' y2='85'/><line x1='81' y1='59' x2='81' y2='69'/><line x1='78' y1='43' x2='78' y2='53'/><line x1='78' y1='27' x2='78' y2='37'/></g>"),
 }
 
 
