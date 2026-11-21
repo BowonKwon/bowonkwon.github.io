@@ -24,6 +24,7 @@ KMC = "https://bowonkwon.github.io/Korean-Music-Charts/"
 BPH = "https://bowonkwon.github.io/Book-Publishing-History/"
 JCL = "https://bowonkwon.github.io/Joseon-Code-Lineage/"
 CDL = "https://bowonkwon.github.io/Conductors-Lineage/"
+ILN = "https://bowonkwon.github.io/Instrument-Lineage/"
 GH = "https://github.com/BowonKwon/"
 
 PROJECTS = [
@@ -437,9 +438,32 @@ PROJECTS = [
             facts=[("854", "teacher and assistant relations with their sources"), ("1,010", "people"), ("635", "Orchestra Festival concerts, 1989–2026")],
         ),
     ),
+    dict(
+        key="iln", color="s14", site=ILN, repo=GH + "Instrument-Lineage",
+        ko=dict(
+            tag="음악·역사", title="악기의 계보", en_title="Lineages of instruments",
+            lead="악기가 어디서 와서 어떻게 바뀌고 이어졌는지를 문서·기록·그림으로 따라가는 사이트. 첫 장은 1493년 『악학궤범』에 그림으로 실린 악기·의물 64조목이 지금 어떻게 쓰이는지와, 그 책이 1610년 판에서 1933년 영인본까지 어떻게 거듭 찍혔는지를 원판 면과 맞대어 본다. 특허와 관현악 편성 장은 준비 중이다. 독립 검증을 거친 탐색판이다.",
+            items=[
+                ("③ 『악학궤범』", "그림 속 64조목의 지금, 판본의 내력, 문서가 정한 때와 쓰인 때의 어긋남", "ko/akhak.html"),
+                ("장 목록", "① 특허와 발명 · ② 관현악 편성(준비 중)", "ko/index.html"),
+            ],
+            extra=None,
+            facts=[("64", "1493년 『악학궤범』에 그림으로 실린 악기·의물 조목"), ("402", "아홉 권 본문의 면 수"), ("1610", "지금 전하는 책들이 잇는 판의 간기")],
+        ),
+        en=dict(
+            tag="Music · history", title="Lineages of instruments", en_title="",
+            lead="A site that follows where instruments came from and how they changed and carried on, through documents, records and pictures. Its first chapter asks how the 64 instruments and ritual objects pictured in the 1493 Akhak gwebeom are used today, and how the book was printed again and again from the 1610 edition to the 1933 facsimile, checked page by page against the old prints. Chapters on patents and orchestration are in preparation. An exploratory edition, checked independently.",
+            items=[
+                ("Chapter 3: Akhak gwebeom", "The 64 pictured entries today, the history of the editions, and the gap between record and use", "en/akhak.html"),
+                ("Chapters", "1 Patents and invention · 2 Orchestration (in preparation)", "en/index.html"),
+            ],
+            extra=None,
+            facts=[("64", "instruments and ritual objects pictured in the 1493 Akhak gwebeom"), ("402", "pages in the nine books"), ("1610", "date of the edition behind the surviving copies")],
+        ),
+    ),
 ]
 
-ORDER = ["llh", "aih", "ahp", "cmm", "cdl", "kmc", "ans", "pcm", "ppm", "bph", "skm", "mjm", "jcl"]
+ORDER = ["llh", "aih", "ahp", "cmm", "cdl", "iln", "kmc", "ans", "pcm", "ppm", "bph", "skm", "mjm", "jcl"]
 assert sorted(ORDER) == sorted(p["key"] for p in PROJECTS)
 PROJECTS.sort(key=lambda p: ORDER.index(p["key"]))
 
@@ -460,11 +484,11 @@ TEXT = dict(
     ko=dict(
         title="권보원의 실험실 — 생성형 AI와 함께 엮은 공개 자료", name="권보원", sub="Bowon Kwon", lab="실험실 · Lab",
         hero="생성형 AI와 함께 엮은 공개 자료",
-        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI·테크 자습서, 논문으로 읽는 인공지능의 역사, 서양 고전 음악 메트릭스, 지휘자의 스승을 출처와 함께 그린 계보, 가요 차트 100년, 동물 신호 연구의 근거 등급표, 그리고 물리 상수·근대 이전 특권·책 출간·조선왕조실록·한국문집총간·조선 법전을 숫자와 연대표로 엮은 사이트 여섯. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
+        hero_lead="완성된 책이나 확정된 결론이 아니라, 생성형 AI와 함께 이것저것 시도해 보고 자료를 모아 엮어 본 실험의 기록입니다. 법률 외국어 자습서, AI·테크 자습서, 논문으로 읽는 인공지능의 역사, 서양 고전 음악 메트릭스, 지휘자의 스승을 출처와 함께 그린 계보, 『악학궤범』에서 출발한 악기의 계보, 가요 차트 100년, 동물 신호 연구의 근거 등급표, 그리고 물리 상수·근대 이전 특권·책 출간·조선왕조실록·한국문집총간·조선 법전을 숫자와 연대표로 엮은 사이트 여섯. 판마다 원문과 대조하고 독립된 AI 검토를 거쳤지만 아직 고쳐 가는 중이어서, 틀린 서술이 남아 있을 수 있습니다. 원문과 다른 서술뿐 아니라 오탈자·풀이의 잘못·끊어진 링크 등 무엇이든 각 저장소의 Issues로 알려 주십시오.",
         nav=[("#projects", "자료"), ("#talks", "발표·스터디"), ("#about", "일러두기")],
         projects_h="자료", talks_h="발표·스터디", about_h="일러두기",
         site="사이트로", repo="저장소", more="전부 보기", contents="들어 있는 것",
-        projects_sub="열세 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
+        projects_sub="열네 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
         about=[
             "<b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI(Codex)가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.",
             "<b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리) 또는 CC BY 4.0으로, 코드는 PolyForm Noncommercial 1.0.0 또는 MIT 등 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.",
@@ -477,11 +501,11 @@ TEXT = dict(
     en=dict(
         title="Bowon Kwon’s Lab — Public materials compiled with generative AI", name="Bowon Kwon", sub="권보원", lab="Lab · 실험실",
         hero="Public materials compiled with generative AI",
-        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI and tech handbooks, a history of AI told through its papers, classical music metrics, a lineage of conductors and their teachers drawn from sources, a hundred years of Korean music charts, an evidence table for animal-signal research, and six sites that put physical constants, pre-modern privileges, book publishing, the Joseon Veritable Records, Korean literary collections and the Joseon law codes into numbers and timelines. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
+        hero_lead="These are not finished books or settled conclusions but a record of experiments — things tried out, and material gathered and put together, with generative AI. Legal-language handbooks, AI and tech handbooks, a history of AI told through its papers, classical music metrics, a lineage of conductors and their teachers drawn from sources, lineages of instruments starting from the 1493 Akhak gwebeom, a hundred years of Korean music charts, an evidence table for animal-signal research, and six sites that put physical constants, pre-modern privileges, book publishing, the Joseon Veritable Records, Korean literary collections and the Joseon law codes into numbers and timelines. Each release was checked against the originals and reviewed by an independent AI reviewer, but the work is still being revised and errors may remain. Anything wrong — a reading that departs from the original, a typo, a faulty gloss, a dead link — please report it via each repository's Issues.",
         nav=[("#projects", "Materials"), ("#talks", "Talks & study groups"), ("#about", "Notes")],
         projects_h="Materials", talks_h="Talks & study groups", about_h="Notes",
         site="Open site", repo="Repository", more="See all", contents="Inside",
-        projects_sub="Thirteen collections — details on each site", talks_sub="Slides live in the GitHub repositories",
+        projects_sub="Fourteen collections — details on each site", talks_sub="Slides live in the GitHub repositories",
         about=[
             "<b>Checked against the originals</b> Statutes, judgments, source texts and figures were machine-checked against official texts or open datasets, and a separate AI reviewer (Codex) that took no part in the writing reviewed them blind, from the raw sources only. Errors may still remain.",
             "<b>Licence</b> To the extent the editor holds rights, texts are licensed under CC BY-NC 4.0 or CC BY 4.0, and code under the PolyForm Noncommercial 1.0.0, MIT or the terms stated in each repository. Quoted statutes, judgments, source texts and data remain subject to their own rights holders. Details are in each repository.",
@@ -498,7 +522,7 @@ CSS = """
 :root{color-scheme:light;
   --bg:#f8f7f4;--bg2:#efede8;--bg3:#e6e3db;--card:#ffffff;--line:#dedbd3;--line2:#ebe8e1;
   --fg:#1d1f24;--fg2:#5a5e68;--fg3:#8a8e98;--accent:#3f6a9e;--accent2:#b5833f;
-  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--s9:#5b6a9c;--s10:#7d6b2e;--s11:#8e4f86;--s12:#6d5a45;--s13:#50565f;--glow:13%;
+  --s1:#3a6fb0;--s2:#b5833f;--s3:#7f63ad;--s4:#4d8a5f;--s5:#2f7470;--s6:#8a4f5c;--s7:#9a4a32;--s8:#2e6b5e;--s9:#5b6a9c;--s10:#7d6b2e;--s11:#8e4f86;--s12:#6d5a45;--s13:#50565f;--s14:#2f5d78;--glow:13%;
   --shadow:0 1px 2px rgba(30,32,40,.05),0 8px 24px rgba(30,32,40,.06);
   --shadow2:0 2px 4px rgba(30,32,40,.06),0 14px 32px rgba(30,32,40,.10);
   --display:"Noto Serif KR","Source Serif 4",Georgia,"Times New Roman",serif;
@@ -506,13 +530,13 @@ CSS = """
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--s12:#b39a7c;--s13:#8a92a0;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--s12:#b39a7c;--s13:#8a92a0;--s14:#6fa3c2;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#1b1c1f;--bg2:#222326;--bg3:#2a2b30;--card:#232428;--line:#34363c;--line2:#2b2d32;
   --fg:#ebe9e4;--fg2:#b3b1aa;--fg3:#80827f;--accent:#7ea4d6;--accent2:#d1a35f;
-  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--s12:#b39a7c;--s13:#8a92a0;--glow:17%;
+  --s1:#5a8ccf;--s2:#b5863a;--s3:#9078c4;--s4:#6aa97c;--s5:#6fb0aa;--s6:#c08595;--s7:#d0866b;--s8:#6fb3a3;--s9:#8f9fd6;--s10:#b9a55c;--s11:#c487b9;--s12:#b39a7c;--s13:#8a92a0;--s14:#6fa3c2;--glow:17%;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
   --shadow2:0 2px 4px rgba(0,0,0,.35),0 14px 32px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{max-width:100%;overflow-x:hidden}
@@ -548,7 +572,7 @@ h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.3;
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
 .chip:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow2);border-color:var(--c)}
 .mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(86px,auto);gap:.6rem;
-  grid-template-areas:"L1 L1 L2 L2" "L1 L1 L2 L2" "S1 W1 W1 S2" "L3 L3 L4 L4" "L3 L3 L4 L4" "W2 W2 W3 W3" "S3 W4 W4 S4" "W5 W5 W5 W5"}
+  grid-template-areas:"L1 L1 L2 L2" "L1 L1 L2 L2" "S1 W1 W1 S2" "L3 L3 L4 L4" "L3 L3 L4 L4" "W2 W2 W3 W3" "S3 W4 W4 S4" "W5 W5 W6 W6"}
 .mosaic a{border-radius:14px;padding:.85rem .9rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;min-height:0;
   background:var(--motif) right -6% top -8%/auto 64% no-repeat,linear-gradient(160deg,color-mix(in srgb,var(--c) 92%,#fff),color-mix(in srgb,var(--c) 78%,#000));box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
 .mosaic a.sz-W{background-size:auto 96%,auto;background-position:right -2% center,0 0}.mosaic a.sz-S{background-size:auto 58%,auto;background-position:right -16% top -12%,0 0}
@@ -594,7 +618,7 @@ html[lang="ko"] p,html[lang="ko"] small,html[lang="ko"] li{word-break:keep-all;o
 .about div b{display:block;color:var(--fg);font-family:var(--display);font-size:1.02rem;margin-bottom:.3rem}
 footer{border-top:1px solid var(--line);color:var(--fg3);font-size:.82rem;padding:1.4rem 1.2rem;text-align:center}
 footer .dots{display:inline-flex;gap:.35rem;margin-bottom:.6rem}footer .dots i{width:8px;height:8px;border-radius:50%;display:inline-block}
-@media(max-width:860px){.hero{grid-template-columns:1fr;gap:1.6rem}.mosaic{max-width:520px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"L1 L1" "L2 L2" "S1 S2" "W1 W1" "L3 L3" "L4 L4" "W2 W2" "W3 W3" "S3 S4" "W4 W4" "W5 W5"}.mosaic a.sz-L{background-size:auto 82%,auto;min-height:124px}.mosaic .sz-S .n.long{font-size:clamp(1.5rem,2.6vw,2.1rem)}.proj{grid-template-columns:1fr}.proj .side{border-left:0;border-top:1px solid var(--line2)}}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:1.6rem}.mosaic{max-width:520px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"L1 L1" "L2 L2" "S1 S2" "W1 W1" "L3 L3" "L4 L4" "W2 W2" "W3 W3" "S3 S4" "W4 W4" "W5 W5" "W6 W6"}.mosaic a.sz-L{background-size:auto 82%,auto;min-height:124px}.mosaic .sz-S .n.long{font-size:clamp(1.5rem,2.6vw,2.1rem)}.proj{grid-template-columns:1fr}.proj .side{border-left:0;border-top:1px solid var(--line2)}}
 @media(max-width:520px){.facts{flex-wrap:wrap}.facts div{flex:1 1 40%;border:0}.proj .num{font-size:2.6rem}}
 header .lang .ls{display:none}
 @media(max-width:700px){html[lang="en"] header{gap:.35rem 1.1rem}html[lang="en"] header nav{order:3;flex-basis:100%}}
@@ -624,10 +648,10 @@ TOGGLE_JS = """(function(){var b=document.querySelector(".theme");function cur()
 # The collections with the most work and pages in them take the large tiles. Six-digit headline numbers
 # need a wide tile; small tiles show the number and title only.
 SLOT = {"llh": "L1", "aih": "L2", "ahp": "L3", "cmm": "L4", "ppm": "W1", "bph": "W2", "skm": "W3", "mjm": "W4",
-        "kmc": "S1", "ans": "S2", "pcm": "S3", "jcl": "S4", "cdl": "W5"}
+        "kmc": "S1", "ans": "S2", "pcm": "S3", "jcl": "S4", "cdl": "W5", "iln": "W6"}
 # Motif by collection, drawn in white over the colour. One picture per tile, so no two tiles look alike.
 KIND = {"llh": "speech", "aih": "chip", "ahp": "network", "cmm": "staff", "kmc": "record", "ans": "waves",
-        "pcm": "atom", "ppm": "seal", "bph": "book", "skm": "columns", "mjm": "bound", "jcl": "lineage", "cdl": "tree"}
+        "pcm": "atom", "ppm": "seal", "bph": "book", "skm": "columns", "mjm": "bound", "jcl": "lineage", "cdl": "tree", "iln": "zither"}
 
 
 def _svg(body: str) -> str:
@@ -704,6 +728,12 @@ MOTIF = {
                  "<circle cx='14' cy='78' r='6'/><circle cx='40' cy='78' r='6'/><circle cx='60' cy='78' r='6'/><circle cx='86' cy='78' r='6'/></g>"),
     # Joseon codes: four codes as closed books, each laid on the one before (Gyeongguk daejeon at the bottom)
     "lineage": _svg(f"<g fill='#fff' fill-opacity='.09' {_S}><rect x='10' y='72' width='80' height='16' rx='2'/><rect x='17' y='56' width='70' height='16' rx='2'/><rect x='8' y='40' width='76' height='16' rx='2'/><rect x='20' y='24' width='64' height='16' rx='2'/></g><g fill='#fff' fill-opacity='.24'><rect x='19' y='77' width='13' height='6' rx='1'/><rect x='26' y='61' width='13' height='6' rx='1'/><rect x='17' y='45' width='13' height='6' rx='1'/><rect x='29' y='29' width='13' height='6' rx='1'/></g><g stroke='#fff' stroke-opacity='.2' stroke-width='1.4'><line x1='84' y1='75' x2='84' y2='85'/><line x1='81' y1='59' x2='81' y2='69'/><line x1='78' y1='43' x2='78' y2='53'/><line x1='78' y1='27' x2='78' y2='37'/></g>"),
+    # Lineages of instruments: a long zither with strings and movable bridges
+    "zither": _svg(f"<g fill='#fff' fill-opacity='.1' {_S}><path d='M10 70 L80 18 a8 8 0 0 1 11 3 l2 3 a8 8 0 0 1 -3 11 L20 86 a8 8 0 0 1 -11 -3 l-2 -3 a8 8 0 0 1 3 -11z'/></g>"
+                   "<g stroke='#fff' stroke-opacity='.3' stroke-width='1.4'>"
+                   + "".join(f"<line x1='{14+i*2}' y1='{74+i*2}' x2='{84+i*2}' y2='{22+i*2}'/>" for i in range(5)) + "</g>"
+                   "<g fill='#fff' fill-opacity='.32'>"
+                   + "".join(f"<path d='M{x} {y} l4 -6 l4 6z'/>" for x, y in ((30, 66), (42, 58), (54, 50), (66, 42))) + "</g>"),
 }
 
 
@@ -714,7 +744,7 @@ def esc(s):
 # Keep the hub's language on the target site. Each site's root otherwise picks
 # a language from the browser (or its own saved choice), so a Korean-language
 # browser landed on Korean pages even from the English hub.
-SPLIT = {"ahp", "kmc", "cmm", "pcm", "skm", "ppm", "bph", "mjm", "jcl", "cdl"}  # ko/ and en/ folders
+SPLIT = {"ahp", "kmc", "cmm", "pcm", "skm", "ppm", "bph", "mjm", "jcl", "cdl", "iln"}  # ko/ and en/ folders
 QUERY = {"aih", "ans", "llh"}  # one page per language switch; honour ?lang= (the legal-language hub is Korean only and shows a note for English readers on ?lang=en)
 
 
