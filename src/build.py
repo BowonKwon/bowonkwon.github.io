@@ -144,9 +144,9 @@ PROJECTS = [
             tag="가요사·연대표", title="가요 차트 100년", en_title="Korean Music Charts",
             lead="1906년 유성기 녹음부터 디지털 차트까지, 누가 무엇으로 어떻게 한국 가요의 순위를 매겨 왔는지를 한 연대표로 잇는 역사 사이트. 집계 체계마다 주체·방식·표본·출처 등급을 적고, 1위 목록은 당대 신문과 집계표 사본으로 대조한 행에만 1차 출처를 단다.",
             items=[
-                ("여섯 장", "순위를 매기는 방법들부터 공인 차트와 플랫폼까지", "ko/ch0.html"),
+                ("일곱 장", "순위를 매기는 방법들부터 아이돌 세대 구분까지", "ko/ch0.html"),
                 ("집계 체계 연표", "체계·공백 29개를 한 시간축에, 2차 자료로만 받쳐지는 구간은 빗금", "ko/ch0.html"),
-                ("데이터", "음반협회 월간 1위 122개월, 「가요톱10」 889행 등 CSV 8개", "ko/data.html"),
+                ("데이터", "음반협회 월간 1위 122개월, 「가요톱10」 889행 등 CSV 13개", "ko/data.html"),
                 ("방법", "미리 정한 표본 규칙, 출처 등급, 대조 결과", "ko/method.html"),
             ],
             extra=None,
@@ -156,9 +156,9 @@ PROJECTS = [
             tag="Popular music history · timeline", title="Korean Music Charts", en_title="",
             lead="A history site that traces, on one timeline from the gramophone recordings of 1906 to digital charts, who ranked Korean popular songs, with what, and how. Each ranking system carries its actor, method, sample and source grade; in the No. 1 lists only rows checked against newspapers or archived tables of the time carry a primary source.",
             items=[
-                ("Six chapters", "From ways of ranking songs to official charts and platforms", "en/ch0.html"),
+                ("Seven chapters", "From ways of ranking songs to how K-pop idol generations are divided", "en/ch0.html"),
                 ("Timeline of systems", "29 systems and gaps on one time axis; spans backed only by secondary sources are hatched", "en/ch0.html"),
-                ("Data", "Eight CSV files, including 122 months of the record association's monthly No. 1 and 889 rows of Gayo Top 10", "en/data.html"),
+                ("Data", "Thirteen CSV files, including 122 months of the record association's monthly No. 1 and 889 rows of Gayo Top 10", "en/data.html"),
                 ("Method", "Sampling rules fixed in advance, source grades, check results", "en/method.html"),
             ],
             extra=None,
