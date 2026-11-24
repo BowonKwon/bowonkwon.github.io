@@ -411,7 +411,7 @@ PROJECTS = [
         key="cdl", color="s13", site=CDL, repo=GH + "Conductors-Lineage",
         ko=dict(
             tag="음악·계보", title="지휘의 계보", en_title="Conductors' lineage",
-            lead="지휘자가 누구에게 배웠고 누구 밑에서 부지휘자·어시스턴트로 일했는지를, 관계마다 출처를 밝히고 되도록 그 문장과 함께 그린 사이트. 17개 악단의 수장과 한국 지휘자에서 출발해 스승을 한 단계 올라갔다. 위키백과가 아닌 출처에서 문장을 읽은 관계만 「확정」으로 그리고, 출처끼리 엇갈리면 양쪽을 싣는다. 독립 검증이 끝나지 않은 0.1 탐색판이다.",
+            lead="지휘자가 누구에게 배웠고 누구 밑에서 부지휘자·어시스턴트로 일했는지를, 관계마다 출처를 밝히고 되도록 그 문장과 함께 그린 사이트. 17개 악단의 수장과 한국 지휘자에서 출발해 스승을 한 단계 올라갔다. 위키백과가 아닌 출처에서 문장을 읽은 관계만 「확정」으로 그리고, 출처끼리 엇갈리면 양쪽을 싣는다. 독립 검증이 끝나지 않은 0.2 탐색판이다.",
             items=[
                 ("계보 그림", "태어난 해 순으로 놓은 사람들과 스승→제자 화살표", "ko/index.html"),
                 ("인물 찾기", "이름으로 찾아 스승 쪽과 제자 쪽을 따라가기", "ko/find.html"),
@@ -421,11 +421,11 @@ PROJECTS = [
                 ("알려진 한계", "그리지 않은 것과 확인하지 못한 것", "ko/limits.html"),
             ],
             extra=None,
-            facts=[("854", "출처를 밝힌 스승·부지휘 관계"), ("1,010", "사람"), ("635", "교향악축제 공연, 1989~2026")],
+            facts=[("952", "출처를 밝힌 스승·부지휘 관계"), ("1,058", "사람"), ("635", "교향악축제 공연, 1989~2026")],
         ),
         en=dict(
             tag="Music · lineage", title="Conductors' lineage", en_title="",
-            lead="A site that draws who taught each conductor and under whom each one worked as an assistant, with the source beside every relation and, wherever possible, the sentence that states it. It starts from the heads of 17 orchestras and from Korean conductors and goes one step up to their teachers. Only relations whose sentence was read in a source other than Wikipedia are drawn as confirmed; where sources disagree, both sides are shown. This is exploratory edition 0.1; the independent check is not finished.",
+            lead="A site that draws who taught each conductor and under whom each one worked as an assistant, with the source beside every relation and, wherever possible, the sentence that states it. It starts from the heads of 17 orchestras and from Korean conductors and goes one step up to their teachers. Only relations whose sentence was read in a source other than Wikipedia are drawn as confirmed; where sources disagree, both sides are shown. This is exploratory edition 0.2; the independent check is not finished.",
             items=[
                 ("Lineage chart", "People by year of birth, with teacher-to-pupil arrows", "en/index.html"),
                 ("Find a person", "Look up a name and follow teachers and pupils", "en/find.html"),
@@ -435,7 +435,7 @@ PROJECTS = [
                 ("Known limits", "What is not drawn and what could not be confirmed", "en/limits.html"),
             ],
             extra=None,
-            facts=[("854", "teacher and assistant relations with their sources"), ("1,010", "people"), ("635", "Orchestra Festival concerts, 1989–2026")],
+            facts=[("952", "teacher and assistant relations with their sources"), ("1,058", "people"), ("635", "Orchestra Festival concerts, 1989–2026")],
         ),
     ),
     dict(
