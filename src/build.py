@@ -490,7 +490,7 @@ TEXT = dict(
         site="사이트로", repo="저장소", more="전부 보기", contents="들어 있는 것",
         projects_sub="열네 묶음 — 자세한 것은 각 사이트에", talks_sub="슬라이드는 GitHub 저장소에",
         about=[
-            "<b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI(Codex)가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.",
+            "<b>원문 대조</b> 조문·판결·원전·수치는 공식 원문이나 공개 데이터와 기계로 대조했고, 작성에 쓰지 않은 별도의 AI가 원자료만 보고 블라인드로 검토했습니다. 그래도 틀린 서술이 남아 있을 수 있습니다.",
             "<b>이용 허락</b> 엮은이에게 권리가 있는 부분은 CC BY-NC 4.0(저작자표시-비영리) 또는 CC BY 4.0으로, 코드는 PolyForm Noncommercial 1.0.0 또는 MIT 등 각 저장소가 정한 조건으로 공개합니다. 인용한 법령·판결·원전·데이터는 각 권리자의 조건을 따릅니다. 자세한 조건은 저장소마다 적혀 있습니다.",
             "<b>개인 자료</b> 엮은이가 개인적으로 공부하며 만든 것으로, 엮은이가 속한 기관의 견해나 업무와는 관계가 없습니다. 법률 자문이 아닙니다.",
         ],
@@ -507,7 +507,7 @@ TEXT = dict(
         site="Open site", repo="Repository", more="See all", contents="Inside",
         projects_sub="Fourteen collections — details on each site", talks_sub="Slides live in the GitHub repositories",
         about=[
-            "<b>Checked against the originals</b> Statutes, judgments, source texts and figures were machine-checked against official texts or open datasets, and a separate AI reviewer (Codex) that took no part in the writing reviewed them blind, from the raw sources only. Errors may still remain.",
+            "<b>Checked against the originals</b> Statutes, judgments, source texts and figures were machine-checked against official texts or open datasets, and a separate AI reviewer that took no part in the writing reviewed them blind, from the raw sources only. Errors may still remain.",
             "<b>Licence</b> To the extent the editor holds rights, texts are licensed under CC BY-NC 4.0 or CC BY 4.0, and code under the PolyForm Noncommercial 1.0.0, MIT or the terms stated in each repository. Quoted statutes, judgments, source texts and data remain subject to their own rights holders. Details are in each repository.",
             "<b>Personal materials</b> These were compiled as personal study and do not represent the views or work of any institution the editor belongs to. They are not legal advice.",
         ],
